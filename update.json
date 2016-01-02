@@ -1,6 +1,11 @@
 {
-    "newestVersion": 1.0,
+    "newestVersion": 1.1,
     "versions": [{
+        "version": 1.1,
+        "filename": "1.1",
+        "description": "Test2"
+    },
+    {
         "version": 1.0,
         "filename": "1.0",
         "description": "Test1"
