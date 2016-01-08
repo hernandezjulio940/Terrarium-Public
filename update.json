@@ -1,6 +1,11 @@
 {
-    "newestVersion": 1.0.1,
+    "newestVersion": 1.0.2,
     "versions": [{
+        "version": 1.0.2,
+        "filename": "app",
+        "description": "修復了一些 BUG"
+    },
+    {
         "version": 1.0.1,
         "filename": "app",
         "description": "修復 BUGS"
