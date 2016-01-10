@@ -1,18 +1,8 @@
 {
-    "newestVersion": 1.0.2,
+    "newestVersion": "1.0.0",
     "versions": [{
-        "version": 1.0.2,
-        "filename": "app",
-        "description": "修復了一些 BUG"
-    },
-    {
-        "version": 1.0.1,
-        "filename": "app",
-        "description": "修復 BUGS"
-    },
-    {
-        "version": 1.0,
-        "filename": "app",
-        "description": "First release"
+        "version": "1.0.0",
+        "filename": "app-release",
+        "description": "1.0.0 正式版推出"
     }]
 }
