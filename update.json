@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.1",
+    "newestVersion": "1.0.2",
     "versions": [{
+        "version": "1.0.2",
+        "filename": "app-release",
+        "description": "1. 新增 MovieTV 片源\n2. 新增 Dizigold 片源\n3. 現在會顯示最後觀看的集數和已我的最愛的美劇\n4. 優化邏輯\n5. 修復崩潰"
+    },
+    {
         "version": "1.0.1",
         "filename": "app-release",
         "description": "1. 現在下載可以選擇字幕\n2. 優化片源搜尋邏輯，片源搜尋更快\n3. 修復了有某些字幕無法顯示問題\n4. 修復了崩潰"
