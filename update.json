@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.2",
+    "newestVersion": "1.0.3",
     "versions": [{
+        "version": "1.0.3",
+        "filename": "app-release",
+        "description": "1. 修復 MovieTV 片源片長問題\n2. 新增新字幕來源 : 字幕庫(Zimuku)\n3. 片源現在依畫質排序\n4. 修復崩潰"
+    },
+    {
         "version": "1.0.2",
         "filename": "app-release",
         "description": "1. 新增 MovieTV 片源\n2. 新增 Dizigold 片源\n3. 現在會顯示最後觀看的集數和已我的最愛的美劇\n4. 優化邏輯\n5. 修復崩潰"
