@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.3",
+    "newestVersion": "1.0.4",
     "versions": [{
+        "version": "1.0.4",
+        "filename": "app-release",
+        "description": "1. 新增 SezonlukDizi 高清片源\n2. 修復片源排序問題"
+    },
+    {
         "version": "1.0.3",
         "filename": "app-release",
         "description": "1. 修復 MovieTV 片源片長問題\n2. 新增新字幕來源 : 字幕庫(Zimuku)\n3. 片源現在依畫質排序\n4. 修復崩潰"
