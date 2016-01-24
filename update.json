@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.4",
+    "newestVersion": "1.0.5",
     "versions": [{
+        "version": "1.0.5",
+        "filename": "app-release",
+        "description": "1. 新增 SubHD 字幕來源\n2. 一些優化"
+    },
+    {
         "version": "1.0.4",
         "filename": "app-release",
         "description": "1. 新增 SezonlukDizi 高清片源\n2. 修復片源排序問題"
