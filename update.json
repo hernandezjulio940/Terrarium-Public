@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.7",
+    "newestVersion": "1.0.8",
     "versions": [{
+        "version": "1.0.8",
+        "filename": "app-release",
+        "description": "1. 現在可以自定美劇下載路徑\n2. 修復 SezonlukDizi 片源\n3. 修復因 Android 6 的新權限機制所造成的無法更新問題\n4. 修復 BUG"
+    },
+    {
         "version": "1.0.7",
         "filename": "app-release",
         "description": "1. 修復因 Android 6.0 的新權限系統所造成的崩潰\n2. 針對平板進行介面優化\n3. 新增字幕語言選擇功能(可在設定裡選擇)\n4. 修復 BUG"
