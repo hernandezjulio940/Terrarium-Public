@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.8",
+    "newestVersion": "1.0.9",
     "versions": [{
+        "version": "1.0.9",
+        "filename": "app-release",
+        "description": "1. 現在可以隱藏未推出季度和集數\n2. 暫時停用 MovieTV 片源\n3. 修復 BUG"
+    },
+    {
         "version": "1.0.8",
         "filename": "app-release",
         "description": "1. 現在可以自定美劇下載路徑\n2. 修復 SezonlukDizi 片源\n3. 修復因 Android 6 的新權限機制所造成的無法更新問題\n4. 修復 BUG"
