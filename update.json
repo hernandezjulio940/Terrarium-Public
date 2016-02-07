@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.9",
+    "newestVersion": "1.0.10",
     "versions": [{
+        "version": "1.0.10",
+        "filename": "app-release",
+        "description": "1. 新增 Dizibox 片源"
+    },
+    {
         "version": "1.0.9",
         "filename": "app-release",
         "description": "1. 現在可以隱藏未推出季度和集數\n2. 暫時停用 MovieTV 片源\n3. 修復 BUG"
