@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.10",
+    "newestVersion": "1.0.11",
     "versions": [{
+        "version": "1.0.11",
+        "filename": "app-release",
+        "description": "1. 修復 Dizimag 片源\n2. 性能優化\n3. BUG修復"
+    },
+    {
         "version": "1.0.10",
         "filename": "app-release",
         "description": "1. 新增 Dizibox 片源"
