@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.11",
+    "newestVersion": "1.0.12",
     "versions": [{
+        "version": "1.0.12",
+        "filename": "app-release",
+        "description": "1. 新增字幕 Filter\n2. 加強字幕搜尋的準確度\n3. 修復某些美劇會出現 No Data\n4. 修復 Vidics 片源\n5. Bug 和 FC 修復\n6. 現在支援 Android 4.0.1 或以上系統"
+    },
+    {
         "version": "1.0.11",
         "filename": "app-release",
         "description": "1. 修復 Dizimag 片源\n2. 性能優化\n3. BUG修復"
