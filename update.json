@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.13",
+    "newestVersion": "1.0.14",
     "versions": [{
+        "version": "1.0.14",
+        "filename": "app-release",
+        "description": "1. 新增 9Movies 片源\n2. 新增 MovieHDMax 片源\n3. 新增 HDMovie14 片源\n4. 片源獲取優化\n5. Bug 和 FC 修復"
+    },
+    {
         "version": "1.0.13",
         "filename": "app-release",
         "description": "1. 現在路徑修改由輸入改為選擇\n2. 片源獲取優化\n3. Bug 和 FC 修復"
