@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.14",
+    "newestVersion": "1.0.15",
     "versions": [{
+        "version": "1.0.15",
+        "filename": "app-release",
+        "description": "1. 修復字幕源顯示錯誤\n2. Bug 和 FC 修復"
+    },
+    {
         "version": "1.0.14",
         "filename": "app-release",
         "description": "1. 新增 9Movies 片源\n2. 新增 MovieHDMax 片源\n3. 新增 HDMovie14 片源\n4. 片源獲取優化\n5. Bug 和 FC 修復"
