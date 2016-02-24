@@ -1,9 +1,9 @@
 {
-    "newestVersion": "1.0.14",
+    "newestVersion": "1.0.15",
     "versions": [{
         "version": "1.0.15",
         "filename": "app-release",
-        "description": "1. 修復字幕源顯示錯誤\n2. Bug 和 FC 修復"
+        "description": "!! 此為重要更新，請務必更新 !!\n\n1. 提升圖片畫質\n2. 修復字幕來源名稱錯誤問題\n3. Bug 和 FC 修復"
     },
     {
         "version": "1.0.14",
