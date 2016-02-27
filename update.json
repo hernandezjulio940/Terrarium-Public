@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.15",
+    "newestVersion": "1.0.16",
     "versions": [{
+        "version": "1.0.16",
+        "filename": "app-release",
+        "description": "1. (新) 新增美劇種類選擇\n2. 切換首選字幕源為 SubHD\n3. Bug 和 FC 修復"
+    },
+    {
         "version": "1.0.15",
         "filename": "app-release",
         "description": "!! 此為重要更新，請務必更新 !!\n\n1. 提升圖片畫質\n2. 修復字幕來源名稱錯誤問題\n3. Bug 和 FC 修復"
