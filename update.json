@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.17",
+    "newestVersion": "1.0.18",
     "versions": [{
+        "version": "1.0.18",
+        "filename": "app-release",
+        "description": "1. 修復字幕下載失敗錯誤"
+    },
+    {
         "version": "1.0.17",
         "filename": "app-release",
         "description": "1. 新增 Farda 片源\n2. 新增更多片源解析器，將會有更多 WatchSeries 和 Vidics 的片源\n3. 新增 OpenSubtitles 字幕來源 (針對外國用戶)\n4. 修復 Dizimag 片源\n5. 加快片源載入速度\n6. Bug 和 FC 修復"
