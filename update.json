@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.18",
+    "newestVersion": "1.0.19",
     "versions": [{
+        "version": "1.0.19",
+        "filename": "app-release",
+        "description": "1. 修復字幕下載失敗錯誤\n2. 修復 OpenSubtitles 字幕源\n3. 修復 Dizimag 片源"
+    },
+    {
         "version": "1.0.18",
         "filename": "app-release",
         "description": "1. 修復字幕下載失敗錯誤"
