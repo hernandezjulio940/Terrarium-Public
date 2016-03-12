@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.18",
+    "newestVersion": "1.0.19",
     "versions": [{
+        "version": "1.0.19",
+        "filename": "app-release",
+        "description": "1. Fix failed to download subtitles error\n2. Fix OpenSubtitles\n3. Fix Dizimag"
+    },
+    {
         "version": "1.0.18",
         "filename": "app-release",
         "description": "1. Fix failed to download subtitles error"
