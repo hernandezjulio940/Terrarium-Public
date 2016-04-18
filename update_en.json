@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.0.19",
+    "newestVersion": "1.1.0",
     "versions": [{
+        "version": "1.1.0",
+        "filename": "app-release",
+        "description": "1. Add source : Vivo\n2. Add source : OnlineDizi\n3. You can choose to show 2 columns of list in landscape mode instead of 1\n4. You can play via other video players or using Chromecast\n5. You can download TV shows to SD card\n6. You can choose to hide thumbnails now\n7. You can choose to disable parallel sources loading now\n8. You can sort TV seasons and episodes in ascending or descending order\n9. Fix source : SezonlukDizi\n10. Fix source : Dizimag\n11. Fix source : Dizilab\n12. Fix source : Vidics\n13. Fix source : WatchSeries\n14. Faster speed of getting sources\n15. FC and Bug fix\n16. More optimization"
+    },
+    {
         "version": "1.0.19",
         "filename": "app-release",
         "description": "1. Fix failed to download subtitles error\n2. Fix OpenSubtitles\n3. Fix Dizimag"
