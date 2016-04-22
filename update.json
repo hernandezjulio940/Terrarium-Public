@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.1.0",
+    "newestVersion": "1.1.1",
     "versions": [{
+        "version": "1.1.1",
+        "filename": "app-release",
+        "description": "1. 新增 Dayt 片源\n2. 修復 Dizigold 片源\n3. 修復 OnlineDizi 片源\n4. 優化圖片載入\n5. 介面優化"
+    },
+    {
         "version": "1.1.0",
         "filename": "app-release",
         "description": "1. 新增 Vivo 片源\n2. 新增 OnlineDizi 片源\n3. 現在橫向模式中可以顯示 2 欄列表\n4. 你現在能使用其他影片播放器或 Chromecast 來播放\n5. 你現在能下載劇集到 SD card\n6. 你現在能選擇隱藏縮圖\n7. 你現在能選擇停用平行載入片源\n8. 現在能選擇順序或倒序顯示季和集\n9. 修復 SezonlukDizi 片源\n10. 修復 Dizimag 片源\n11. 修復 Dizilab 片源\n12. 修復 Vidics 片源\n13. 修復 WatchSeries 片源\n14. 加快片源載入速度\n15. Bug 和 FC 修復\n16. 效能優化"
