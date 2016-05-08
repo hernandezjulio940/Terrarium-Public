@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.1.1",
+    "newestVersion": "1.1.2",
     "versions": [{
+        "version": "1.1.2",
+        "filename": "app-release",
+        "description": "1. Add source : Putlocker\n2. Add category : Recently Updated\n3. Add category : New Shows\n4. Add category : Premieres\n5. Add option to choose default category or genre\n6. Add option to filter out non-English TV shows\n7. Add option to filter out dead sources\n8. Add option to choose providers and resolvers to be enabled\n9. Bug fix"
+    },
+    {
         "version": "1.1.1",
         "filename": "app-release",
         "description": "1. Add source : Dayt\n2. Fix source : Dizigold\n3. Fix source : OnlineDizi\n4. Optimize image loading\n5. Optimize UI"
