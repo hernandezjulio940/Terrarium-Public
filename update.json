@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.1.2",
+    "newestVersion": "1.1.3",
     "versions": [{
+        "version": "1.1.3",
+        "filename": "app-release",
+        "description": "1. 修復 Makedie (射手網) 字幕服務\n2. 當片源無法被其他播放器播放或開啟時顯示提示\n3. Bug 修復"
+    },
+    {
         "version": "1.1.2",
         "filename": "app-release",
         "description": "1. 新增 Putlocker 片源\n2. 新增類別 : 最近更新\n3. 新增類別 : 新劇集\n4. 新增類別 : 新季度\n5. 現在你可以選擇預設美劇類別\n6. 現在你可以選擇隱藏非英語劇集\n7. 現在你可以選擇隱藏無效鏈接\n8. 現在你可以選擇要開啟的片源提供者和連結解析器\n9. Bug 修復"
