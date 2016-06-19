@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.1.4",
+    "newestVersion": "1.1.5",
     "versions": [{
+        "version": "1.1.5",
+        "filename": "app-release",
+        "description": "1. 新介面\n2. 新增 WatchFree 片源\n3. 修復 Putlocker 片源\n4. 修復 Dayt 片源\n5. Bug 和 FC 修復"
+    },
+    {
         "version": "1.1.4",
         "filename": "app-release",
         "description": "1. 修復 Farda 片源\n2. 暫時停用 Dizilab 片源\n3. Bug 和 FC 修復"
