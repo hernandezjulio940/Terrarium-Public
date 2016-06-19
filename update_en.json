@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.1.4",
+    "newestVersion": "1.1.5",
     "versions": [{
+        "version": "1.1.5",
+        "filename": "app-release",
+        "description": "1. New UI\n2. Add source : WatchFree\n3. Fix source : Putlocker\n4. Fix source : Dayt\n5. Bug and FC fix"
+    },
+    {
         "version": "1.1.4",
         "filename": "app-release",
         "description": "1. Fix source : Farda\n2. Temporarily disable Dizilab\n3. Bug and FC fix"
