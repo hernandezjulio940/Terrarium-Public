@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.2.1",
         "filename": "app-release",
-        "description": "1. 修復 PelisPedia 電影片源\n2. 修復 MiraDeTodo 電影片源\n3. 修復選擇下載管理員選項\n4. 移除一個最近新增的廣告\n5. Bugs 和 FCs 修復"
+        "description": "1. 修復 PelisPedia 電影片源\n2. 修復 MiraDeTodo 電影片源\n3. 修復選擇下載管理員選項\n4. 移除一個最近新增的廣告\n5. Bugs 和 FCs 修復\n\n注意 : 更新後所有我的最愛將會被重設"
     },
     {
         "version": "1.2.0",
