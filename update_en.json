@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.2.1",
         "filename": "app-release",
-        "description": "1. Fix movie provider : PelisPedia\n2. Fix movie provider : MiraDeTodo\n3. Fix download manager choosing bug\n4. Remove a newly added ad\n5. Bugs and FCs fix"
+        "description": "1. Fix movie provider : PelisPedia\n2. Fix movie provider : MiraDeTodo\n3. Fix download manager choosing bug\n4. Remove a newly added ad\n5. Bugs and FCs fix\n\nCaution : All bookmarks will be reset!"
     },
     {
         "version": "1.2.0",
