@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.0",
+    "newestVersion": "1.2.1",
     "versions": [{
+        "version": "1.2.1",
+        "filename": "app-release",
+        "description": "1. 修復 PelisPedia 電影片源\n2. 修復 MiraDeTodo 電影片源\n3. 修復選擇下載管理員選項\n4. 移除一個最近新增的廣告\n5. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.0",
         "filename": "app-release",
         "description": "1. 加入電影!!\n2. 修復 WatchSeries 片源\n3. 大量 bugs 和 FCs 修復"
