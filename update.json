@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.1",
+    "newestVersion": "1.2.2",
     "versions": [{
+        "version": "1.2.2",
+        "filename": "app-release",
+        "description": "1. 新增 Afdah 電影片源\n2. 自動儲存排序偏好\n3. 重新加入主頁面我的最愛按鈕\n4. 修復 OpenSubtitles 字幕源"
+    },
+    {
         "version": "1.2.1",
         "filename": "app-release",
         "description": "1. 修復 PelisPedia 電影片源\n2. 修復 MiraDeTodo 電影片源\n3. 修復選擇下載管理員選項\n4. 移除一個最近新增的廣告\n5. Bugs 和 FCs 修復\n\n注意 : 更新後所有我的最愛將會被重設"
