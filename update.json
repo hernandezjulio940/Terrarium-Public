@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.2",
+    "newestVersion": "1.2.3",
     "versions": [{
+        "version": "1.2.3",
+        "filename": "app-release",
+        "description": "1. 修復 Putlocker 片源\n2. 修復 Dizimag 片源"
+    },
+    {
         "version": "1.2.2",
         "filename": "app-release",
         "description": "1. 新增 Afdah 電影片源\n2. 自動儲存排序偏好\n3. 重新加入主頁面我的最愛按鈕\n4. 修復 OpenSubtitles 字幕源"
