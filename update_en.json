@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.2",
+    "newestVersion": "1.2.3",
     "versions": [{
+        "version": "1.2.3",
+        "filename": "app-release",
+        "description": "1. Fix provider : Putlocker\n2. Fix provider : Dizimag"
+    },
+    {
         "version": "1.2.2",
         "filename": "app-release",
         "description": "1. Add movie source : Afdah\n2. Auto save sorting orders\n3. Add bookmark list button back in homepage\n4. Fix OpenSubtitles"
