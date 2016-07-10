@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.2.4",
         "filename": "app-release",
-        "description": "1. 新增 Movie25 電影片源\n2. 新增 MoviesHD 電影片源\n3. 新增 PelisPedia 美劇片源\n4. 新增 SantaSeries 美劇片源\n5. 新增更多連結解析器\n6. 修復使用任何擋廣告軟體所造成的影片無法播放 BUG\n\n如自動更新失敗，請在瀏覽器瀏覽以下的連結手動下載最新版 Terrarium TV 1.2.4 :\nhttp://bit.ly/29FkiKp"
+        "description": "1. 新增 Movie25 電影片源\n2. 新增 MoviesHD 電影片源\n3. 新增 PelisPedia 美劇片源\n4. 新增 SantaSeries 美劇片源\n5. 新增更多連結解析器\n6. 修復使用任何擋廣告軟體所造成的影片無法播放 BUG\n\n如自動更新失敗，請在瀏覽器瀏覽以下的連結手動下載最新版 Terrarium TV 1.2.4 :\nhttp://bit.ly/TerrariumTV124"
     },
     {
         "version": "1.2.3",
