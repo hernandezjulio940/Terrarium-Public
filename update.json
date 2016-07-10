@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.3",
+    "newestVersion": "1.2.4",
     "versions": [{
+        "version": "1.2.4",
+        "filename": "app-release",
+        "description": "1. 新增 Movie25 電影片源\n2. 新增 MoviesHD 電影片源\n3. 新增 PelisPedia 美劇片源\n4. 新增 SantaSeries 美劇片源\n5. 新增更多連結解析器\n6. 修復使用任何擋廣告軟體所造成的影片無法播放 BUG"
+    },
+    {
         "version": "1.2.3",
         "filename": "app-release",
         "description": "1. 修復 Putlocker 片源\n2. 修復 Dizimag 片源"
