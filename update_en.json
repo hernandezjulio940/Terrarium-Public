@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.3",
+    "newestVersion": "1.2.4",
     "versions": [{
+        "version": "1.2.4",
+        "filename": "app-release",
+        "description": "1. Add movie source : Movie25\n2. Add movie source : MoviesHD\n3. Add TV source : PelisPedia\n4. Add TV source : SantaSeries\n5. Add more url resolvers\n6. Fix videos won't start when using any ad-blocking"
+    },
+    {
         "version": "1.2.3",
         "filename": "app-release",
         "description": "1. Fix provider : Putlocker\n2. Fix provider : Dizimag"
