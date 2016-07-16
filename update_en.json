@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.2.5",
         "filename": "app-release",
-        "description": "1. Add movie provider : Vivo\n2. Add TV provider : TuneMovie\n3. Add URL resolver : VideoMega\n4. Add an option to choose default play action\n5. Add copy streamable link play action\n6. Fix movie provider : XMovies8\n7. Fix movie provider : MovieZone\n8. Fix movie provider : MoviesHD\n9. Fix Parse Error while installing updates\n10. Remove Dizilab\n11. Bugs and FCs fix\n\nIf auto-update failed, please download the newest Terrarium TV 1.2.4 apk manually by visiting the link below in your browser :\nhttp://bit.ly/TerrariumTV125"
+        "description": "1. Add movie provider : Vivo\n2. Add TV provider : TuneMovie\n3. Add URL resolver : VideoMega\n4. Add an option to choose default play action\n5. Add copy streamable link play action\n6. Fix movie provider : XMovies8\n7. Fix movie provider : MovieZone\n8. Fix movie provider : MoviesHD\n9. Fix Parse Error while installing updates\n10. Remove Dizilab\n11. Bugs and FCs fix\n\nIf auto-update failed, please download the newest Terrarium TV 1.2.5 apk manually by visiting the link below in your browser :\nhttp://bit.ly/TerrariumTV125"
     },
     {
         "version": "1.2.4",
