@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.5",
+    "newestVersion": "1.2.6",
     "versions": [{
+        "version": "1.2.6",
+        "filename": "app-release",
+        "description": "1. Add movie provider : HDMovie14\n2. Add provider : MHDDB\n3. Add provider : PrimeWire\n4. Add suggestion section\n5. Add IMDb and Rotten Tomatoes ratings\n6. Fix provider : MoviesHD\n7. Fix provider : HDMovie14\n8. Fix provider : TuneMovie\n9. Fix movie provider : XMovies8\n10. Fix movie provider : MiraDeTodo\n11. Fix TV show provider : SezonlukDizi\n12. Improve TV show provider : DayT\n13. Improve TV show provider : Dizimag\n14. Change domain of Makedie subtitles service\n15. Indicates Farda links' codec\n16. Don't override MXPlayer decode mode\n17. Use local JavaScript engine to solve CloudFlare\n18. Code improvement and optimization\n19. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.5",
         "filename": "app-release",
         "description": "1. Add movie provider : Vivo\n2. Add TV provider : TuneMovie\n3. Add URL resolver : VideoMega\n4. Add an option to choose default play action\n5. Add copy streamable link play action\n6. Fix movie provider : XMovies8\n7. Fix movie provider : MovieZone\n8. Fix movie provider : MoviesHD\n9. Fix Parse Error while installing updates\n10. Remove Dizilab\n11. Bugs and FCs fix\n\nIf auto-update failed, please download the newest Terrarium TV 1.2.5 apk manually by visiting the link below in your browser :\nhttp://bit.ly/TerrariumTV125"
