@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.6",
+    "newestVersion": "1.2.7",
     "versions": [{
+        "version": "1.2.7",
+        "filename": "app-prod-release",
+        "description": "1. 新增 NovaMov 連結解析器\n2. 新增 Uploadc 連結解析器\n3. 新增 Vidbull 連結解析器\n4. 新增 VidUp.me 連結解析器\n5. 新增 Vidzi 連結解析器\n6. 修復 XMovies8 電影片源\n7. 運行效率優化\n8. 降低出現 OutOfMemoryError 錯誤的機會\n9. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.6",
         "filename": "app-release",
         "description": "1. 新增 HDMovie14 電影片源\n2. 新增 MHDDB 片源\n3. 新增 PrimeWire 片源\n4. 新增更多推薦\n5. 新增 IMDb 和 爛番茄 評分\n6. 修復 MoviesHD 片源\n7. 修復 HDMovie14 片源\n8. 修復 TuneMovie 片源\n9. 修復 XMovies8 電影片源\n10. 修復 MiraDeTodo 電影片源\n11. 修復 SezonlukDizi 美劇片源\n12. 優化 DayT 美劇片源\n13. 優化 Dizimag 美劇片源\n14. 更改 Makedie 字幕服務的域名\n15. 顯示 Farda 片源的編碼格式\n16. 不再覆蓋 MXPlayer 預設解碼器選項\n17. 使用本機 JavaScript 引擎來解決 CloudFlare 驗證\n18. 運行效率優化\n19. Bugs 和 FCs 修復"
