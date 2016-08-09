@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.7",
+    "newestVersion": "1.2.8",
     "versions": [{
+        "version": "1.2.8",
+        "filename": "app-release",
+        "description": "1. Add URL resolver : Letwatch\n2. Add URL resolver : Movshare\n3. Add URL resolver : Vidto\n4. Fix URL resolver : VidUp.me\n5. Fix URL resolver : Vidzi\n6. Fix movie provider : Rainierland\n7. Fix a serious crash which will happen in low-end devices"
+    },
+    {
         "version": "1.2.7",
         "filename": "app-release",
         "description": "1. Add URL resolver : NovaMov\n2. Add URL resolver : Uploadc\n3. Add URL resolver : Vidbull\n4. Add URL resolver : VidUp.me\n5. Add URL resolver : Vidzi\n6. Fix movie provider : XMovies8\n7. Code improvement and optimization\n8. Reduce the chance of getting OutOfMemoryError\n9. Bugs and FCs fix"
