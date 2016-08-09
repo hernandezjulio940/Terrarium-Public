@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.7",
+    "newestVersion": "1.2.8",
     "versions": [{
+        "version": "1.2.8",
+        "filename": "app-release",
+        "description": "1. 新增 Letwatch 連結解析器\n2. 新增 Movshare 連結解析器\n3. 新增 Vidto 連結解析器\n4. 修復 VidUp.me 連結解析器\n5. 修復 Vidzi 連結解析器\n6. 修復 Rainierland 電影片源\n7. 修復一個在低端裝置上會發生的崩潰"
+    },
+    {
         "version": "1.2.7",
         "filename": "app-release",
         "description": "1. 新增 NovaMov 連結解析器\n2. 新增 Uploadc 連結解析器\n3. 新增 Vidbull 連結解析器\n4. 新增 VidUp.me 連結解析器\n5. 新增 Vidzi 連結解析器\n6. 修復 XMovies8 電影片源\n7. 運行效率優化\n8. 降低出現 OutOfMemoryError 錯誤的機會\n9. Bugs 和 FCs 修復"
