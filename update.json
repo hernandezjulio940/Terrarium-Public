@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.8",
+    "newestVersion": "1.2.9",
     "versions": [{
+        "version": "1.2.9",
+        "filename": "app-release",
+        "description": "1. 新增 WHO 電影片源\n2. 新增 TVRush 美劇片源\n3. 新增語言 : 阿拉伯文\n4. 新增語言 : 法文\n5. 新增語言 : 西班牙文\n6. 修復 XMovies8 電影片源\n7. 修復 TheVideo 連結解析器\n8. 修復 NowVideo 連結解析器\n9. 修復 Vidzi 連結解析器\n10. 修復 Letwatch 連結解析器\n11. 修復 OpenSubtitles 字幕源\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.8",
         "filename": "app-release",
         "description": "1. 新增 Letwatch 連結解析器\n2. 新增 Movshare 連結解析器\n3. 新增 Vidto 連結解析器\n4. 修復 VidUp.me 連結解析器\n5. 修復 Vidzi 連結解析器\n6. 修復 Rainierland 電影片源\n7. 修復一個在低端裝置上會發生的崩潰"

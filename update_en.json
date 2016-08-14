@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.8",
+    "newestVersion": "1.2.9",
     "versions": [{
+        "version": "1.2.9",
+        "filename": "app-release",
+        "description": "1. Add movies provider : WHO\n2. Add TV shows provider : TVRush\n3. Add Arabic translation\nAdd French translation\n5. Add Spanish translation\n6. Fix movie provider : XMovies8\n7. Fix URL resolver : TheVideo\n8. Fix URL resolver : NowVideo\n9. Fix URL resolver : Vidzi\n10. Fix URL resolver : Letwatch\n11. Fix subtitles service : OpenSubtitles\n12. Performance improvement\n13. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.8",
         "filename": "app-release",
         "description": "1. Add URL resolver : Letwatch\n2. Add URL resolver : Movshare\n3. Add URL resolver : Vidto\n4. Fix URL resolver : VidUp.me\n5. Fix URL resolver : Vidzi\n6. Fix movie provider : Rainierland\n7. Fix a serious crash which will happen in low-end devices"
