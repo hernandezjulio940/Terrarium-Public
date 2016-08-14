@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.2.9",
         "filename": "app-release",
-        "description": "1. Add movies provider : WHO\n2. Add TV shows provider : TVRush\n3. Add Arabic translation\nAdd French translation\n5. Add Spanish translation\n6. Fix movie provider : XMovies8\n7. Fix URL resolver : TheVideo\n8. Fix URL resolver : NowVideo\n9. Fix URL resolver : Vidzi\n10. Fix URL resolver : Letwatch\n11. Fix subtitles service : OpenSubtitles\n12. Performance improvement\n13. Bugs and FCs fix"
+        "description": "1. Add movies provider : WHO\n2. Add TV shows provider : TVRush\n3. Add Arabic translation\n4. Add French translation\n5. Add Spanish translation\n6. Fix movie provider : XMovies8\n7. Fix URL resolver : TheVideo\n8. Fix URL resolver : NowVideo\n9. Fix URL resolver : Vidzi\n10. Fix URL resolver : Letwatch\n11. Fix subtitles service : OpenSubtitles\n12. Performance improvement\n13. Bugs and FCs fix"
     },
     {
         "version": "1.2.8",
