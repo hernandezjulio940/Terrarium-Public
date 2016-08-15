@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.9",
+    "newestVersion": "1.2.10",
     "versions": [{
+        "version": "1.2.10",
+        "filename": "app-release",
+        "description": "1. 顯示 GoogleVideo 片源檔案大小\n2. 自動隱藏檔案大小小於 10MB 的片源\n3. 自動 App 語言切換選項\n4. 新增語言 : 芬蘭文\n5. 修復 PelisPedia 片源\n6. 修復 Afdah 電影片源\n7. 修復 Stage66 電影片源\n8. 修復 Movshare 連結解析器\n9. 修復 NowVideo 連結解析器\n10. 修復法語翻譯\n11. 運行效率優化\n12. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.9",
         "filename": "app-release",
         "description": "1. 新增 WHO 電影片源\n2. 新增 TVRush 美劇片源\n3. 新增語言 : 阿拉伯文\n4. 新增語言 : 法文\n5. 新增語言 : 西班牙文\n6. 修復 XMovies8 電影片源\n7. 修復 TheVideo 連結解析器\n8. 修復 NowVideo 連結解析器\n9. 修復 Vidzi 連結解析器\n10. 修復 Letwatch 連結解析器\n11. 修復 OpenSubtitles 字幕源\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
