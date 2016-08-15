@@ -1,6 +1,12 @@
 {
-    "newestVersion": "1.2.9",
-    "versions": [{
+    "newestVersion": "1.2.10",
+    "versions": [
+        {
+        "version": "1.2.10",
+        "filename": "app-release",
+        "description": "1. Indicate media file size for GoogleVideo\n2. Filter out media files which file size is too small (smaller than 10MB)\n3. Add option to change app language\n4. Add Finnish translation\n5. Fix provider : PelisPedia\n6. Fix movie provider : Afdah\n7. Fix movie provider : Stage66\n8. Fix URL resolver : Movshare\n9. Fix URL resolver : NowVideo\n10. Fix French translation\n11. Performance improvement\n12. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.9",
         "filename": "app-release",
         "description": "1. Add movies provider : WHO\n2. Add TV shows provider : TVRush\n3. Add Arabic translation\n4. Add French translation\n5. Add Spanish translation\n6. Fix movie provider : XMovies8\n7. Fix URL resolver : TheVideo\n8. Fix URL resolver : NowVideo\n9. Fix URL resolver : Vidzi\n10. Fix URL resolver : Letwatch\n11. Fix subtitles service : OpenSubtitles\n12. Performance improvement\n13. Bugs and FCs fix"
