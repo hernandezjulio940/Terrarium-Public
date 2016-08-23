@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.11",
+    "newestVersion": "1.2.12",
     "versions": [{
+        "version": "1.2.12",
+        "filename": "app-release",
+        "description": "1. Add provider : FliXanity\n2. Add movies provider : SpaceMov\n3. Add URL resolver : VShare.eu\n4. Add URL resolver : Watchers\n5. Add URL resolver : YouLol\n6. Add Dutch translation\n7. Add Portuguese (Portugal) translation\n8. Change movie provider Pubfilm01 to Pubfilm\n9. Fix movie provider : Stage66\n10. Fix URL resolver : AllMyVideos\n11. Remove URL resolver : TheVideo\n12. Performance improvement\n13. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.11",
         "filename": "app-release",
         "description": "1. Add URL resolver : AllMyVideos\n2. Add Hungarian to OpenSubtitles\n3. Fix provider : MHDDB\n4. Fix TV shows provider : TVRush\n5. Fix URL resolver : TheVideo (again)\n6. Fix URL resolver : NowVideo\n7. Fix URL resolver : NovaMov\n8. Fix URL resolver : Movshare\n9. Fix URL resolver : VodLocker\n10. Update Arabic translation\n11. Update Spanish translation\n12. Update Finnish translation\n13. Performance improvement\n14. Bugs and FCs fix"
