@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.12",
+    "newestVersion": "1.2.13",
     "versions": [{
+        "version": "1.2.13",
+        "filename": "app-release",
+        "description": "1. Add provider : CartoonHD\n2. Add movies provider : MovieHut\n3. Add movies provider : M4UFree\n4. Add TV shows provider : XMovies8\n5. Add SeriesGuide extension support\n6. Fix provider : Putlocker\n7. Fix provider : MoviesHD\n8. Fix provider : FliXanity\n9. Fix movies provider : Pubfilm\n10. Fix TV shows provider : SezonlukDizi\n11. UI update\n12. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.12",
         "filename": "app-release",
         "description": "1. Add provider : FliXanity\n2. Add movies provider : SpaceMov\n3. Add URL resolver : VShare.eu\n4. Add URL resolver : Watchers\n5. Add URL resolver : YouLol\n6. Add Dutch translation\n7. Add Portuguese (Portugal) translation\n8. Change movie provider Pubfilm01 to Pubfilm\n9. Fix movie provider : Stage66\n10. Fix URL resolver : AllMyVideos\n11. Remove URL resolver : TheVideo\n12. Performance improvement\n13. Bugs and FCs fix"
