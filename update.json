@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.12",
+    "newestVersion": "1.2.13",
     "versions": [{
+        "version": "1.2.13",
+        "filename": "app-release",
+        "description": "1. 新增 CartoonHD 片源\n2. 新增 MovieHut 電影片源\n3. 新增 M4UFree 電影片源\n4. 新增 XMovies8 美劇片源\n5. 新增 SeriesGuide 插件支援\n6. 修復 Putlocker 片源\n7. 修復 MoviesHD 片源\n8. 修復 FliXanity 片源\n9. 修復 Pubfilm 電影片源\n10. 修復 SezonlukDizi 美劇片源\n11. UI 更新\n12. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.12",
         "filename": "app-release",
         "description": "1. 新增 FliXanity 片源\n2. 新增 SpaceMov 電影片源\n3. 新增 VShare.eu 連結解析器\n4. 新增 Watchers 連結解析器\n5. 新增 YouLol 連結解析器\n6. 新增語言 : 荷蘭文\n7. 新增語言 : 葡萄牙文 (葡萄牙)\n8. Pubfilm01 電影片源 -> Pubfilm 電影片源\n9. 修復 Stage66 電影片源\n10. 修復 AllMyVideos 連結解析器\n11. 移除 TheVideo 連結解析器\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
