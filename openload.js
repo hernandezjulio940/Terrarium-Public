@@ -28,7 +28,13 @@ var OpenloadDecoder = {
             var aaEncodedArr = aaEncodedPattern.exec(script);
             if (aaEncodedArr != null) {
                 var aaEncoded = aaEncodedArr[1];
-                var aaDecoded = AADecode.decode(aaEncoded);
+                Log.log("aaEncoded = " + aaEncoded);
+                var aaDecoded = "";
+                try {
+                    aaDecoded = AADecode.decode(aaEncoded);
+                } catch (err) {
+                    Log.log("Error occured while decoding AA : " + err.message);
+                }
                 Log.log("aaDecoded = " + aaDecoded);
                 decodes.push(aaDecoded);
             }
