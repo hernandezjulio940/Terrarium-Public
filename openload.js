@@ -8,6 +8,7 @@
 var OpenloadDecoder = { 
     decode: function(html) { 
         Log.log('Start decoding in JS now...');
+        Log.log('html = ' + html);
 
         var pattern = /hiddenurl">(.+?)<\/span>/i;
         var hiddenUrl = pattern.exec()[1];
