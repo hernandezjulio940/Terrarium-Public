@@ -15,7 +15,7 @@ var OpenloadDecoder = {
             var hiddenUrl = hiddenUrlPattern.exec(html)[1];
             if (hiddenUrl == undefined)
                 return;
-            hiddenUrl = unescape(hiddenUrl);
+            hiddenUrl = newUnescape(hiddenUrl);
             Log.log("hiddenUrl = " + hiddenUrl);
 
             var decodes = [];
@@ -72,7 +72,7 @@ function getMatches(string, regex, index) {
  * @return {String}
  */
 
-var unescape = function(str) {
+var newUnescape = function(str) {
     if (str == null) return '';
 
     var re = new RegExp('(' + Object.keys(chars)
