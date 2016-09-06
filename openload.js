@@ -10,18 +10,27 @@ var OpenloadDecoder = {
         Log.log('Start decoding in JS now...');
         Log.log('html = ' + html);
 
-        var pattern = /hiddenurl">(.+?)<\/span>/i;
-        var hiddenUrl = pattern.exec(html)[1];
+        var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
+        var hiddenUrl = aaEncodedPattern.exec(html)[1];
         if (hiddenUrl == undefined)
             return;
         hiddenUrl = unescape(hiddenUrl);
         Log.log('hiddenUrl = ' + hiddenUrl);
         
+        var decodes = [];
         var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
         var scriptMatches = getMatches(html, scriptPattern, 1);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
-            Log.log('Found <script> : ' + script);
+            //Log.log('Found <script> : ' + script);
+            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+            var aaEncodedArr = aaEncodedPattern.exec();
+.           if (aaEncodedArr != null) {
+                var aaEncoded = aaEncodedArr[1];
+                var aaDecoded = AADecode.decode(aaEncoded);
+                Log.log('aaDecoded = ' + aaDecoded);
+                decodes.push(aaDecoded);
+            }
         }
     } 
 };
