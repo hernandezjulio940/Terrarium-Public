@@ -1,10 +1,27 @@
 /* OpenloadDecoder - A script which will be executed by Duktape to extract Openload links
  * 
+ * JavaScript (for Duktape Java) port of openload urlresolver plugin by tknorris.
+ *
+ * Original plugin in Python : 
+ * https://github.com/tknorris/script.module.urlresolver/blob/master/lib/urlresolver/plugins/ol_gmu.py
+ * 
  * Copyright (C) 2016 NitroXenon
  * 
- * This software is released under the MIT License.
- * http://opensource.org/licenses/mit-license.php
- */
+ * This software is released under the GPLv3 License.
+
+openload.io urlresolver plugin
+Copyright (C) 2015 tknorris
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+*/
 var OpenloadDecoder = {
     decode: function(html) {
         try {
@@ -24,7 +41,7 @@ var OpenloadDecoder = {
             for (var i = 0; i < scriptMatches.length; i++) {
                 var script = scriptMatches[i];
                 //Log.log("Found <script> : " + script);
-                
+
                 var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
                 //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
                 var aaEncodedArr = aaEncodedPattern.exec(script);
