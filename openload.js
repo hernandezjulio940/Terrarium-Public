@@ -24,6 +24,7 @@ var OpenloadDecoder = {
             for (var i = 0; i < scriptMatches.length; i++) {
                 var script = scriptMatches[i];
                 //Log.log("Found <script> : " + script);
+                
                 var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
                 //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
                 var aaEncodedArr = aaEncodedPattern.exec(script);
@@ -32,14 +33,14 @@ var OpenloadDecoder = {
                     //Log.log("aaEncoded = " + aaEncoded);
                     var aaDecoded = "";
                     try {
-                        aaDecoded = AADecode.decode(aaEncoded);
+                        aaDecoded = aadecode(aaEncoded);
                     } catch (err) {
                         Log.log("Error decoding AA : " + err.message);
                     }
                     Log.log("aaDecoded = " + aaDecoded);
                     decodes.push(aaDecoded);
                 }
-                
+
                 var jjEncodedPattern = /(.=~\[\].*\(\);)/;
                 var jjEncodedArr = jjEncodedPattern.exec(script);
                 if (jjEncodedArr != null) {
@@ -55,6 +56,42 @@ var OpenloadDecoder = {
                     decodes.push(jjDecoded);
                 }
             }
+
+            if (decodes.length <= 0)
+                throw new Error("No Encoded Section Found. Deleted?");
+
+            var magicNumber = 0;
+            var charDecodePattern = /charCodeAt\(\d+\)\s*\+\s*(\d+)\)/g;
+            for (var i = 0; i < decodes.length; i++) {
+                var decodedStr = decodes[i];
+                var charDecodeArr = charDecodePattern.exec(decodedStr);
+                if (charDecodeArr == null || charDecodeArr.length <= 0 || charDecodeArr[1] == undefined)
+                    continue;
+                magicNumber = charDecodeArr[1];
+                break;
+            }
+            Log.log("magicNumber = " + magicNumber);
+
+            var s = [];
+            var hiddenUrlChars = hiddenUrl.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
+            for (var i = 0; i < hiddenUrlChars.length; i++) {
+                var c = hiddenUrlChars[i];
+                var j = c.charCodeAt(0);
+                Log.log("c = " + c + "; j = " + j);
+
+                if (j >= 33 & j <= 126)
+                    j = 33 + ((j + 14) % 94);
+
+                if (i == (hiddenUrl.length - 1))
+                    j = j + parseInt(magicNumber);
+
+                s.push(String.fromCharCode(j));
+            }
+
+            var res = s.join('');
+            Log.log("res = " + res);
+
+            return "https://openload.co/stream/" + res + "?mime=true";
         } catch (nErr) {
             Log.log("Error decoding Openload : " + nErr);
         }
@@ -115,20 +152,19 @@ var chars = {
  * This software is released under the MIT License.
  * http://opensource.org/licenses/mit-license.php
  */
-var AADecode = {
-    decode: function(text) {
-        var evalPreamble = "(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (";
-        var decodePreamble = "( (ﾟДﾟ) ['_'] (";
-        var evalPostamble = ") (ﾟΘﾟ)) ('_');";
-        var decodePostamble = ") ());";
-        text = text.replace(/^\s*/, "").replace(/\s*$/, "");
-        if (/^\s*$/.test(text)) return "";
-        if (text.lastIndexOf(evalPreamble) < 0) throw new Error("Given code is not encoded as aaencode.");
-        if (text.lastIndexOf(evalPostamble) != text.length - evalPostamble.length) throw new Error("Given code is not encoded as aaencode.");
-        var decodingScript = text.replace(evalPreamble, decodePreamble).replace(evalPostamble, decodePostamble);
-        return eval(decodingScript);
-    }
-};
+
+function aadecode(text) {
+    var evalPreamble = "(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (";
+    var decodePreamble = "( (ﾟДﾟ) ['_'] (";
+    var evalPostamble = ") (ﾟΘﾟ)) ('_');";
+    var decodePostamble = ") ());";
+    text = text.replace(/^\s*/, "").replace(/\s*$/, "");
+    if (/^\s*$/.test(text)) return "";
+    if (text.lastIndexOf(evalPreamble) < 0) throw new Error("Given code is not encoded as aaencode.");
+    if (text.lastIndexOf(evalPostamble) != text.length - evalPostamble.length) throw new Error("Given code is not encoded as aaencode.");
+    var decodingScript = text.replace(evalPreamble, decodePreamble).replace(evalPostamble, decodePostamble);
+    return eval(decodingScript);
+}
 
 /*
  * jjdecode function written by Syed Zainudeen
@@ -136,7 +172,7 @@ var AADecode = {
  */
 function jjdecode(t) {
     var result = "";
-    
+
     //clean it
     t.replace(/^\s+|\s+$/g, "");
 
@@ -513,6 +549,6 @@ function jjdecode(t) {
         throw new Error("no match : " + data);
         break;
     }
-    
+
     return result;
 }
