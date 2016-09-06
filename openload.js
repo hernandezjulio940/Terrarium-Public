@@ -191,7 +191,7 @@ function jjdecode(t) {
     var result = "";
 
     //clean it
-    t.replace(/^\s+|\s+$/g, "");
+    t = t.replace(/^\s+|\s+$/g, "");
 
     var startpos;
     var endpos;
