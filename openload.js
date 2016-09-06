@@ -7,37 +7,41 @@
  */
 var OpenloadDecoder = {
     decode: function(html) {
-        Log.log("Start decoding in JS now...");
-        //Log.log("html = " + html);
+        try {
+            Log.log("Start decoding in JS now...");
+            //Log.log("html = " + html);
 
-        var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
-        var hiddenUrl = hiddenUrlPattern.exec(html)[1];
-        if (hiddenUrl == undefined)
-            return;
-        hiddenUrl = unescape(hiddenUrl);
-        Log.log("hiddenUrl = " + hiddenUrl);
+            var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
+            var hiddenUrl = hiddenUrlPattern.exec(html)[1];
+            if (hiddenUrl == undefined)
+                return;
+            hiddenUrl = unescape(hiddenUrl);
+            Log.log("hiddenUrl = " + hiddenUrl);
 
-        var decodes = [];
-        var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
-        var scriptMatches = getMatches(html, scriptPattern, 1);
-        for (var i = 0; i < scriptMatches.length; i++) {
-            var script = scriptMatches[i];
-            //Log.log("Found <script> : " + script);
-            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-            //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
-            var aaEncodedArr = aaEncodedPattern.exec(script);
-            if (aaEncodedArr != null) {
-                var aaEncoded = aaEncodedArr[1];
-                //Log.log("aaEncoded = " + aaEncoded);
-                var aaDecoded = "";
-                try {
-                    aaDecoded = AADecode.decode(aaEncoded);
-                } catch (err) {
-                    Log.log("Error occured while decoding AA : " + err.message);
+            var decodes = [];
+            var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
+            var scriptMatches = getMatches(html, scriptPattern, 1);
+            for (var i = 0; i < scriptMatches.length; i++) {
+                var script = scriptMatches[i];
+                //Log.log("Found <script> : " + script);
+                var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+                //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+                var aaEncodedArr = aaEncodedPattern.exec(script);
+                if (aaEncodedArr != null) {
+                    var aaEncoded = aaEncodedArr[1];
+                    //Log.log("aaEncoded = " + aaEncoded);
+                    var aaDecoded = "";
+                    try {
+                        aaDecoded = AADecode.decode(aaEncoded);
+                    } catch (err) {
+                        Log.log("Error decoding AA : " + err.message);
+                    }
+                    Log.log("aaDecoded = " + aaDecoded);
+                    decodes.push(aaDecoded);
                 }
-                Log.log("aaDecoded = " + aaDecoded);
-                decodes.push(aaDecoded);
             }
+        } catch (nErr) {
+            Log.log("Error decoding Openload : " + nErr);
         }
     }
 };
@@ -51,6 +55,41 @@ function getMatches(string, regex, index) {
     }
     return matches;
 }
+
+/*!
+ * unescape <https://github.com/jonschlinkert/unescape>
+ * Edited by NitroXenon to make it compatible with OpenloadDecoder 
+ *
+ * Copyright (c) 2014 Jon Schlinkert, contributors.
+ *
+ * Licensed under the MIT License
+ */
+
+/**
+ * Convert HTML entities to HTML characters.
+ *
+ * @param  {String} `str` String with HTML entities to un-escape.
+ * @return {String}
+ */
+
+var unescape = function(str) {
+    if (str == null) return '';
+
+    var re = new RegExp('(' + Object.keys(chars)
+        .join('|') + ')', 'g');
+
+    return String(str).replace(re, function(match) {
+        return chars[match];
+    });
+};
+
+var chars = {
+    '&#39;': '\'',
+    '&amp;': '&',
+    '&gt;': '>',
+    '&lt;': '<',
+    '&quot;': '"'
+};
 
 /* AADecode - Decode encoded-as-aaencode JavaScript program.
  * Edited by NitroXenon to make it compatible with OpenloadDecoder
