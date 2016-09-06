@@ -22,9 +22,9 @@ var OpenloadDecoder = {
         var scriptMatches = getMatches(html, scriptPattern, 1);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
-            //Log.log("Found <script> : " + script);
-            //var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-            var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+            Log.log("Found <script> : " + script);
+            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+            //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
             var aaEncodedArr = aaEncodedPattern.exec(script);
             if (aaEncodedArr != null) {
                 var aaEncoded = aaEncodedArr[1];
