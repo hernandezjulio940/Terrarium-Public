@@ -25,7 +25,7 @@ var OpenloadDecoder = {
             //Log.log('Found <script> : ' + script);
             var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
             var aaEncodedArr = aaEncodedPattern.exec();
-.           if (aaEncodedArr != null) {
+            if (aaEncodedArr != null) {
                 var aaEncoded = aaEncodedArr[1];
                 var aaDecoded = AADecode.decode(aaEncoded);
                 Log.log('aaDecoded = ' + aaDecoded);
