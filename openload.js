@@ -5,8 +5,8 @@
  * This software is released under the MIT License.
  * http://opensource.org/licenses/mit-license.php
  */
-var OpenloadDecoder = { 
-    decode: function(html) { 
+var OpenloadDecoder = {
+    decode: function(html) {
         Log.log("Start decoding in JS now...");
         //Log.log("html = " + html);
 
@@ -16,7 +16,7 @@ var OpenloadDecoder = {
             return;
         hiddenUrl = unescape(hiddenUrl);
         Log.log("hiddenUrl = " + hiddenUrl);
-        
+
         var decodes = [];
         var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
         var scriptMatches = getMatches(html, scriptPattern, 1);
@@ -39,7 +39,7 @@ var OpenloadDecoder = {
                 decodes.push(aaDecoded);
             }
         }
-    } 
+    }
 };
 
 function getMatches(string, regex, index) {
@@ -47,7 +47,7 @@ function getMatches(string, regex, index) {
     var matches = [];
     var match;
     while (match = regex.exec(string)) {
-      matches.push(match[index]);
+        matches.push(match[index]);
     }
     return matches;
 }
