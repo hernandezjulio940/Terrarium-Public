@@ -11,7 +11,7 @@ var OpenloadDecoder = {
         //Log.log("html = " + html);
 
         var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
-        var hiddenUrl = aaEncodedPattern.exec(html)[1];
+        var hiddenUrl = hiddenUrlPattern.exec(html)[1];
         if (hiddenUrl == undefined)
             return;
         hiddenUrl = unescape(hiddenUrl);
