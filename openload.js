@@ -113,6 +113,9 @@ var OpenloadDecoder = {
             Log.log("Error decoding Openload : " + nErr);
         }
         return "";
+    },
+    isEnabled: function() {
+        return true;
     }
 };
 
