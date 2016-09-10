@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.13",
+    "newestVersion": "1.2.14",
     "versions": [{
+        "version": "1.2.14",
+        "filename": "app-release",
+        "description": "1. Add support of Android N 7.0\n2. Add subtitles service : Subscene (You need to select language(s) in Setting page\n3. Add URL resolver : Openload\n4. Add Vietnamese to OpenSubtitles\n5. Add Georgian translation\n6. Add Italian translation\n7. Fix provider : Putlocker\n8. Fix provider : MoviesHD\n9. Fix provider : FliXanity\n10. Fix movies provider : SpaceMov\n11. Fix URL resolver : VShare.eu\n12. Show [Just Once] and [Always] in choosing apps popup\n13. Hide subtitles of trailer in OpenSubtitles\n14. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.13",
         "filename": "app-release",
         "description": "1. Add provider : CartoonHD\n2. Add movies provider : MovieHut\n3. Add movies provider : M4UFree\n4. Add TV shows provider : XMovies8\n5. Add SeriesGuide extension support\n6. Fix provider : Putlocker\n7. Fix provider : MoviesHD\n8. Fix provider : FliXanity\n9. Fix movies provider : Pubfilm\n10. Fix TV shows provider : SezonlukDizi\n11. UI update\n12. Bugs and FCs fix"
