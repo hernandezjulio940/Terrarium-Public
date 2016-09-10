@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.13",
+    "newestVersion": "1.2.14",
     "versions": [{
+        "version": "1.2.14",
+        "filename": "app-release",
+        "description": "1. 新增 Android N 7.0 支援\n2. 新增 Subscene 字幕來源 (針對外國用戶)\n3. 新增 Openload 連結解析器\n4. OpenSubtitles 新增 越南文\n5. 新增語言 : 喬治亞文\n6. 新增語言 : 意大利文\n7. 修復 Putlocker 片源\n8. 修復 MoviesHD 片源\n9. 修復 FliXanity 片源\n10. 修復 SpaceMov 電影片源\n11. 修復 VShare.eu 連結解析器\n12. 選擇開啟方式時顯示 [只此一次] 和 [永遠]\n13. OpenSubtitles 隱藏預告片的字幕\n14. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.13",
         "filename": "app-release",
         "description": "1. 新增 CartoonHD 片源\n2. 新增 MovieHut 電影片源\n3. 新增 M4UFree 電影片源\n4. 新增 XMovies8 美劇片源\n5. 新增 SeriesGuide 插件支援\n6. 修復 Putlocker 片源\n7. 修復 MoviesHD 片源\n8. 修復 FliXanity 片源\n9. 修復 Pubfilm 電影片源\n10. 修復 SezonlukDizi 美劇片源\n11. UI 更新\n12. Bugs 和 FCs 修復"
