@@ -28,6 +28,7 @@ var OpenloadDecoder = {
             Log.d("Start decoding in JS now...");
             //Log.d("html = " + html);
 
+            html = unpackHtml(html);
             var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
             var hiddenUrl = hiddenUrlPattern.exec(html)[1];
             if (hiddenUrl == undefined)
@@ -90,7 +91,7 @@ var OpenloadDecoder = {
             Log.d("magicNumber = " + magicNumber);
 
             var s = [];
-            var hiddenUrlChars = hiddenUrl.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
+            var hiddenUrlChars = getCharsFromString(hiddenUrl);
             for (var i = 0; i < hiddenUrlChars.length; i++) {
                 var c = hiddenUrlChars[i];
                 var j = c.charCodeAt(0);
@@ -118,6 +119,70 @@ var OpenloadDecoder = {
         return true;
     }
 };
+
+function unpackHtml(html) {
+    var replaceArr = ['j', '_', '__', '___'];
+    var stringsPattern = /{\s*var\s+a\s*=\s*"([^"]+)/;
+    var strings = getMatches(html, stringsPattern, 1);
+    var shiftsPattern = /\)\);}\((\d+)\)/;
+    var shifts = getMatches(html, shiftsPattern, 1);
+    var zippedArr = zip(strings, shifts);
+    
+    for (i = 0, len = zippedArr.length; i < len; ++i) {
+        var arr = zippedArr[i];
+        var str = arr[0];
+        var shift = arr[1];
+        
+        var res = caesarShift(str, parseInt(shift));
+        
+        for (j = 0, len2 = replaceArr.length; j < len2; ++j) {
+            res = res.replace(j.toString(), replaceArr[j]);
+        }
+        
+        res = decodeURIComponent(res);
+        html += ("<script>" + res + "</script>");
+    }
+    
+    return html;
+}
+
+function caesarShift(s, shift) {
+    if (!shift)
+        shift = 13;
+    shift = parseInt(shift);
+    var s2 = "";
+    var chars = getCharsFromString(s);
+    
+    for (i = 0, len = chars.length; i < len; ++i) {
+        var c = chars[i];
+        var cCode = c.charCodeAt(0);
+        if (isAlpha(c)) {
+            var limit = (cCode <= "Z".charCodeAt(0)) ? 90 : 122;
+            var newCode = cCode + shift;
+            if (newCode > limit) {
+                newCode -= 26;
+            }
+            s2 += String.fromCharCode(newCode);
+        } else {
+            s2 += c;
+        }
+    }
+    return s2;
+}
+
+function isAlpha(s) {
+    return /^[a-zA-Z()]+$/.test(s);
+}
+
+function zip(x, y) {
+    return x.map(function (e, i) {
+        return [e, y[i]];
+    });
+}
+
+function getCharsFromString(s) {
+    return s.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
+}
 
 function getMatches(string, regex, index) {
     index || (index = 1); // default to the first capturing group
