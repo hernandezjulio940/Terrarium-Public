@@ -118,7 +118,7 @@ var OpenloadDecoder = {
         return "";
     },
     isEnabled: function() {
-        return true;
+        return false;
     }
 };
 
