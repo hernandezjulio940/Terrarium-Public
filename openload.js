@@ -22,9 +22,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
+const DOTALL = 32;
+const CASE_INSENSITIVE = 2;
+
 var OpenloadDecoder = {
     decode: function(html) {
-        try {
+        //try {
             Log.d("Start decoding in JS now...");
             //Log.d("html = " + html);
 
@@ -39,8 +42,8 @@ var OpenloadDecoder = {
             Log.d("newHiddenUrl = " + hiddenUrl);
             
             var decodes = [];
-            var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
-            var scriptMatches = getMatches(html, scriptPattern, 1);
+            var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
+            var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
             for (var i = 0; i < scriptMatches.length; i++) {
                 var script = scriptMatches[i];
                 //Log.d("Found <script> : " + script);
@@ -112,10 +115,10 @@ var OpenloadDecoder = {
             Log.d("res = " + res);
 
             return "https://openload.co/stream/" + res + "?mime=true";
-        } catch (nErr) {
-            Log.d("Error decoding Openload : " + nErr);
-        }
-        return "";
+        //} catch (nErr) {
+            //Log.d("Error decoding Openload : " + nErr + "\n\n" + nErr.stack);
+        //}
+        //return "";
     },
     isEnabled: function() {
         return false;
@@ -125,13 +128,15 @@ var OpenloadDecoder = {
 function unpackHtml(html) {
     Log.d("unpacking html");
     var replaceArr = ['j', '_', '__', '___'];
-    var stringsPattern = /{\s*var\s+a\s*=\s*"([^"]+)/;
-    var strings = getMatches(html, stringsPattern, 1);
-    var shiftsPattern = /\)\);}\((\d+)\)/;
-    var shifts = getMatches(html, shiftsPattern, 1);
+    var stringsPattern = '\\{\\s*var\\s+a\\s*=\\s*"([^"]+)';
+    var strings = getJavaRegexMatches(html, stringsPattern, 1, CASE_INSENSITIVE);
+    Log.d("stringsLen = " + strings.length);
+    
+    var shiftsPattern = "\\)\\);\\}\\((\\d+)\\)";
+    var shifts = getJavaRegexMatches(html, shiftsPattern, 1, -1);
     var zippedArr = zip(strings, shifts);
 
-    for (i = 0, len = zippedArr.length; i < len; ++i) {
+    for (var i = 0, len = zippedArr.length; i < len; ++i) {
         var arr = zippedArr[i];
         var str = arr[0];
         var shift = arr[1];
@@ -145,7 +150,7 @@ function unpackHtml(html) {
             res = res.replace(j.toString(), replaceArr[j]);
         }
 
-        res = decodeURIComponent(res);
+        res = JavaUrlDecoder.decode(res);
         html += ("<script>" + res + "</script>");
 
         Log.d("res = " + res);
@@ -157,20 +162,28 @@ function unpackHtml(html) {
 function caesarShift(s, shift) {
     if (!shift)
         shift = 13;
-    shift = parseInt(shift);
+    else
+        shift = parseInt(shift);
+    
     var s2 = "";
+    var z = "Z";
+    var zCode = z.charCodeAt(0);
     var chars = getCharsFromString(s);
 
-    for (i = 0, len = chars.length; i < len; ++i) {
+    for (var i = 0, len = chars.length; i < len; ++i) {
         var c = chars[i];
         var cCode = c.charCodeAt(0);
         if (isAlpha(c)) {
-            var limit = (cCode <= "Z".charCodeAt(0)) ? 90 : 122;
-            Log.d("limit = " + limit);
+            var limit;
+            if (cCode <= zCode)
+                limit = 90;
+            else
+                limit = 122;
+            //Log.d("limit = " + limit);
 
             var newCode = cCode + shift;
             if (newCode > limit) {
-                newCode -= 26;
+                newCode = newCode - 26;
             }
             s2 += String.fromCharCode(newCode);
         } else {
@@ -197,14 +210,11 @@ function getCharsFromString(s) {
     return s.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
 }
 
-function getMatches(string, regex, index) {
-    index || (index = 1); // default to the first capturing group
-    var matches = [];
-    var match;
-    while (match = regex.exec(string)) {
-        matches.push(match[index]);
-    }
-    return matches;
+function getJavaRegexMatches(string, regex, index, mode) {
+    if (mode && mode > -1)
+        return JSON.parse(JavaRegex.findAllWithMode(string, regex, index, mode));
+    else
+        return JSON.parse(JavaRegex.findAll(string, regex, index));
 }
 
 /*!
