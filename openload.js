@@ -28,6 +28,7 @@ var OpenloadDecoder = {
             Log.d("Start decoding in JS now...");
             //Log.d("html = " + html);
 
+            Log.d("unpackedHtml = " + unpackHtml(html));
             html = unpackHtml(html);
             var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
             var hiddenUrl = hiddenUrlPattern.exec(html)[1];
