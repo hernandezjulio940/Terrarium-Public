@@ -122,6 +122,7 @@ var OpenloadDecoder = {
 };
 
 function unpackHtml(html) {
+    Log.d("unpacking html");
     var replaceArr = ['j', '_', '__', '___'];
     var stringsPattern = /{\s*var\s+a\s*=\s*"([^"]+)/;
     var strings = getMatches(html, stringsPattern, 1);
