@@ -127,22 +127,27 @@ function unpackHtml(html) {
     var shiftsPattern = /\)\);}\((\d+)\)/;
     var shifts = getMatches(html, shiftsPattern, 1);
     var zippedArr = zip(strings, shifts);
-    
+
     for (i = 0, len = zippedArr.length; i < len; ++i) {
         var arr = zippedArr[i];
         var str = arr[0];
         var shift = arr[1];
-        
+
+        Log.d("str = " + str);
+        Log.d("shift = " + shift);
+
         var res = caesarShift(str, parseInt(shift));
-        
+
         for (j = 0, len2 = replaceArr.length; j < len2; ++j) {
             res = res.replace(j.toString(), replaceArr[j]);
         }
-        
+
         res = decodeURIComponent(res);
         html += ("<script>" + res + "</script>");
+
+        Log.d("res = " + res);
     }
-    
+
     return html;
 }
 
@@ -152,12 +157,14 @@ function caesarShift(s, shift) {
     shift = parseInt(shift);
     var s2 = "";
     var chars = getCharsFromString(s);
-    
+
     for (i = 0, len = chars.length; i < len; ++i) {
         var c = chars[i];
         var cCode = c.charCodeAt(0);
         if (isAlpha(c)) {
             var limit = (cCode <= "Z".charCodeAt(0)) ? 90 : 122;
+            Log.d("limit = " + limit);
+
             var newCode = cCode + shift;
             if (newCode > limit) {
                 newCode -= 26;
@@ -167,6 +174,9 @@ function caesarShift(s, shift) {
             s2 += c;
         }
     }
+
+    Log.d("s2 = " + s2);
+
     return s2;
 }
 
@@ -175,7 +185,7 @@ function isAlpha(s) {
 }
 
 function zip(x, y) {
-    return x.map(function (e, i) {
+    return x.map(function(e, i) {
         return [e, y[i]];
     });
 }
