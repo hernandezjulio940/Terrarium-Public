@@ -25,36 +25,36 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 var OpenloadDecoder = {
     decode: function(html) {
         try {
-            Log.log("Start decoding in JS now...");
-            //Log.log("html = " + html);
+            Log.d("Start decoding in JS now...");
+            //Log.d("html = " + html);
 
             var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
             var hiddenUrl = hiddenUrlPattern.exec(html)[1];
             if (hiddenUrl == undefined)
                 return;
             hiddenUrl = newUnescape(hiddenUrl);
-            Log.log("hiddenUrl = " + hiddenUrl);
+            Log.d("hiddenUrl = " + hiddenUrl);
 
             var decodes = [];
             var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
             var scriptMatches = getMatches(html, scriptPattern, 1);
             for (var i = 0; i < scriptMatches.length; i++) {
                 var script = scriptMatches[i];
-                //Log.log("Found <script> : " + script);
+                //Log.d("Found <script> : " + script);
 
                 var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
                 //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
                 var aaEncodedArr = aaEncodedPattern.exec(script);
                 if (aaEncodedArr != null) {
                     var aaEncoded = aaEncodedArr[1];
-                    //Log.log("aaEncoded = " + aaEncoded);
+                    //Log.d("aaEncoded = " + aaEncoded);
                     var aaDecoded = "";
                     try {
                         aaDecoded = aadecode(aaEncoded);
                     } catch (err) {
-                        Log.log("Error decoding AA : " + err.message);
+                        Log.d("Error decoding AA : " + err.message);
                     }
-                    Log.log("aaDecoded = " + aaDecoded);
+                    Log.d("aaDecoded = " + aaDecoded);
                     decodes.push(aaDecoded);
                 }
 
@@ -62,14 +62,14 @@ var OpenloadDecoder = {
                 var jjEncodedArr = jjEncodedPattern.exec(script);
                 if (jjEncodedArr != null) {
                     var jjEncoded = jjEncodedArr[1];
-                    Log.log("jjEncoded = " + jjEncoded);
+                    Log.d("jjEncoded = " + jjEncoded);
                     var jjDecoded = "";
                     try {
                         jjDecoded = jjdecode(jjEncoded);
                     } catch (err) {
-                        Log.log("Error decoding JJ : " + err.message);
+                        Log.d("Error decoding JJ : " + err.message);
                     }
-                    Log.log("jjDecoded = " + jjDecoded);
+                    Log.d("jjDecoded = " + jjDecoded);
                     decodes.push(jjDecoded);
                 }
             }
@@ -87,14 +87,14 @@ var OpenloadDecoder = {
                 magicNumber = charDecodeArr[1];
                 break;
             }
-            Log.log("magicNumber = " + magicNumber);
+            Log.d("magicNumber = " + magicNumber);
 
             var s = [];
             var hiddenUrlChars = hiddenUrl.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
             for (var i = 0; i < hiddenUrlChars.length; i++) {
                 var c = hiddenUrlChars[i];
                 var j = c.charCodeAt(0);
-                Log.log("c = " + c + "; j = " + j);
+                Log.d("c = " + c + "; j = " + j);
 
                 if (j >= 33 & j <= 126)
                     j = 33 + ((j + 14) % 94);
@@ -106,11 +106,11 @@ var OpenloadDecoder = {
             }
 
             var res = s.join('');
-            Log.log("res = " + res);
+            Log.d("res = " + res);
 
             return "https://openload.co/stream/" + res + "?mime=true";
         } catch (nErr) {
-            Log.log("Error decoding Openload : " + nErr);
+            Log.d("Error decoding Openload : " + nErr);
         }
         return "";
     },
