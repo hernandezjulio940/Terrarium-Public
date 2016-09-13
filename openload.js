@@ -31,11 +31,12 @@ var OpenloadDecoder = {
             html = unpackHtml(html);
             var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
             var hiddenUrl = hiddenUrlPattern.exec(html)[1];
+            Log.d("hiddenUrl = " + hiddenUrl);
             if (hiddenUrl == undefined)
                 return;
             hiddenUrl = newUnescape(hiddenUrl);
-            Log.d("hiddenUrl = " + hiddenUrl);
-
+            Log.d("newHiddenUrl = " + hiddenUrl);
+            
             var decodes = [];
             var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/g;
             var scriptMatches = getMatches(html, scriptPattern, 1);
