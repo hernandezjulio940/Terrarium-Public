@@ -27,76 +27,31 @@ const CASE_INSENSITIVE = 2;
 
 var OpenloadDecoder = {
     decode: function(html) {
-        //try {
-            Log.d("Start decoding in JS now...");
-            //Log.d("html = " + html);
+        Log.d("Start decoding in JS now...");
+        //Log.d("html = " + html);
 
-            Log.d("unpackedHtml = " + unpackHtml(html));
-            html = unpackHtml(html);
-            var hiddenUrlPattern = /hiddenurl">(.+?)<\/span>/i;
-            var hiddenUrl = hiddenUrlPattern.exec(html)[1];
-            Log.d("hiddenUrl = " + hiddenUrl);
-            if (hiddenUrl == undefined)
-                return;
-            hiddenUrl = newUnescape(hiddenUrl);
-            Log.d("newHiddenUrl = " + hiddenUrl);
-            
-            var decodes = [];
-            var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
-            var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
-            for (var i = 0; i < scriptMatches.length; i++) {
-                var script = scriptMatches[i];
-                //Log.d("Found <script> : " + script);
+        html = unpackHtml(html);
 
-                var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-                //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
-                var aaEncodedArr = aaEncodedPattern.exec(script);
-                if (aaEncodedArr != null) {
-                    var aaEncoded = aaEncodedArr[1];
-                    //Log.d("aaEncoded = " + aaEncoded);
-                    var aaDecoded = "";
-                    try {
-                        aaDecoded = aadecode(aaEncoded);
-                    } catch (err) {
-                        Log.d("Error decoding AA : " + err.message);
-                    }
-                    Log.d("aaDecoded = " + aaDecoded);
-                    decodes.push(aaDecoded);
-                }
+        var scripts = getAllDecodedScripts(html);
 
-                var jjEncodedPattern = /(.=~\[\].*\(\);)/;
-                var jjEncodedArr = jjEncodedPattern.exec(script);
-                if (jjEncodedArr != null) {
-                    var jjEncoded = jjEncodedArr[1];
-                    Log.d("jjEncoded = " + jjEncoded);
-                    var jjDecoded = "";
-                    try {
-                        jjDecoded = jjdecode(jjEncoded);
-                    } catch (err) {
-                        Log.d("Error decoding JJ : " + err.message);
-                    }
-                    Log.d("jjDecoded = " + jjDecoded);
-                    decodes.push(jjDecoded);
-                }
-            }
+        var magicNumbers = getAllMagicNumbers(scripts);
 
-            if (decodes.length <= 0)
-                throw new Error("No Encoded Section Found. Deleted?");
+        var hiddenUrlPattern = />([^<]+)<\/span>\s*<span\s+id=\"streamurl\"/gi;
+        var hiddenUrl = hiddenUrlPattern.exec(html)[1];
+        Log.d("hiddenUrl = " + hiddenUrl);
+        if (hiddenUrl == undefined)
+            return;
+        hiddenUrl = newUnescape(hiddenUrl);
+        Log.d("unescapedHiddenUrl = " + hiddenUrl);
 
-            var magicNumber = 0;
-            var charDecodePattern = /charCodeAt\(\d+\)\s*\+\s*(\d+)\)/g;
-            for (var i = 0; i < decodes.length; i++) {
-                var decodedStr = decodes[i];
-                var charDecodeArr = charDecodePattern.exec(decodedStr);
-                if (charDecodeArr == null || charDecodeArr.length <= 0 || charDecodeArr[1] == undefined)
-                    continue;
-                magicNumber = charDecodeArr[1];
-                break;
-            }
+        var results = [];
+        var hiddenUrlChars = getCharsFromString(hiddenUrl);
+
+        for (var x = 0; x < magicNumbers.length; x++) {
+            var s = [];
+            var magicNumber = magicNumbers[x];
             Log.d("magicNumber = " + magicNumber);
 
-            var s = [];
-            var hiddenUrlChars = getCharsFromString(hiddenUrl);
             for (var i = 0; i < hiddenUrlChars.length; i++) {
                 var c = hiddenUrlChars[i];
                 var j = c.charCodeAt(0);
@@ -110,15 +65,13 @@ var OpenloadDecoder = {
 
                 s.push(String.fromCharCode(j));
             }
-
             var res = s.join('');
             Log.d("res = " + res);
 
-            return "https://openload.co/stream/" + res + "?mime=true";
-        //} catch (nErr) {
-            //Log.d("Error decoding Openload : " + nErr + "\n\n" + nErr.stack);
-        //}
-        //return "";
+            results.push("https://openload.co/stream/" + res + "?mime=true");
+        }
+
+        return JSON.stringify(results);
     },
     isEnabled: function() {
         return false;
@@ -131,7 +84,7 @@ function unpackHtml(html) {
     var stringsPattern = '\\{\\s*var\\s+a\\s*=\\s*"([^"]+)';
     var strings = getJavaRegexMatches(html, stringsPattern, 1, CASE_INSENSITIVE);
     Log.d("stringsLen = " + strings.length);
-    
+
     var shiftsPattern = "\\)\\);\\}\\((\\d+)\\)";
     var shifts = getJavaRegexMatches(html, shiftsPattern, 1, -1);
     var zippedArr = zip(strings, shifts);
@@ -145,12 +98,12 @@ function unpackHtml(html) {
         Log.d("shift = " + shift);
 
         var res = caesarShift(str, parseInt(shift));
+        res = JavaUrlDecoder.decode(res);
 
         for (j = 0, len2 = replaceArr.length; j < len2; ++j) {
             res = res.replace(j.toString(), replaceArr[j]);
         }
 
-        res = JavaUrlDecoder.decode(res);
         html += ("<script>" + res + "</script>");
 
         Log.d("res = " + res);
@@ -164,7 +117,7 @@ function caesarShift(s, shift) {
         shift = 13;
     else
         shift = parseInt(shift);
-    
+
     var s2 = "";
     var z = "Z";
     var zCode = z.charCodeAt(0);
@@ -194,6 +147,68 @@ function caesarShift(s, shift) {
     Log.d("s2 = " + s2);
 
     return s2;
+}
+
+function getAllDecodedScripts(html) {
+    var decodes = [];
+    var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
+    var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
+    for (var i = 0; i < scriptMatches.length; i++) {
+        var script = scriptMatches[i];
+        //Log.d("Found <script> : " + script);
+
+        var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+        //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+        var aaEncodedArr = aaEncodedPattern.exec(script);
+        if (aaEncodedArr != null) {
+            var aaEncoded = aaEncodedArr[1];
+            //Log.d("aaEncoded = " + aaEncoded);
+            var aaDecoded = "";
+            try {
+                aaDecoded = aadecode(aaEncoded);
+            } catch (err) {
+                Log.d("Error decoding AA : " + err.message);
+            }
+            Log.d("aaDecoded = " + aaDecoded);
+            decodes.push(aaDecoded);
+        }
+
+        var jjEncodedPattern = /(.=~\[\].*\(\);)/;
+        var jjEncodedArr = jjEncodedPattern.exec(script);
+        if (jjEncodedArr != null) {
+            var jjEncoded = jjEncodedArr[1];
+            Log.d("jjEncoded = " + jjEncoded);
+            var jjDecoded = "";
+            try {
+                jjDecoded = jjdecode(jjEncoded);
+            } catch (err) {
+                Log.d("Error decoding JJ : " + err.message);
+            }
+            Log.d("jjDecoded = " + jjDecoded);
+            decodes.push(jjDecoded);
+        }
+    }
+    return decodes;
+}
+
+function getAllMagicNumbers(decodes) {
+    var magicNumbers = [];
+    if (decodes.length > 0) {
+        var charDecodePattern = /charCodeAt\(\d+\)\s*\+\s*(\d+)\)/g;
+        for (var i = 0; i < decodes.length; i++) {
+            var decodedStr = decodes[i];
+            var charDecodeArr = charDecodePattern.exec(decodedStr);
+            if (charDecodeArr == null || charDecodeArr.length <= 0 || charDecodeArr[1] == undefined)
+                continue;
+            magicNumbers.push(charDecodeArr[1]);
+            break;
+        }
+    }
+
+    if (magicNumbers.length <= 0) {
+        magicNumbers = [1, 2, 3, 4, 5];
+    }
+    return magicNumbers;
 }
 
 function isAlpha(s) {
