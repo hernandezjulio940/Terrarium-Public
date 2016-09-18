@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.14",
+    "newestVersion": "1.2.15",
     "versions": [{
+        "version": "1.2.15",
+        "filename": "app-release",
+        "description": "1. 新增 Hasti 片源\n2. 新增 HeyDL 片源\n3. 新增 Farda 電影片源\n4. 加入 Samsung 多視窗支援\n5. 顯示所有片源檔案大小\n6. 顯示美劇播放頻道\n7. 修復 Farda 片源\n8. 修復 PirateJunkies 電影片源\n9. 修復 Pubfilm 電影片源\n10. 修復 Streamin 連結解析器\n11. 移除 VideoMega 連結解析器\n12. 優化片源排序方式\n13. 更新翻譯\n14. 運行效率優化\n15. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.14",
         "filename": "app-release",
         "description": "1. 新增 Android N 7.0 支援\n2. 新增 Subscene 字幕來源 (針對外國用戶)\n3. 新增 Openload 連結解析器\n4. OpenSubtitles 新增 越南文\n5. 新增語言 : 喬治亞文\n6. 新增語言 : 意大利文\n7. 修復 Putlocker 片源\n8. 修復 MoviesHD 片源\n9. 修復 FliXanity 片源\n10. 修復 SpaceMov 電影片源\n11. 修復 VShare.eu 連結解析器\n12. 選擇開啟方式時顯示 [只此一次] 和 [永遠]\n13. OpenSubtitles 隱藏預告片的字幕\n14. Bugs 和 FCs 修復"
