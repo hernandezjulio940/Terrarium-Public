@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.14",
+    "newestVersion": "1.2.15",
     "versions": [{
+        "version": "1.2.15",
+        "filename": "app-release",
+        "description": "1. Add provider : Hasti\n2. Add provider : HeyDL\n3. Add movies provider : Farda\n4. Add Samsung multi-window support\n5. Indicate file size of all links\n6. Indicate TV show network\n7. Fix provider : Farda\n8. Fix movies provider : PirateJunkies\n9. Fix movies provider : Pubfilm\n10. Fix URL resolver : Streamin\n11. Remove VideoMega URL resolver\n12. Optimize links sorting order\n13. Update translations\n14. Performance improvement\n15. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.14",
         "filename": "app-release",
         "description": "1. Add support of Android N 7.0\n2. Add subtitles service : Subscene (You need to select language(s) in Setting page\n3. Add URL resolver : Openload\n4. Add Vietnamese to OpenSubtitles\n5. Add Georgian translation\n6. Add Italian translation\n7. Fix provider : Putlocker\n8. Fix provider : MoviesHD\n9. Fix provider : FliXanity\n10. Fix movies provider : SpaceMov\n11. Fix URL resolver : VShare.eu\n12. Show [Just Once] and [Always] in choosing apps popup\n13. Hide subtitles of trailer in OpenSubtitles\n14. Bugs and FCs fix"
