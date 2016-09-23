@@ -192,6 +192,7 @@ function caesarShift(s, shift) {
 }
 
 function getAllMagicNumbers(decodes) {
+    /*
     var magicNumbers = [];
     if (decodes.length > 0) {
         var charDecodePattern = /charCodeAt\(\d+\)\s*\+\s*(\d+)\)/g;
@@ -209,6 +210,9 @@ function getAllMagicNumbers(decodes) {
         magicNumbers = [0, 1, 2, 3, 4];
     }
     return magicNumbers;
+    */
+    
+    return [2];
 }
 
 function isAlpha(s) {
