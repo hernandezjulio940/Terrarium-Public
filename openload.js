@@ -32,15 +32,57 @@ var OpenloadDecoder = {
 
         html = unpackHtml(html);
 
-        var scripts = getAllDecodedScripts(html);
+        var hiddenId = '';
+        var decodes = [];
+        var decoded = '';
+        var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
+        var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
+        for (var i = 0; i < scriptMatches.length; i++) {
+            var script = scriptMatches[i];
+            //Log.d("Found <script> : " + script);
+    
+            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+            //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+            var aaEncodedArr = aaEncodedPattern.exec(script);
+            if (aaEncodedArr != null) {
+                var aaEncoded = aaEncodedArr[1];
+                //Log.d("aaEncoded = " + aaEncoded);
+                var aaDecoded = "";
+                try {
+                    aaDecoded = aadecode(aaEncoded);
+                    decoded = aaDecoded;
+                } catch (err) {
+                    Log.d("Error decoding AA : " + err.message);
+                }
+                Log.d("aaDecoded = " + aaDecoded);
+                decodes.push(aaDecoded);
+            }
+    
+            var jjEncodedPattern = /(.=~\[\].*\(\);)/;
+            var jjEncodedArr = jjEncodedPattern.exec(script);
+            if (jjEncodedArr != null) {
+                var jjEncoded = jjEncodedArr[1];
+                Log.d("jjEncoded = " + jjEncoded);
+                var jjDecoded = "";
+                try {
+                    jjDecoded = jjdecode(jjEncoded);
+                    decoded = jjDecoded;
+                } catch (err) {
+                    Log.d("Error decoding JJ : " + err.message);
+                }
+                Log.d("jjDecoded = " + jjDecoded);
+                decodes.push(jjDecoded);
+            }
+        }
 
-        var magicNumbers = getAllMagicNumbers(scripts);
+        var magicNumbers = getAllMagicNumbers(decodes);
 
-        var hiddenUrlPattern = />([^<]+)<\/span>\s*<span\s+id=\"streamurl\"/gi;
+        var hiddenUrlPattern = /<span[^>]*>([^<]+)<\/span>\s*<span[^>]*>[^<]+<\/span>\s*<span[^>]+id="streamurl"/gi;
         var hiddenUrl = hiddenUrlPattern.exec(html)[1];
         Log.d("hiddenUrl = " + hiddenUrl);
         if (hiddenUrl == undefined)
             return;
+        
         hiddenUrl = newUnescape(hiddenUrl);
         Log.d("unescapedHiddenUrl = " + hiddenUrl);
 
@@ -147,48 +189,6 @@ function caesarShift(s, shift) {
     Log.d("s2 = " + s2);
 
     return s2;
-}
-
-function getAllDecodedScripts(html) {
-    var decodes = [];
-    var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
-    var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
-    for (var i = 0; i < scriptMatches.length; i++) {
-        var script = scriptMatches[i];
-        //Log.d("Found <script> : " + script);
-
-        var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-        //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
-        var aaEncodedArr = aaEncodedPattern.exec(script);
-        if (aaEncodedArr != null) {
-            var aaEncoded = aaEncodedArr[1];
-            //Log.d("aaEncoded = " + aaEncoded);
-            var aaDecoded = "";
-            try {
-                aaDecoded = aadecode(aaEncoded);
-            } catch (err) {
-                Log.d("Error decoding AA : " + err.message);
-            }
-            Log.d("aaDecoded = " + aaDecoded);
-            decodes.push(aaDecoded);
-        }
-
-        var jjEncodedPattern = /(.=~\[\].*\(\);)/;
-        var jjEncodedArr = jjEncodedPattern.exec(script);
-        if (jjEncodedArr != null) {
-            var jjEncoded = jjEncodedArr[1];
-            Log.d("jjEncoded = " + jjEncoded);
-            var jjDecoded = "";
-            try {
-                jjDecoded = jjdecode(jjEncoded);
-            } catch (err) {
-                Log.d("Error decoding JJ : " + err.message);
-            }
-            Log.d("jjDecoded = " + jjDecoded);
-            decodes.push(jjDecoded);
-        }
-    }
-    return decodes;
 }
 
 function getAllMagicNumbers(decodes) {
