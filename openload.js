@@ -34,6 +34,7 @@ var OpenloadDecoder = {
 
         var hiddenId = '';
         var decodes = [];
+        /*
         var decoded = '';
         var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
         var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
@@ -74,6 +75,7 @@ var OpenloadDecoder = {
                 decodes.push(jjDecoded);
             }
         }
+        */
 
         var magicNumbers = getAllMagicNumbers(decodes);
 
