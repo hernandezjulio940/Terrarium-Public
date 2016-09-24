@@ -1,0 +1,9 @@
+{
+    "bases": [{
+        "url": "http://cartoonhd.website",
+        "useNEmbeds": true
+    }, {
+        "url": "http://www.flixanity.me",
+        "useNEmbeds": false
+    }]
+}
