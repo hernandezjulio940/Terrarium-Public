@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.15",
+    "newestVersion": "1.2.16",
     "versions": [{
+        "version": "1.2.16",
+        "filename": "app-release",
+        "description": "1. Add internal video player\n2. Add LG multi-window support\n3. Change FliXanity, CartoonHD, Putlocker and MoviesHD to FliXanityBased provider\n4. Fix provider : XMovies8\n5. Fix TV shows provider : Dizibox\n6. Fix TV shows provider : Dizigold\n7. Fix movies provider : MovieZone\n8. Disable HDMovies14 for TV shows\n9. Fix URL resolver : NowVideo\n10. Fix URL resolver : VShare.eu\n11. Update SeriesGuide extension\n12. Performance improvement\n13. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.15",
         "filename": "app-release",
         "description": "1. Add provider : Hasti\n2. Add provider : HeyDL\n3. Add movies provider : Farda\n4. Add Samsung multi-window support\n5. Indicate file size of all links\n6. Indicate TV show network\n7. Fix provider : Farda\n8. Fix movies provider : PirateJunkies\n9. Fix movies provider : Pubfilm\n10. Fix URL resolver : Streamin\n11. Remove VideoMega URL resolver\n12. Optimize links sorting order\n13. Update translations\n14. Performance improvement\n15. Bugs and FCs fix"
