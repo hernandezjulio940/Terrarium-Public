@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.15",
+    "newestVersion": "1.2.16",
     "versions": [{
+        "version": "1.2.16",
+        "filename": "app-release",
+        "description": "1. 新增內置播放器\n2. 加入 LG 多視窗支援\n3. FliXanity, CartoonHD, Putlocker 和 MoviesHD 變為 FliXanityBased 片源\n4. 修復 XMovies8 片源\n5. 修復 Dizibox 美劇片源\n6. 修復 Dizigold 美劇片源\n7. 修復 MovieZone 電影片源\n8. 移除 HDMovies14 美劇片源\n9. 修復 NowVideo 連結解析器\n10. 移除 VShare.eu 連結解析器\n11. 更新 SeriesGuide 插件\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.15",
         "filename": "app-release",
         "description": "1. 新增 Hasti 片源\n2. 新增 HeyDL 片源\n3. 新增 Farda 電影片源\n4. 加入 Samsung 多視窗支援\n5. 顯示所有片源檔案大小\n6. 顯示美劇播放頻道\n7. 修復 Farda 片源\n8. 修復 PirateJunkies 電影片源\n9. 修復 Pubfilm 電影片源\n10. 修復 Streamin 連結解析器\n11. 移除 VideoMega 連結解析器\n12. 優化片源排序方式\n13. 更新翻譯\n14. 運行效率優化\n15. Bugs 和 FCs 修復"
