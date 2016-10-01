@@ -1,9 +1,11 @@
 {
     "bases": [{
         "url": "http://cartoonhd.website",
-        "useNEmbeds": true
+        "useNEmbeds": true,
+        "embedsPath": "tnembeds.php"
     }, {
         "url": "http://www.flixanity.me",
-        "useNEmbeds": false
+        "useNEmbeds": false,
+        "embedsPath": "embeds.php"
     }]
 }
