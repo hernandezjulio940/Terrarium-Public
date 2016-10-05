@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.16",
+    "newestVersion": "1.3.0",
     "versions": [{
+        "version": "1.3.0",
+        "filename": "app-release",
+        "description": "1. UI 美化\n2. 現在允許你把美劇集數設為已觀看\n3. 新增 Watch5s 片源\n4. 新增 Uplod 片源\n5. 新增 Bia2M 片源\n6. 新增 VU45 電影片源\n7. 新增 UploadBan 美劇片源\n8. 加入 印地語 翻譯\n9. 修復 Rainierland 電影片源\n10. 修復 SezonlukDizi 美劇片源\n11. 修復電影 Russian Lolita 沒有顯示 XMovies8 和 HDMovie14 片源的問題\n12. 修復 Openload 連結解析器\n13. 修復 Android N 用戶在更新時會崩潰的 Bug\n14. 移除內置播放器\n15. 運行效率優化\n16. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.2.16",
         "filename": "app-release",
         "description": "1. 新增內置播放器\n2. 加入 LG 多視窗支援\n3. FliXanity, CartoonHD, Putlocker 和 MoviesHD 變為 FliXanityBased 片源\n4. 修復 XMovies8 片源\n5. 修復 Dizibox 美劇片源\n6. 修復 Dizigold 美劇片源\n7. 修復 MovieZone 電影片源\n8. 移除 HDMovies14 美劇片源\n9. 修復 NowVideo 連結解析器\n10. 移除 VShare.eu 連結解析器\n11. 更新 SeriesGuide 插件\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
