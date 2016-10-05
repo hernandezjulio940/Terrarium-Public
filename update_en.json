@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.2.16",
+    "newestVersion": "1.3.0",
     "versions": [{
+        "version": "1.3.0",
+        "filename": "app-release",
+        "description": "1. Beautify UI\n2. Allows you to set an episode as watched\n3. Add provider : Watch5s\n4. Add provider : Uplod\n5. Add provider : Bia2M\n6. Add movies provider : VU45\n7. Add TV shows provider : UploadBan\n8. Add Hindi translation\n9. Fix movies provider : Rainierland\n10. Fix TV shows provider : SezonlukDizi\n11. Fix movie Russian Lolita of XMovies8 and HDMovie14\n12. Fix URL resolver : Openload\n13. Fix app crashes while updating using Android N\n14. Remove internal video player\n15. Performance improvement\n16. Bugs and FCs fix"
+    },
+    {
         "version": "1.2.16",
         "filename": "app-release",
         "description": "1. Add internal video player\n2. Add LG multi-window support\n3. Change FliXanity, CartoonHD, Putlocker and MoviesHD to FliXanityBased provider\n4. Fix provider : XMovies8\n5. Fix TV shows provider : Dizibox\n6. Fix TV shows provider : Dizigold\n7. Fix movies provider : MovieZone\n8. Disable HDMovies14 for TV shows\n9. Fix URL resolver : NowVideo\n10. Fix URL resolver : VShare.eu\n11. Update SeriesGuide extension\n12. Performance improvement\n13. Bugs and FCs fix"
