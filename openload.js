@@ -92,6 +92,9 @@ function unpackHtml(html) {
     var strings = getJavaRegexMatches(html, stringsPattern, 1, CASE_INSENSITIVE);
     Log.d("stringsLen = " + strings.length);
 
+    if (strings.length <= 0)
+        return html;
+
     var shiftsPattern = "\\)\\);\\}\\((\\d+)\\)";
     var shifts = getJavaRegexMatches(html, shiftsPattern, 1, -1);
     var zippedArr = zip(strings, shifts);
