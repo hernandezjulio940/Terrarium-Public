@@ -28,54 +28,15 @@ const CASE_INSENSITIVE = 2;
 var OpenloadDecoder = {
     decode: function(html) {
         Log.d("Start decoding in JS now...");
-        //Log.d("html = " + html);
 
-        html = unpackHtml(html);
+        try {
+            html = unpackHtml(html);
+        } catch (err) {
+            Log.d(err.toString());
+        }
 
         var hiddenId = '';
         var decodes = [];
-        /*
-        var decoded = '';
-        var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
-        var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
-        for (var i = 0; i < scriptMatches.length; i++) {
-            var script = scriptMatches[i];
-            //Log.d("Found <script> : " + script);
-    
-            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-            //var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
-            var aaEncodedArr = aaEncodedPattern.exec(script);
-            if (aaEncodedArr != null) {
-                var aaEncoded = aaEncodedArr[1];
-                //Log.d("aaEncoded = " + aaEncoded);
-                var aaDecoded = "";
-                try {
-                    aaDecoded = aadecode(aaEncoded);
-                    decoded = aaDecoded;
-                } catch (err) {
-                    Log.d("Error decoding AA : " + err.message);
-                }
-                Log.d("aaDecoded = " + aaDecoded);
-                decodes.push(aaDecoded);
-            }
-    
-            var jjEncodedPattern = /(.=~\[\].*\(\);)/;
-            var jjEncodedArr = jjEncodedPattern.exec(script);
-            if (jjEncodedArr != null) {
-                var jjEncoded = jjEncodedArr[1];
-                Log.d("jjEncoded = " + jjEncoded);
-                var jjDecoded = "";
-                try {
-                    jjDecoded = jjdecode(jjEncoded);
-                    decoded = jjDecoded;
-                } catch (err) {
-                    Log.d("Error decoding JJ : " + err.message);
-                }
-                Log.d("jjDecoded = " + jjDecoded);
-                decodes.push(jjDecoded);
-            }
-        }
-        */
 
         var magicNumbers = getAllMagicNumbers(decodes);
 
@@ -124,7 +85,9 @@ var OpenloadDecoder = {
 
 function unpackHtml(html) {
     Log.d("unpacking html");
+
     var replaceArr = ['j', '_', '__', '___'];
+
     var stringsPattern = '\\{\\s*var\\s+a\\s*=\\s*"([^"]+)';
     var strings = getJavaRegexMatches(html, stringsPattern, 1, CASE_INSENSITIVE);
     Log.d("stringsLen = " + strings.length);
