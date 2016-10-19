@@ -51,6 +51,10 @@ var OpenloadDecoder = {
 
         var results = [];
         var hiddenUrlChars = getCharsFromString(hiddenUrl);
+        var magic = 0;
+        if (hiddenUrlChars.length > 1) {
+            magic = hiddenUrlChars[hiddenUrlChars.length - 1].charCodeAt(0);
+        }
 
         for (var x = 0; x < magicNumbers.length; x++) {
             var s = [];
@@ -62,11 +66,16 @@ var OpenloadDecoder = {
                 var j = c.charCodeAt(0);
                 Log.d("c = " + c + "; j = " + j);
 
+                if (j == magic)
+                    j -= 1;
+                else if (j == magic - 1)
+                    j += 1;
+
                 if (j >= 33 & j <= 126)
                     j = 33 + ((j + 14) % 94);
 
                 if (i == (hiddenUrl.length - 1))
-                    j = j + parseInt(magicNumber);
+                    j += parseInt(magicNumber);
 
                 s.push(String.fromCharCode(j));
             }
