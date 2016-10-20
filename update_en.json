@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.0",
+    "newestVersion": "1.3.1",
     "versions": [{
+        "version": "1.3.1",
+        "filename": "app-release",
+        "description": "1. Add Portuguese (Brazil) translation\n2. Add Indonesian translation\n3. Add Lithuanian translation\n4. Add back last watched blue highlight indicator\n5. Fix subtitles service : OpenSubtitles\n6. Fix movies provider : M4UFree\n7. Fix TV shows provider : Dizibox\n8. Fix provider : XMovies8\n9. Fix provider : Watch5s\n10. Fix URL resolver : VidUp.me\n11. Remove TV shows provider : UploadBan\n12. Performance improvement\n13. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.0",
         "filename": "app-release",
         "description": "1. Beautify UI\n2. Allows you to set an episode as watched\n3. Add provider : Watch5s\n4. Add provider : Uplod\n5. Add provider : Bia2M\n6. Add movies provider : VU45\n7. Add TV shows provider : UploadBan\n8. Add Hindi translation\n9. Fix movies provider : Rainierland\n10. Fix TV shows provider : SezonlukDizi\n11. Fix movie Russian Lolita of XMovies8 and HDMovie14\n12. Fix URL resolver : Openload\n13. Fix app crashes while updating using Android N\n14. Remove internal video player\n15. Performance improvement\n16. Bugs and FCs fix"
