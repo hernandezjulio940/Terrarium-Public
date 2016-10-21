@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.1",
+    "newestVersion": "1.3.2",
     "versions": [{
+        "version": "1.3.2",
+        "filename": "app-release",
+        "description": "1. Fix video not playing"
+    },
+    {
         "version": "1.3.1",
         "filename": "app-release",
         "description": "1. Add Portuguese (Brazil) translation\n2. Add Indonesian translation\n3. Add Lithuanian translation\n4. Add back last watched blue highlight indicator\n5. Fix subtitles service : OpenSubtitles\n6. Fix movies provider : M4UFree\n7. Fix TV shows provider : Dizibox\n8. Fix provider : XMovies8\n9. Fix provider : Watch5s\n10. Fix URL resolver : VidUp.me\n11. Remove TV shows provider : UploadBan\n12. Performance improvement\n13. Bugs and FCs fix"

@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.1",
+    "newestVersion": "1.3.2",
     "versions": [{
+        "version": "1.3.2",
+        "filename": "app-release",
+        "description": "1. 修復影片無法播放的問題"
+    },
+    {
         "version": "1.3.1",
         "filename": "app-release",
         "description": "1. 新增 西班牙文(巴西) 翻譯\n2. 新增 印尼文 翻譯\n3. 新增 立陶宛文 翻譯\n4. 重新加入上一次看的集數藍色標示\n5. 修復 OpenSubtitles 字幕服務\n6. 修復 M4UFree 電影片源\n7. 修復 Dizibox 美劇片源\n8. 修復 XMovies8 片源\n9. 修復 Watch5s 片源\n10. 修復 VidUp.me 連結解析器\n11. 移除 UploadBan 美劇片源\n12. 運行效率優化\n13. Bugs 和 FCs 修復"
