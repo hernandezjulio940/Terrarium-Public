@@ -4,7 +4,7 @@
         "useNEmbeds": true,
         "embedsPath": "tnembeds.php"
     }, {
-        "url": "http://www.flixanity.me",
+        "url": "http://flixanity.watch",
         "useNEmbeds": false,
         "embedsPath": "embeds.php"
     }]
