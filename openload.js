@@ -189,7 +189,7 @@ function getAllMagicNumbers(decodes) {
     return magicNumbers;
     */
     
-    return [2];
+    return [3];
 }
 
 function isAlpha(s) {
