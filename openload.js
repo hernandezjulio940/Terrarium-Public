@@ -29,60 +29,137 @@ var OpenloadDecoder = {
     decode: function(html) {
         Log.d("Start decoding in JS now...");
 
+        var results = [];
+
         try {
             html = unpackHtml(html);
         } catch (err) {
             Log.d(err.toString());
         }
 
-        var hiddenId = '';
-        var decodes = [];
+        //Try to get link using eval() first
+        try {
+            var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/gi;
+            var scriptMatches = getMatches(html, scriptPattern, 1);
+            for (var i = 0; i < scriptMatches.length; i++) {
+                var script = scriptMatches[i];
+                //var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+                var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/g;
+                var aaEncodedArr = getMatches(script, aaEncodedPattern, 1);
+                for (var j = 0; j < aaEncodedArr.length; j++) {
+                    var aaEncoded = aaEncodedArr[j];
+                    var aaDecoded = "";
+                    try {
+                        aaDecoded = aadecode(aaEncoded);
+                    } catch (err) {
+                        Log.d("Error decoding AA : " + err.message);
+                    }
+                    Log.d("aaDecoded = " + aaDecoded);
 
-        var magicNumbers = getAllMagicNumbers(decodes);
+                    var jsDocReadyPattern = /\$\(.*\)\.ready\(\s*function\(.*\)\s*{([\s\S]*?)}\);/g;
+                    var jsDocReadyArr = jsDocReadyPattern.exec(aaDecoded);
 
-        var hiddenUrlPattern = /<span[^>]*>([^<]+)<\/span>\s*<span[^>]*>[^<]+<\/span>\s*<span[^>]+id="streamurl"/gi;
-        var hiddenUrl = hiddenUrlPattern.exec(html)[1];
-        Log.d("hiddenUrl = " + hiddenUrl);
-        if (hiddenUrl == undefined)
-            return;
-        
-        hiddenUrl = newUnescape(hiddenUrl);
-        Log.d("unescapedHiddenUrl = " + hiddenUrl);
+                    if (jsDocReadyArr == null)
+                        continue;
 
-        var results = [];
-        var hiddenUrlChars = getCharsFromString(hiddenUrl);
-        var magic = 0;
-        if (hiddenUrlChars.length > 1) {
-            magic = hiddenUrlChars[hiddenUrlChars.length - 1].charCodeAt(0);
+                    var jsDocReady = jsDocReadyArr[1];
+                    Log.d("jsDocReady = " + jsDocReady);
+
+                    var jsVarPattern = /var\s+(.*?)\s*=\s*\$\(['"]#(.*?)['"]\)\.text\(\);/gi;
+                    var jsVarNameArr = getMatches(jsDocReady, jsVarPattern, 1);
+                    var jsTagIdArr = getMatches(jsDocReady, jsVarPattern, 2);
+
+                    if (jsVarNameArr.length <= 0 || jsTagIdArr.length <= 0)
+                        continue;
+
+                    for (var i = 0; i < jsVarNameArr.length; i++) {
+                        var jsVarName = jsVarNameArr[i];
+                        var jsTagId = jsTagIdArr[i];
+
+                        Log.d("jsVarName = " + jsVarName);
+                        Log.d("jsTagId = " + jsTagId);
+
+                        var htmlSpanPattern = new RegExp("<span id=\"" + jsTagId + "\">(.*?)</span>", "g");
+                        var htmlSpanArr = htmlSpanPattern.exec(html);
+
+                        if (htmlSpanArr == null)
+                            continue;
+
+                        var htmlSpan = newUnescape(htmlSpanArr[1]);
+
+                        Log.d("htmlSpan = " + htmlSpan);
+
+                        jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan.replace(/"/g, "\\\"") + "\";");
+                    }
+
+                    jsDocReady = jsDocReady.replace(/\$\(['"].+['"]\)\.text\((.+?)\);/g, "($1);");
+                    Log.d("New jsDocReady = " + jsDocReady);
+
+                    var jsToBeEvaluated = aaDecoded.replace(/\$\(.*\)\.ready\(\s*function\(.*\)\s*{[\s\S]*?}\);/g, jsDocReady);
+                    Log.d("jsToBeEvaluated = " + jsToBeEvaluated);
+
+                    var evalResult = eval(jsToBeEvaluated);
+                    Log.d("evalResult = " + evalResult);
+
+                    var streamUrl = "https://openload.co/stream/" + evalResult + "?mime=true";
+                    results.push(streamUrl);
+                }
+            }
+        } catch (err) {
+            Log.d("Error occurred while trying to get link using eval()\n" + err.message);
         }
 
-        for (var x = 0; x < magicNumbers.length; x++) {
-            var s = [];
-            var magicNumber = magicNumbers[x];
-            Log.d("magicNumber = " + magicNumber);
+        //Try to get link by decrypting the link
+        try {
+            var hiddenId = '';
+            var decodes = [];
+            var magicNumbers = getAllMagicNumbers();
 
-            for (var i = 0; i < hiddenUrlChars.length; i++) {
-                var c = hiddenUrlChars[i];
-                var j = c.charCodeAt(0);
-                Log.d("c = " + c + "; j = " + j);
+            var hiddenUrlPattern = /<span[^>]*>([^<]+)<\/span>\s*<span[^>]*>[^<]+<\/span>\s*<span[^>]+id="streamurl"/gi;
+            var hiddenUrl = hiddenUrlPattern.exec(html)[1];
+            Log.d("hiddenUrl = " + hiddenUrl);
+            if (hiddenUrl == undefined)
+                return;
 
-                if (j == magic)
-                    j -= 1;
-                else if (j == magic - 1)
-                    j += 1;
+            hiddenUrl = newUnescape(hiddenUrl);
+            Log.d("unescapedHiddenUrl = " + hiddenUrl);
 
-                if (j >= 33 & j <= 126)
-                    j = 33 + ((j + 14) % 94);
-
-                if (i == (hiddenUrl.length - 1))
-                    j += parseInt(magicNumber);
-
-                s.push(String.fromCharCode(j));
+            var hiddenUrlChars = getCharsFromString(hiddenUrl);
+            var magic = 0;
+            if (hiddenUrlChars.length > 1) {
+                magic = hiddenUrlChars[hiddenUrlChars.length - 1].charCodeAt(0);
             }
-            var res = s.join('');
-            Log.d("res = " + res);
 
-            results.push("https://openload.co/stream/" + res + "?mime=true");
+            for (var x = 0; x < magicNumbers.length; x++) {
+                var s = [];
+                var magicNumber = magicNumbers[x];
+                Log.d("magicNumber = " + magicNumber);
+
+                for (var i = 0; i < hiddenUrlChars.length; i++) {
+                    var c = hiddenUrlChars[i];
+                    var j = c.charCodeAt(0);
+                    //Log.d("c = " + c + "; j = " + j);
+
+                    if (j == magic)
+                        j -= 1;
+                    else if (j == magic - 1)
+                        j += 1;
+
+                    if (j >= 33 & j <= 126)
+                        j = 33 + ((j + 14) % 94);
+
+                    if (i == (hiddenUrl.length - 1))
+                        j += parseInt(magicNumber);
+
+                    s.push(String.fromCharCode(j));
+                }
+                var res = s.join('');
+                Log.d("res = " + res);
+
+                results.push("https://openload.co/stream/" + res + "?mime=true");
+            }
+        } catch (err) {
+            Log.d("Error occurred while trying to get link by decrypting the link\n" + err.message);
         }
 
         return JSON.stringify(results);
@@ -188,8 +265,18 @@ function getAllMagicNumbers(decodes) {
     }
     return magicNumbers;
     */
-    
+
     return [3];
+}
+
+function getMatches(string, regex, index) {
+    index || (index = 1); // default to the first capturing group
+    var matches = [];
+    var match;
+    while (match = regex.exec(string)) {
+        matches.push(match[index]);
+    }
+    return matches;
 }
 
 function isAlpha(s) {
