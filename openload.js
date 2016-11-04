@@ -82,17 +82,17 @@ var OpenloadDecoder = {
                         var htmlSpanPattern = new RegExp("<span id=\"" + jsTagId + "\">(.*?)</span>", "g");
                         var htmlSpanArr = htmlSpanPattern.exec(html);
 
-                        if (htmlSpan == null)
+                        if (htmlSpanArr == null)
                             continue;
 
-                        var htmlSpan = htmlSpanArr[1];
+                        var htmlSpan = newUnescape(htmlSpanArr[1]);
 
                         Log.d("htmlSpan = " + htmlSpan);
 
-                        jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan + "\";");
+                        jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan.replace(/"/g, "\\\"") + "\";");
                     }
 
-                    jsDocReady = jsDocReady.replace(/\$\(['"].+['"]\)\.text\((.+?)\);/g, "return $1;");
+                    jsDocReady = jsDocReady.replace(/\$\(['"].+['"]\)\.text\((.+?)\);/g, "($1);");
                     Log.d("New jsDocReady = " + jsDocReady);
 
                     var jsToBeEvaluated = aaDecoded.replace(/\$\(.*\)\.ready\(\s*function\(.*\)\s*{[\s\S]*?}\);/g, jsDocReady);
@@ -101,7 +101,8 @@ var OpenloadDecoder = {
                     var evalResult = eval(jsToBeEvaluated);
                     Log.d("evalResult = " + evalResult);
 
-                    results.push(evalResult);
+                    var streamUrl = "https://openload.co/stream/" + evalResult + "?mime=true";
+                    results.push(streamUrl);
                 }
             }
         } catch (err) {
