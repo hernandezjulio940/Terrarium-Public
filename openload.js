@@ -29,27 +29,49 @@ var OpenloadDecoder = {
     decode: function(html) {
         Log.d("Start decoding in JS now...");
 
+        var results = [];
+        
         try {
             html = unpackHtml(html);
         } catch (err) {
             Log.d(err.toString());
         }
+        
+        //Try to get link using eval() first
+        var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
+        var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
+        for (var i = 0; i < scriptMatches.length; i++) {
+            var script = scriptMatches[i];
+            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+            var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+            var aaEncodedArr = aaEncodedPattern.exec(script);
+            if (aaEncodedArr != null) {
+                var aaEncoded = aaEncodedArr[1];
+                var aaDecoded = "";
+                try {
+                    aaDecoded = aadecode(aaEncoded);
+                } catch (err) {
+                    Log.d("Error decoding AA : " + err.message);
+                }
+                Log.d("aaDecoded = " + aaDecoded);
+                
+                
+            }
+        }
 
         var hiddenId = '';
         var decodes = [];
-
-        var magicNumbers = getAllMagicNumbers(decodes);
+        var magicNumbers = getAllMagicNumbers();
 
         var hiddenUrlPattern = /<span[^>]*>([^<]+)<\/span>\s*<span[^>]*>[^<]+<\/span>\s*<span[^>]+id="streamurl"/gi;
         var hiddenUrl = hiddenUrlPattern.exec(html)[1];
         Log.d("hiddenUrl = " + hiddenUrl);
         if (hiddenUrl == undefined)
             return;
-        
+
         hiddenUrl = newUnescape(hiddenUrl);
         Log.d("unescapedHiddenUrl = " + hiddenUrl);
 
-        var results = [];
         var hiddenUrlChars = getCharsFromString(hiddenUrl);
         var magic = 0;
         if (hiddenUrlChars.length > 1) {
@@ -188,7 +210,7 @@ function getAllMagicNumbers(decodes) {
     }
     return magicNumbers;
     */
-    
+
     return [3];
 }
 
