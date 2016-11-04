@@ -88,7 +88,7 @@ var OpenloadDecoder = {
 
                     Log.d("htmlSpan = " + htmlSpan);
 
-                    jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#(.*?)['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan + "\";");
+                    jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan + "\";");
                 }
 
                 Log.d("New jsDocReady = " + jsDocReady);
