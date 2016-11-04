@@ -42,8 +42,8 @@ var OpenloadDecoder = {
         var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
-            var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
-            var aaEncodedPattern = /(\uFF9F\u03C9\uFF8F\uFF89[\s\S]*?\('_'\);)/;
+            //var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
+            var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/;
             var aaEncodedArr = aaEncodedPattern.exec(script);
             if (aaEncodedArr != null) {
                 var aaEncoded = aaEncodedArr[1];
@@ -86,7 +86,7 @@ var OpenloadDecoder = {
             for (var i = 0; i < hiddenUrlChars.length; i++) {
                 var c = hiddenUrlChars[i];
                 var j = c.charCodeAt(0);
-                Log.d("c = " + c + "; j = " + j);
+                //Log.d("c = " + c + "; j = " + j);
 
                 if (j == magic)
                     j -= 1;
