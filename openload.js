@@ -54,8 +54,37 @@ var OpenloadDecoder = {
                     Log.d("Error decoding AA : " + err.message);
                 }
                 Log.d("aaDecoded = " + aaDecoded);
+                
+                var jsDocReadyPattern = /\.ready\(\s*function\(.*\)\s*{([\s\S]*?)}\);/g;
+                var jsDocReadyArr = jsDocReadyPattern.exec(aaDecoded);
+                
+                if (jsDocReadyArr.length <= 0)
+                    continue;
+                
+                var jsDocReady = jsDocReadyArr[0];
+                Log.d("jsDocReady = " + jsDocReady);
+                
+                var jsVarPattern = /var\s+(.*?)\s*=\s*\$\(['"]#(.*?)['"]\)\.text\(/gi;
+                var jsVarNameArr = getMatches(jsDocReady, jsVarPattern, 1);
+                var jsTagIdArr = getMatches(jsDocReady, jsVarPattern, 2);
+                
+                if (jsVarNameArr.length <= 0 || jsTagIdArr.length <= 0)
+                    continue;
+                
+                for (var i = 0; i < jsVarNameArr.length; i++) {
+                    var jsVarName = jsVarNameArr[i];
+                    var jsTagId = jsTagIdArr[i];
+                    
+                    Log.d("jsVarName = " + jsVarName);
+                    Log.d("jsTagId = " + jsTagId);
+                    
+                    var htmlSpanPattern = new RegExp("<span id=\"" + jsTagId + "\">(.*?)</span>", "g");
+                    var htmlSpan = htmlSpanPattern.exec(html);
+                    
+                    Log.d("htmlSpan = " + htmlSpan);
                     
                     
+                }
             }
         }
 
