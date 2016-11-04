@@ -39,25 +39,23 @@ var OpenloadDecoder = {
 
         //Try to get link using eval() first
         var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/gi;
-        var scriptMatches = scriptPattern.exec(html);
+        var scriptMatches = getMatches(html, scriptPattern, 1);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
             //var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
             var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/;
-            var aaEncodedArr = aaEncodedPattern.exec(script);
-            if (aaEncodedArr != null) {
-                for (var j = 0; j < aaEncodedArr.length; j++) {
-                    var aaEncoded = aaEncodedArr[j];
-                    var aaDecoded = "";
-                    try {
-                        aaDecoded = aadecode(aaEncoded);
-                    } catch (err) {
-                        Log.d("Error decoding AA : " + err.message);
-                    }
-                    Log.d("aaDecoded = " + aaDecoded);
-                    
-                    
+            var aaEncodedArr = getMatches(script, aaEncodedPattern, 1);
+            for (var j = 0; j < aaEncodedArr.length; j++) {
+                var aaEncoded = aaEncodedArr[j];
+                var aaDecoded = "";
+                try {
+                    aaDecoded = aadecode(aaEncoded);
+                } catch (err) {
+                    Log.d("Error decoding AA : " + err.message);
                 }
+                Log.d("aaDecoded = " + aaDecoded);
+                    
+                    
             }
         }
 
@@ -214,6 +212,16 @@ function getAllMagicNumbers(decodes) {
     */
 
     return [3];
+}
+
+function getMatches(string, regex, index) {
+    index || (index = 1); // default to the first capturing group
+    var matches = [];
+    var match;
+    while (match = regex.exec(string)) {
+        matches.push(match[index]);
+    }
+    return matches;
 }
 
 function isAlpha(s) {
