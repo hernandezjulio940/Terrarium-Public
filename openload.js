@@ -38,7 +38,7 @@ var OpenloadDecoder = {
         }
 
         //Try to get link using eval() first
-        var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/gmi;
+        var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/gi;
         var scriptMatches = scriptPattern.exec(html);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
@@ -46,7 +46,7 @@ var OpenloadDecoder = {
             var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/;
             var aaEncodedArr = aaEncodedPattern.exec(script);
             if (aaEncodedArr != null) {
-                for (int j = 0; j < aaEncodedArr.length; j++) {
+                for (var j = 0; j < aaEncodedArr.length; j++) {
                     var aaEncoded = aaEncodedArr[j];
                     var aaDecoded = "";
                     try {
@@ -55,6 +55,8 @@ var OpenloadDecoder = {
                         Log.d("Error decoding AA : " + err.message);
                     }
                     Log.d("aaDecoded = " + aaDecoded);
+                    
+                    
                 }
             }
         }
