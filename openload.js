@@ -30,32 +30,32 @@ var OpenloadDecoder = {
         Log.d("Start decoding in JS now...");
 
         var results = [];
-        
+
         try {
             html = unpackHtml(html);
         } catch (err) {
             Log.d(err.toString());
         }
-        
+
         //Try to get link using eval() first
-        var scriptPattern = "<script[^>]*>(.*?)<\\/script>";
-        var scriptMatches = getJavaRegexMatches(html, scriptPattern, 1, -1, DOTALL);
+        var scriptPattern = /<script[^>]*>([\s\S]*?)<\/script>/gmi;
+        var scriptMatches = scriptPattern.exec(html);
         for (var i = 0; i < scriptMatches.length; i++) {
             var script = scriptMatches[i];
             //var aaEncodedPattern = /(ﾟωﾟﾉ[\s\S]*?\('_'\);)/;
             var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/;
             var aaEncodedArr = aaEncodedPattern.exec(script);
             if (aaEncodedArr != null) {
-                var aaEncoded = aaEncodedArr[1];
-                var aaDecoded = "";
-                try {
-                    aaDecoded = aadecode(aaEncoded);
-                } catch (err) {
-                    Log.d("Error decoding AA : " + err.message);
+                for (int j = 0; j < aaEncodedArr.length; j++) {
+                    var aaEncoded = aaEncodedArr[j];
+                    var aaDecoded = "";
+                    try {
+                        aaDecoded = aadecode(aaEncoded);
+                    } catch (err) {
+                        Log.d("Error decoding AA : " + err.message);
+                    }
+                    Log.d("aaDecoded = " + aaDecoded);
                 }
-                Log.d("aaDecoded = " + aaDecoded);
-                
-                
             }
         }
 
