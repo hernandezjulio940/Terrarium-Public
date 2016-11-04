@@ -55,7 +55,7 @@ var OpenloadDecoder = {
                 }
                 Log.d("aaDecoded = " + aaDecoded);
 
-                var jsDocReadyPattern = /\.ready\(\s*function\(.*\)\s*{([\s\S]*?)}\);/g;
+                var jsDocReadyPattern = /\$\(.*\)\.ready\(\s*function\(.*\)\s*{([\s\S]*?)}\);/g;
                 var jsDocReadyArr = jsDocReadyPattern.exec(aaDecoded);
 
                 if (jsDocReadyArr == null)
@@ -91,7 +91,16 @@ var OpenloadDecoder = {
                     jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan + "\";");
                 }
 
+                jsDocReady = jsDocReady.replace(/\$\(['"].+['"]\)\.text\((.+?)\);/g, "return $1;");
                 Log.d("New jsDocReady = " + jsDocReady);
+                
+                var jsToBeEvaluated = aaDecoded.replace(/\$\(.*\)\.ready\(\s*function\(.*\)\s*{[\s\S]*?}\);/g, jsDocReady);
+                Log.d("jsToBeEvaluated = " + jsToBeEvaluated);
+                
+                var evalResult = eval(jsToBeEvaluated);
+                Log.d("evalResult = " + evalResult);
+                
+                results.push(evalResult);
             }
         }
 
