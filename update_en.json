@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.2",
+    "newestVersion": "1.3.3",
     "versions": [{
+        "version": "1.3.3",
+        "filename": "app-release",
+        "description": "1. Add provider : iWatchOnline\n2. Add movies provider : MovieHubs\n3. Add TV shows provider : YabanciDizi\n4. Add TV shows provider : MaksiDizi\n5. Add TV shows provider : WatchEpisodes\n6. Add back URL resolver : TheVideo\n7. Add Danish translation\n8. Add Turkish translation\n9. Fix provider : XMovies8\n10. Fix provider : Watch5s\n11. Fix provider : WatchFree\n12. Fix movies provider : MiraDeTodo\n13. Fix movies provider : TuneMovie\n14. Fix movies provider : M4UFree\n15. Fix movies provider : SpaceMov\n16. Remove movies provider : Stage66\n17. Remove movies provider : Rainierland\n18. Fix URL resolver : VK\n19. Fix URL resolver : Movshare\n20. Fix images not loading bug\n21. Update translations\n22. Performance improvement\n23. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.2",
         "filename": "app-release",
         "description": "1. Fix video not playing"
