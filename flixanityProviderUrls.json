@@ -7,9 +7,5 @@
         "url": "http://flixanity.watch",
         "useNEmbeds": false,
         "embedsPath": "embeds.php"
-    }, {
-        "url": "http://flixanity.in",
-        "useNEmbeds": false,
-        "embedsPath": "embeds.php"
     }]
 }
