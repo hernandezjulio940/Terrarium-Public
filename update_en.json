@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.3",
+    "newestVersion": "1.3.5",
     "versions": [{
+        "version": "1.3.5",
+        "filename": "app-release",
+        "description": "0. Fix a serious bug introduced in 1.3.4\n1. Add play button on menu\n2. Auto scroll to last watched TV season\n3. Add Norwegian translation\n4. Fix provider : PelisPedia\n5. Fix provider : Watch5s\n6. Fix URL resolver : GorillaVid\n7. Fix URL resolver : Movshare\n8. Fix FC after play button is clicked\n9. Beautify app logo to follow the guidelines of Material Design (Thanks to rodrigoswz@reddit)\n10. Enhance user experience\n11. Performance improvement\n12. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.4",
         "filename": "app-release",
         "description": "1. Add play button on menu\n2. Auto scroll to last watched TV season\n3. Add Norwegian translation\n4. Fix provider : PelisPedia\n5. Fix provider : Watch5s\n6. Fix URL resolver : GorillaVid\n7. Fix URL resolver : Movshare\n8. Fix FC after play button is clicked\n9. Beautify app logo to follow the guidelines of Material Design (Thanks to rodrigoswz@reddit)\n10. Enhance user experience\n11. Performance improvement\n12. Bugs and FCs fix"
