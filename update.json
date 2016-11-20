@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.3",
+    "newestVersion": "1.3.4",
     "versions": [{
+        "version": "1.3.4",
+        "filename": "app-release",
+        "description": "1. 在選單中新增播放按鈕\n2. 自動滾動到最近觀看的美劇季度\n3. 新增語言 : 挪威文\n4. 修復 PelisPedia 片源\n5. 修復 Watch5s 片源\n6. 修復 GorillaVid 連結解析器\n7. 修復 Movshare 連結解析器\n8. 修復按下播放按鈕後會崩潰的 BUG\n9. 美化 App 圖示 (感謝 rodrigoswz@reddit)\n10. 增強用戶體驗\n11. 運行效率優化\n12. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.3.3",
         "filename": "app-release",
         "description": "1. 新增 iWatchOnline 片源\n2. 新增 MovieHubs 電影片源\n3. 新增 YabanciDizi 美劇片源\n4. 新增 MaksiDizi 美劇片源\n5. 新增 WatchEpisodes 美劇片源\n6. 重新新增 TheVideo 連結解析器\n7. 新增語言 : 丹麥文\n8. 新增語言 : 土耳其文\n9. 修復 XMovies8 片源\n10. 修復 Watch5s 片源\n11. 修復 WatchFree 片源\n12. 修復 MiraDeTodo 電影片源\n13. 修復 TuneMovie 電影片源\n14. 修復 M4UFree 電影片源\n15. 修復 SpaceMov 電影片源\n16. 移除 Stage66 電影片源\n17. 移除 Rainierland 電影片源\n18. 修復 VK 連結解析器\n19. 修復 Movshare 連結解析器\n20. 修復圖片無法顯示 BUG\n21. 更新翻譯\n22. 運行效率優化\n23. Bugs 和 FCs 修復"
