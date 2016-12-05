@@ -56,52 +56,18 @@ var OpenloadDecoder = {
                     }
                     Log.d("aaDecoded = " + aaDecoded);
 
-                    var jsDocReadyPattern = /\$\(.*\)\.ready\(\s*function\(.*\)\s*{([\s\S]*?)}\);/g;
-                    var jsDocReadyArr = jsDocReadyPattern.exec(aaDecoded);
-
-                    if (jsDocReadyArr == null)
-                        continue;
-
-                    var jsDocReady = jsDocReadyArr[1];
-                    Log.d("jsDocReady = " + jsDocReady);
-
-                    var jsVarPattern = /var\s+(.*?)\s*=\s*\$\(['"]#(.*?)['"]\)\.text\(\);/gi;
-                    var jsVarNameArr = getMatches(jsDocReady, jsVarPattern, 1);
-                    var jsTagIdArr = getMatches(jsDocReady, jsVarPattern, 2);
-
-                    if (jsVarNameArr.length <= 0 || jsTagIdArr.length <= 0)
-                        continue;
-
-                    for (var i = 0; i < jsVarNameArr.length; i++) {
-                        var jsVarName = jsVarNameArr[i];
-                        var jsTagId = jsTagIdArr[i];
-
-                        Log.d("jsVarName = " + jsVarName);
-                        Log.d("jsTagId = " + jsTagId);
-
-                        var htmlSpanPattern = new RegExp("<span id=\"" + jsTagId + "\">(.*?)</span>", "g");
-                        var htmlSpanArr = htmlSpanPattern.exec(html);
-
-                        if (htmlSpanArr == null)
-                            continue;
-
-                        var htmlSpan = newUnescape(htmlSpanArr[1]);
-
-                        Log.d("htmlSpan = " + htmlSpan);
-
-                        jsDocReady = jsDocReady.replace(new RegExp("var\\s+" + jsVarName + "\\s*=\\s*\\$\\(['\"]#.*['\"]\\)\\.text\\(\\);", "g"), "var " + jsVarName + " = \"" + htmlSpan.replace(/"/g, "\\\"") + "\";");
+                    var idPattern = /window.r\s*=\s*'([\s\S]*?)'/gi;
+                    var id = idPattern.exec(aaDecoded)[1];
+                    
+                    var firstTwoChars = parseInt(id.substr(0, 2));
+                    var urlcode = '';
+                    var num = 2;
+                    while (num < id.length) {
+                        urlcode += String.fromCharCode(parseInt(id.substr(num, 3)) - firstTwoChars * parseInt(id.substr(num + 3, 2)));
+                        num += 5;
                     }
 
-                    jsDocReady = jsDocReady.replace(/\$\(['"].+['"]\)\.text\((.+?)\);/g, "($1);");
-                    Log.d("New jsDocReady = " + jsDocReady);
-
-                    var jsToBeEvaluated = aaDecoded.replace(/\$\(.*\)\.ready\(\s*function\(.*\)\s*{[\s\S]*?}\);/g, jsDocReady);
-                    Log.d("jsToBeEvaluated = " + jsToBeEvaluated);
-
-                    var evalResult = eval(jsToBeEvaluated);
-                    Log.d("evalResult = " + evalResult);
-
-                    var streamUrl = "https://openload.co/stream/" + evalResult + "?mime=true";
+                    var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
                     results.push(streamUrl);
                 }
             }
@@ -165,7 +131,7 @@ var OpenloadDecoder = {
         return JSON.stringify(results);
     },
     isEnabled: function() {
-        return false;
+        return true;
     }
 };
 
