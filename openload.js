@@ -47,28 +47,33 @@ var OpenloadDecoder = {
                 var aaEncodedPattern = /(\uFF9F\u03C9\uFF9F\uFF89[\s\S]*?\('_'\);)/g;
                 var aaEncodedArr = getMatches(script, aaEncodedPattern, 1);
                 for (var j = 0; j < aaEncodedArr.length; j++) {
-                    var aaEncoded = aaEncodedArr[j];
-                    var aaDecoded = "";
                     try {
-                        aaDecoded = aadecode(aaEncoded);
+                        var aaEncoded = aaEncodedArr[j];
+                        var aaDecoded = aadecode(aaEncoded);
+
+                        Log.d("aaDecoded = " + aaDecoded);
+
+                        var idPattern = /window.r\s*=\s*'([\s\S]*?)'/gi;
+                        var id = idPattern.exec(aaDecoded)[1];
+                        Log.d("id = " + id);
+
+                        var spanPattern = new RegExp('<span\\s+id="' + id + "x" + '"[^>]*>([^<]+?)</span>', 'gi');
+                        var span = spanPattern.exec(html)[1];
+                        Log.d("span = " + span);
+
+                        var firstTwoChars = parseInt(span.substr(0, 2));
+                        var urlcode = '';
+                        var num = 2;
+                        while (num < span.length) {
+                            urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) - firstTwoChars * parseInt(span.substr(num + 3, 2)));
+                            num += 5;
+                        }
+
+                        var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
+                        results.push(streamUrl);
                     } catch (err) {
-                        Log.d("Error decoding AA : " + err.message);
+                        Log.d("Error " + err.message);
                     }
-                    Log.d("aaDecoded = " + aaDecoded);
-
-                    var idPattern = /window.r\s*=\s*'([\s\S]*?)'/gi;
-                    var id = idPattern.exec(aaDecoded)[1];
-                    
-                    var firstTwoChars = parseInt(id.substr(0, 2));
-                    var urlcode = '';
-                    var num = 2;
-                    while (num < id.length) {
-                        urlcode += String.fromCharCode(parseInt(id.substr(num, 3)) - firstTwoChars * parseInt(id.substr(num + 3, 2)));
-                        num += 5;
-                    }
-
-                    var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
-                    results.push(streamUrl);
                 }
             }
         } catch (err) {
