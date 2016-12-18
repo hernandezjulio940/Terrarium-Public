@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.7",
+    "newestVersion": "1.3.8",
     "versions": [{
+        "version": "1.3.8",
+        "filename": "app-release",
+        "description": "1. Add provider : OLMovies\n2. Add movies provider : MovieGo\n3. Add movies provider : Putlockerz\n4. Add TV shows provider : Dizilab\n5. Remove the compulsory use of a VPN for India users\n6. Fix subtitles service : OpenSubtitles\n7. Fix provider : PelisPedia\n8. Fix provider : Vivo\n9. Fix provider : Watch5s\n10. Fix movies provider : MiraDeTodo\n11. Fix movies provider : Movie25\n12. Fix movies provider : MovieHubs\n13. Fix movies provider : MovieHut\n14. Fix movies provider : MvGee\n15. Fix movies provider : PutMV\n16. Fix TV shows provider : Dizimag\n17. Fix TV shows provider : OnlineDizi\n18. Fix TV shows provider : SezonlukDizi\n19. Fix TV shows provider : WatchEpisodes\n20. Fix URL resolver : NosVideo\n21. Fix URL resolver : Streamin\n22. Fix URL resolver : Watchers\n23. Remove provider : Uplod\n24. Remove movies provider : VU45\n25. Remove TV shows provider : SantaSeries\n26. Remove TV shows provider : YabanciDizi\n27. Remove URL resolver : AllMyVideos\n28. Performance improvement\n29. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.7",
         "filename": "app-release",
         "description": "1. Ads removal (aka Premium) now available (Please check our Facebook Page or official website)\n2. Add movies provider : MvGee\n3. Add movies provider : PutMV\n4. Add URL resolver : NosVideo\n5. Add Swedish translation\n6. Fix provider : PelisPedia\n7. Fix movies provider : SpaceMov\n8. Fix movies provider : HeyDL\n9. Remove TV show provider : MaksiDizi\n10. Fix URL resolver : Watchers\n11. Update translations\n12. Performance improvement\n13. Bugs and FCs fix"
