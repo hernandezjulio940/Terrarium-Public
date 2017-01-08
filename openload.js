@@ -53,84 +53,41 @@ var OpenloadDecoder = {
 
                         Log.d("aaDecoded = " + aaDecoded);
 
-                        var idPattern = /window.r\s*=\s*'([\s\S]*?)'/gi;
+                        var idPattern = /window\.r\s*=\s*['"]([^'^"]+?)['"]/gi;
                         var id = idPattern.exec(aaDecoded)[1];
                         Log.d("id = " + id);
 
-                        var spanPattern = new RegExp('<span\\s+id="' + id + "x" + '"[^>]*>([^<]+?)</span>', 'gi');
-                        var span = spanPattern.exec(html)[1];
-                        Log.d("span = " + span);
+                        var spanPattern = new RegExp('<span[^>]+?id="' + id + '[^"]*?"[^>]*?>([^<]+?)</span>', 'gi');
+                        var spanMatches = getMatches(html, spanPattern, 1);
 
-                        var firstTwoChars = parseInt(span.substr(0, 2));
-                        var urlcode = '';
-                        var num = 2;
-                        while (num < span.length) {
-                            urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) - firstTwoChars * parseInt(span.substr(num + 3, 2)));
-                            num += 5;
+                        for (var idx = 0; idx < spanMatches.length; idx++) {
+                            try {
+                                var span = spanMatches[idx];
+                                Log.d("span = " + span);
+
+                                var firstThreeChars = parseInt(span.substr(0, 3));
+                                var middleTwoChars = parseInt(span.substr(3, 2));
+                                var urlcode = '';
+                                var num = 5;
+                                while (num < span.length) {
+                                    urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) - firstThreeChars - middleTwoChars * parseInt(span.substr(num + 3, 2)));
+                                    num += 5;
+                                }
+
+                                var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
+                                results.push(streamUrl);
+
+                            } catch (err) {
+                                Log.d("Error " + err.message);
+                            }
                         }
-
-                        var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
-                        results.push(streamUrl);
-                    } catch (err) {
-                        Log.d("Error " + err.message);
+                    } catch (err2) {
+                        Log.d("Error " + err2.message);
                     }
                 }
             }
-        } catch (err) {
-            Log.d("Error occurred while trying to get link using eval()\n" + err.message);
-        }
-
-        //Try to get link by decrypting the link
-        try {
-            var hiddenId = '';
-            var decodes = [];
-            var magicNumbers = getAllMagicNumbers();
-
-            var hiddenUrlPattern = /<span[^>]*>([^<]+)<\/span>\s*<span[^>]*>[^<]+<\/span>\s*<span[^>]+id="streamurl"/gi;
-            var hiddenUrl = hiddenUrlPattern.exec(html)[1];
-            Log.d("hiddenUrl = " + hiddenUrl);
-            if (hiddenUrl == undefined)
-                return;
-
-            hiddenUrl = newUnescape(hiddenUrl);
-            Log.d("unescapedHiddenUrl = " + hiddenUrl);
-
-            var hiddenUrlChars = getCharsFromString(hiddenUrl);
-            var magic = 0;
-            if (hiddenUrlChars.length > 1) {
-                magic = hiddenUrlChars[hiddenUrlChars.length - 1].charCodeAt(0);
-            }
-
-            for (var x = 0; x < magicNumbers.length; x++) {
-                var s = [];
-                var magicNumber = magicNumbers[x];
-                Log.d("magicNumber = " + magicNumber);
-
-                for (var i = 0; i < hiddenUrlChars.length; i++) {
-                    var c = hiddenUrlChars[i];
-                    var j = c.charCodeAt(0);
-                    //Log.d("c = " + c + "; j = " + j);
-
-                    if (j == magic)
-                        j -= 1;
-                    else if (j == magic - 1)
-                        j += 1;
-
-                    if (j >= 33 & j <= 126)
-                        j = 33 + ((j + 14) % 94);
-
-                    if (i == (hiddenUrl.length - 1))
-                        j += parseInt(magicNumber);
-
-                    s.push(String.fromCharCode(j));
-                }
-                var res = s.join('');
-                Log.d("res = " + res);
-
-                results.push("https://openload.co/stream/" + res + "?mime=true");
-            }
-        } catch (err) {
-            Log.d("Error occurred while trying to get link by decrypting the link\n" + err.message);
+        } catch (err3) {
+            Log.d("Error occurred while trying to get link using eval()\n" + err3.message);
         }
 
         return JSON.stringify(results);
