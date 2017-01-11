@@ -70,7 +70,7 @@ var OpenloadDecoder = {
                                 var urlcode = '';
                                 var num = 5;
                                 while (num < span.length) {
-                                    urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) - firstThreeChars - middleTwoChars * parseInt(span.substr(num + 3, 2)));
+                                    urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) + firstThreeChars - middleTwoChars * parseInt(span.substr(num + 3, 2)));
                                     num += 5;
                                 }
 
