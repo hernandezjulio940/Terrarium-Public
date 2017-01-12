@@ -23,7 +23,7 @@ var Unpacker = {
             results.push(P_A_C_K_E_R.unpack(match));
         }
 
-        return results;
+        return JSON.stringify(results);
     },
 }
 
