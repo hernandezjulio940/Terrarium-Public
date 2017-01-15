@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.8",
+    "newestVersion": "1.3.9",
     "versions": [{
+        "version": "1.3.9",
+        "filename": "app-release",
+        "description": "1. 新增 MovieFree 電影片源\n2. 新增 MovieXK 電影片源\n3. 新增 YabanciDizi 美劇片源\n4. 新增 BlazeFile 連結解析器\n5. 新增 CloudZilla 連結解析器\n6. 新增 DivxStage 連結解析器\n7. 新增 Putload 連結解析器\n8. 新增 VidUpOrg 連結解析器\n9. 新增 Android TV Leanback Launcher 橫幅圖片\n10. 新增語言 : 匈牙利文\n11. 新增語言 : 馬來西亞文\n12. 新增語言 : 俄文\n13. 修復 10 個電影片源\n14. 修復 7 個美劇片源\n15. 移除 5 個連結解析器\n16. 運行效率優化\n17. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.3.8",
         "filename": "app-release",
         "description": "1. 新增 OLMovies 片源\n2. 新增 MovieGo 電影片源\n3. 新增 Putlockerz 電影片源\n4. 新增 Dizilab 美劇片源\n5. 移除印度用戶必需使用 VPN 的要求\n6. 修復 OpenSubtitles 字幕服務\n7. 修復 PelisPedia 片源\n8. 修復 Vivo 片源\n9. 修復 Watch5s 片源\n10. 修復 MiraDeTodo 電影片源\n11. 修復 Movie25 電影片源\n12. 修復 MovieHubs 電影片源\n13. 修復 MovieHut 電影片源\n14. 修復 MvGee 電影片源\n15. 修復 PutMV 電影片源\n16. 修復 Dizimag 美劇片源\n17. 修復 OnlineDizi 美劇片源\n18. 修復 SezonlukDizi 美劇片源\n19. 修復 WatchEpisodes 美劇片源\n20. 修復 NosVideo 連結解析器\n21. 修復 Streamin 連結解析器\n22. 修復 Watchers 連結解析器\n23. 移除 Uplod 片源\n24. 移除 VU45 電影片源\n25. 移除 SantaSeries 美劇片源\n26. 移除 YabanciDizi 美劇片源\n27. 移除 AllMyVideos 連結解析器\n28. 運行效率優化\n29. Bugs 和 FCs 修復"
