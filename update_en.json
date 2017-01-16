@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.9",
+    "newestVersion": "1.3.10",
     "versions": [{
+        "version": "1.3.10",
+        "filename": "app-release",
+        "description": "1. Performance improvement\n2. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.9",
         "filename": "app-release",
         "description": "1. Add movies provider : MovieFree\n2. Add movies provider : MovieXK\n3. Add back TV shows provider : YabanciDizi\n4. Add URL resolver : BlazeFile\n5. Add URL resolver : CloudZilla\n6. Add URL resolver : DivxStage\n7. Add URL resolver : Putload\n8. Add URL resolver : VidUpOrg\n9. Add TV leanback launcher banner (Credit : /u/Hungryfarang @ Reddit)\n10. Add Hungarian translation\n11. Add Malay translation\n12. Add Russian translation\n13. Fix 10 movies provider\n14. Fix 7 TV shows provider\n15. Fix 5 URLs resolvers\n16. Performance improvement\n17. Bugs and FCs fix"
