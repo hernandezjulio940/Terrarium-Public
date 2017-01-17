@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.10",
+    "newestVersion": "1.3.11",
     "versions": [{
+        "version": "1.3.11",
+        "filename": "app-release",
+        "description": "1. 修復一個在 1.3.10 中出現的嚴重崩潰錯誤"
+    },
+    {
         "version": "1.3.10",
         "filename": "app-release",
         "description": "1. 運行效率優化\n2. Bugs 和 FCs 修復"
