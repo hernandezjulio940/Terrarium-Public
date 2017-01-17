@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.10",
+    "newestVersion": "1.3.11",
     "versions": [{
+        "version": "1.3.11",
+        "filename": "app-release",
+        "description": "1. Fix a serious bug introduced in 1.3.10 which causes serious crash"
+    },
+    {
         "version": "1.3.10",
         "filename": "app-release",
         "description": "1. Performance improvement\n2. Bugs and FCs fix"
