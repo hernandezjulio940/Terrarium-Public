@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.11",
+    "newestVersion": "1.3.12",
     "versions": [{
+        "version": "1.3.12",
+        "filename": "app-release",
+        "description": "1. Add TV shows category : Animation\n2. Add German translation\n3. Fix URL resolver : MovPod\n4. Remove URL resolver : Uploadc\n5. Remove URL resolver : Vidbull\n6. Remove URL resolver : Vodlocker\n7. Improve Spanish translation\n8. Remove some awful fullscreen ads\n9. Performance improvement\n10. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.11",
         "filename": "app-release",
         "description": "1. Fix a serious bug introduced in 1.3.10 which causes serious crash"
