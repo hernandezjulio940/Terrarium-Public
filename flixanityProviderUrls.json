@@ -4,12 +4,8 @@
         "useNEmbeds": true,
         "embedsPath": "tnembeds.php"
     }, {
-        "url": "http://cartoonhd.com",
-        "useNEmbeds": true,
-        "embedsPath": "nembeds.php"
-    }, {
         "url": "http://flixanity.watch",
         "useNEmbeds": false,
-        "embedsPath": "embeds.php"
+        "embedsPath": "jne.php"
     }]
 }
