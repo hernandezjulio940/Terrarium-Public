@@ -2,10 +2,12 @@
     "bases": [{
         "url": "http://cartoonhd.online",
         "useNEmbeds": true,
-        "embedsPath": "tnembeds.php"
+        "embedsPath": "tnembeds.php",
+        "embedsPaths": ["tnembeds.php", "embeds.php"]
     }, {
         "url": "http://flixanity.watch",
         "useNEmbeds": false,
-        "embedsPath": "jne.php"
+        "embedsPath": "jne.php",
+        "embedsPaths": ["jne.php", "embeds.php"]
     }]
 }
