@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.12",
+    "newestVersion": "1.4.0",
     "versions": [{
+        "version": "1.4.0",
+        "filename": "app-release",
+        "description": "1. 新增 Android TV 遙控方向鍵支援\n2. 優化橫向模式介面\n3. 新增 Vumoo 片源\n4. 新增 AfdahTV 電影片源\n5. 新增 Movie25V2 電影片源\n6. 新增 TinklePadV2 電影片源\n7. 新增 PutMV 美劇片源\n8. 新增 YouWatch 連結解析器\n9. 新增語言 : 簡體中文\n10. 修復 FliXanity 片源\n11. 修復 PutMV 片源\n12. 修復 Afdah 電影片源\n13. 修復 HDMovie14 電影片源\n14. 優化德語翻譯\n15. 運行效率優化\n 16. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.3.12",
         "filename": "app-release",
         "description": "1. 新增美劇類別 : 動畫\n2. 新增語言 : 德文\n3. 新增 MovPod 連結解析器\n4. 移除 Uploadc 連結解析器\n5. 移除 Vidbull 連結解析器\n6. 移除 Vodlocker 連結解析器\n7. 更新西班牙語翻譯\n8. 移除一些煩擾的全螢幕廣告\n9. 運行效率優化\n10. Bugs 和 FCs 修復"
