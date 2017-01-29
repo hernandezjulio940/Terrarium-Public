@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.3.12",
+    "newestVersion": "1.4.0",
     "versions": [{
+        "version": "1.4.0",
+        "filename": "app-release",
+        "description": "1. Add Android TV remote control D-Pad support\n2. New episode layout in landscape mode\n3. Add provider : Vumoo\n4. Add movies provider : AfdahTV\n5. Add movies provider : Movie25V2\n6. Add movies provider : TinklePadV2\n7. Add TV shows provider : PutMV\n8. Add URL resolver : YouWatch\n9. Add Simplified Chinese translation\n10. Fix provider : FliXanity\n11. Fix provider : PutMV\n12. Fix movies provider : Afdah\n13. Fix movies provider : HDMovie14\n14. Improve German translation\n15. Performance improvement\n16. Bugs and FCs fix"
+    },
+    {
         "version": "1.3.12",
         "filename": "app-release",
         "description": "1. Add TV shows category : Animation\n2. Add German translation\n3. Fix URL resolver : MovPod\n4. Remove URL resolver : Uploadc\n5. Remove URL resolver : Vidbull\n6. Remove URL resolver : Vodlocker\n7. Improve Spanish translation\n8. Remove some awful fullscreen ads\n9. Performance improvement\n10. Bugs and FCs fix"
