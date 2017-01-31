@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.0",
+    "newestVersion": "1.4.1",
     "versions": [{
+        "version": "1.4.1",
+        "filename": "app-release",
+        "description": "1. Add year filter (for genre lists only)\n2. Add an option to allow users to enable Android TV mode forcibly\n3. Add movies provider : Cine\n4. Fix movies provider : HDMovie14\n5. Fix TV shows provider : SezonlukDizi\n6. Remove provider : MHDDB\n7. Update some icons\n8. Update translations\n9. Reduce ads\n10. Performance improvement\n11. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.0",
         "filename": "app-release",
         "description": "1. Add Android TV remote control D-Pad support\n2. New episode layout in landscape mode\n3. Add provider : Vumoo\n4. Add movies provider : AfdahTV\n5. Add movies provider : Movie25V2\n6. Add movies provider : TinklePadV2\n7. Add TV shows provider : PutMV\n8. Add URL resolver : YouWatch\n9. Add Simplified Chinese translation\n10. Fix provider : FliXanity\n11. Fix provider : PutMV\n12. Fix movies provider : Afdah\n13. Fix movies provider : HDMovie14\n14. Improve German translation\n15. Performance improvement\n16. Bugs and FCs fix"
