@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.4.2",
         "filename": "app-release",
-        "description": "1. Add VLC Player support (you can choose the default player in the Settings page)\n2. Display movie/episode runtime on details page\n2. Improve AllCast, LocalCast and ADM support\n3. Fix provider : FliXanity\n4. Fix provider : Watch5s\n5. Fix provider : XMovies8\n6. Fix movies provider : AfdahTV\n7. Fix movies provider : HDMovie14\n8. Fix movies provider : MovieFree\n9. Fix movies provider : MovieHut\n10. Fix TV shows provider : Dizimag\n11. Fix TV shows provider : SezonlukDizi\n12. Remove URLs resolver : ok.ru\n13. Update translations\n14. Reduce ads\n15. Performance improvement\n16. Bugs and FCs fix"
+        "description": "1. Add VLC Player support (you can choose the default player in the Settings page)\n2. Display movie/episode runtime on details page\n2. Improve AllCast, LocalCast and ADM support\n3. Fix provider : FliXanity\n4. Fix provider : Watch5s\n5. Fix provider : XMovies8\n6. Fix movies provider : AfdahTV\n7. Fix movies provider : HDMovie14\n8. Fix movies provider : MovieFree\n9. Fix movies provider : MovieHut\n10. Fix TV shows provider : Dizimag\n11. Fix TV shows provider : SezonlukDizi\n12. Fix URLs resolver : ok.ru\n13. Update translations\n14. Reduce ads\n15. Performance improvement\n16. Bugs and FCs fix"
     },
     {
         "version": "1.4.1",
