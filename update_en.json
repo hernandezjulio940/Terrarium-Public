@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.2",
+    "newestVersion": "1.4.3",
     "versions": [{
+        "version": "1.4.3",
+        "filename": "app-release",
+        "description": "1. Improve Fire TV and Android TV support\n2. Add Serbian translation\n3. Change default poster size to \"Normal\""
+    },
+    {
         "version": "1.4.2",
         "filename": "app-release",
         "description": "1. Add VLC Player support (you can choose the default player in the Settings page)\n2. Display movie/episode runtime on details page\n3. Improve AllCast, LocalCast and ADM support\n4. Fix provider : FliXanity\n5. Fix provider : Watch5s\n6. Fix provider : XMovies8\n7. Fix movies provider : AfdahTV\n8. Fix movies provider : HDMovie14\n9. Fix movies provider : MovieFree\n10. Fix movies provider : MovieHut\n11. Fix TV shows provider : Dizimag\n12. Fix TV shows provider : SezonlukDizi\n13. Fix URLs resolver : ok.ru\n14. Update translations\n15. Reduce ads\n16. Performance improvement\n17. Bugs and FCs fix"
