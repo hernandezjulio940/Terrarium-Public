@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.2",
+    "newestVersion": "1.4.3",
     "versions": [{
+        "version": "1.4.3",
+        "filename": "app-release",
+        "description": "1. 優化對 Fire TV 和 Android TV 的支援\n2. 新增語言 : 塞爾維亞文\n3. 修改預設海報大小為中等"
+    },
+    {
         "version": "1.4.2",
         "filename": "app-release",
         "description": "1. 新增對 VLC Player 的支援 (你可以在設定中選擇預設播放器)\n2. 在詳細頁面中顯示美劇／電影的片長\n3. 優化對 AllCast, LocalCast 和 ADM 的支援\n4. 修復 FliXanity 片源\n5. 修復 Watch5s 片源\n6. 修復 XMovies8 片源\n7. 修復 AfdahTV 電影片源\n8. 修復 HDMovie14 電影片源\n9. 修復 MovieFree 電影片源\n10. 修復 MovieHut 電影片源\n11. 修復 Dizimag 美劇片源\n12. 修復 SezonlukDizi 美劇片源\n13. 修復 ok.ru 連結解析器\n14. 更新翻譯\n15. 移除一些廣告\n16. 運行效率優化\n17. Bugs 和 FCs 修復"
