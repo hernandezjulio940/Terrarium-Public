@@ -82,7 +82,7 @@ var OpenloadDecoder = {
 
                                 for (var mapKey in decodedMap) {
                                     if (decodedMap.hasOwnProperty(mapKey)) {
-                                        console.log("appending. key = " + mapKey);
+                                        Log.d("appending. key = " + mapKey);
                                         decodedUrl += decodedMap[mapKey];
                                     }
                                 }
