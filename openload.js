@@ -78,6 +78,9 @@ var OpenloadDecoder = {
                                     num += 5;
                                 }
 
+                                //Sort the map by key
+                                decodedMap = sortObject(decodedMap);
+
                                 var decodedUrl = '';
 
                                 for (var mapKey in decodedMap) {
@@ -89,7 +92,7 @@ var OpenloadDecoder = {
 
                                 var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
                                 Log.d("streamUrl = " + streamUrl);
-                                
+
                                 results.push(streamUrl);
                             } catch (err) {
                                 Log.d("Error " + err.message);
@@ -233,6 +236,13 @@ function zip(x, y) {
 
 function getCharsFromString(s) {
     return s.split(/(?=(?:[\0-\t\x0B\f\x0E-\u2027\u202A-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]))/);
+}
+
+function sortObject(obj) {
+    return Object.keys(obj).sort().reduce(function(result, key) {
+        result[key] = obj[key];
+        return result;
+    }, {});
 }
 
 function getJavaRegexMatches(string, regex, index, mode) {
