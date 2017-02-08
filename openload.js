@@ -24,7 +24,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 const DOTALL = 32;
 const CASE_INSENSITIVE = 2;
-const FS_RANGE = [-1, 1];
 
 var OpenloadDecoder = {
     decode: function(html) {
@@ -62,35 +61,32 @@ var OpenloadDecoder = {
                         var spanMatches = getMatches(html, spanPattern, 1);
 
                         for (var spanIdx = 0; spanIdx < spanMatches.length; spanIdx++) {
-                            for (var b = 0; b < FS_RANGE.length; b++) {
-                                try {
-                                    var fs = FS_RANGE[b];
-                                    var encoded = spanMatches[spanIdx];
-                                    var decodedMap = {};
+                            try {
+                                var encoded = spanMatches[spanIdx];
+                                var decodedMap = {};
 
-                                    Log.d("encoded = " + encoded);
+                                Log.d("encoded = " + encoded);
 
-                                    var firstTwo = parseInt(encoded.substr(0, 2)) * fs;
-                                    var num = 2;
+                                var subtrahend = parseInt(encoded.substr(0, 2));
+                                var num = 2;
 
-                                    while (num < encoded.length) {
-                                        var key = parseInt(encoded.substr(num + 3, 2));
-                                        decodeMap[key] = String.fromCharCode(parseInt(encoded.substr(num, 3)) + firstTwo);
-                                        num += 5;
-                                    }
-
-                                    var decodedUrl = '';
-
-                                    for (var mapKey in decodedMap) {
-                                        if (decodedMap.hasOwnProperty(mapKey))
-                                            decodedUrl += decodedMap[mapKey];
-                                    }
-
-                                    var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
-                                    results.push(streamUrl);
-                                } catch (err) {
-                                    Log.d("Error " + err.message);
+                                while (num < encoded.length) {
+                                    var key = parseInt(encoded.substr(num + 3, 2));
+                                    decodedMap[key] = String.fromCharCode(parseInt(encoded.substr(num, 3)) - subtrahend);
+                                    num += 5;
                                 }
+
+                                var decodedUrl = '';
+
+                                for (var mapKey in decodedMap) {
+                                    if (decodedMap.hasOwnProperty(mapKey))
+                                        decodedUrl += decodedMap[mapKey];
+                                }
+
+                                var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
+                                results.push(streamUrl);
+                            } catch (err) {
+                                Log.d("Error " + err.message);
                             }
                         }
                     } catch (err2) {
