@@ -81,8 +81,10 @@ var OpenloadDecoder = {
                                 var decodedUrl = '';
 
                                 for (var mapKey in decodedMap) {
-                                    if (decodedMap.hasOwnProperty(mapKey))
+                                    if (decodedMap.hasOwnProperty(mapKey)) {
+                                        console.log("appending. key = " + mapKey);
                                         decodedUrl += decodedMap[mapKey];
+                                    }
                                 }
 
                                 var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
