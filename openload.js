@@ -24,6 +24,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 const DOTALL = 32;
 const CASE_INSENSITIVE = 2;
+const FS_RANGE = [-1, 1];
 
 var OpenloadDecoder = {
     decode: function(html) {
@@ -60,25 +61,36 @@ var OpenloadDecoder = {
                         var spanPattern = new RegExp('<span[^>]+?id="' + id + '[^"]*?"[^>]*?>([^<]+?)</span>', 'gi');
                         var spanMatches = getMatches(html, spanPattern, 1);
 
-                        for (var idx = 0; idx < spanMatches.length; idx++) {
-                            try {
-                                var span = spanMatches[idx];
-                                Log.d("span = " + span);
+                        for (var spanIdx = 0; spanIdx < spanMatches.length; spanIdx++) {
+                            for (var b = 0; b < FS_RANGE.length; b++) {
+                                try {
+                                    var fs = FS_RANGE[b];
+                                    var encoded = spanMatches[spanIdx];
+                                    var decodedMap = {};
 
-                                var firstThreeChars = parseInt(span.substr(0, 3));
-                                var middleTwoChars = parseInt(span.substr(3, 2));
-                                var urlcode = '';
-                                var num = 5;
-                                while (num < span.length) {
-                                    urlcode += String.fromCharCode(parseInt(span.substr(num, 3)) + firstThreeChars - middleTwoChars * parseInt(span.substr(num + 3, 2)));
-                                    num += 5;
+                                    Log.d("encoded = " + encoded);
+
+                                    var firstTwo = parseInt(encoded.substr(0, 2)) * fs;
+                                    var num = 2;
+
+                                    while (num < encoded.length) {
+                                        var key = parseInt(encoded.substr(num + 3, 2));
+                                        decodeMap[key] = String.fromCharCode(parseInt(encoded.substr(num, 3)) + firstTwo);
+                                        num += 5;
+                                    }
+
+                                    var decodedUrl = '';
+
+                                    for (var mapKey in decodedMap) {
+                                        if (decodedMap.hasOwnProperty(mapKey))
+                                            decodedUrl += decodedMap[mapKey];
+                                    }
+
+                                    var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
+                                    results.push(streamUrl);
+                                } catch (err) {
+                                    Log.d("Error " + err.message);
                                 }
-
-                                var streamUrl = "https://openload.co/stream/" + urlcode + "?mime=true";
-                                results.push(streamUrl);
-
-                            } catch (err) {
-                                Log.d("Error " + err.message);
                             }
                         }
                     } catch (err2) {
@@ -93,7 +105,7 @@ var OpenloadDecoder = {
         return JSON.stringify(results);
     },
     isEnabled: function() {
-        return false;
+        return true;
     }
 };
 
