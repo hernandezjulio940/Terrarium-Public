@@ -31,11 +31,13 @@ var OpenloadDecoder = {
 
         var results = [];
 
+        /*
         try {
             html = unpackHtml(html);
         } catch (err) {
             Log.d(err.toString());
         }
+        */
 
         //Try to get link using eval() first
         try {
@@ -51,7 +53,7 @@ var OpenloadDecoder = {
                         var aaEncoded = aaEncodedArr[j];
                         var aaDecoded = aadecode(aaEncoded);
 
-                        Log.d("aaDecoded = " + aaDecoded);
+                        //Log.d("aaDecoded = " + aaDecoded);
 
                         var idPattern = /window\.r\s*=\s*['"]([^'^"]+?)['"]/gi;
                         var id = idPattern.exec(aaDecoded)[1];
@@ -84,6 +86,8 @@ var OpenloadDecoder = {
                                 }
 
                                 var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
+                                Log.d("streamUrl = " + streamUrl);
+                                
                                 results.push(streamUrl);
                             } catch (err) {
                                 Log.d("Error " + err.message);
