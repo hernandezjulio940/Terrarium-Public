@@ -65,7 +65,7 @@ var OpenloadDecoder = {
                         for (var spanIdx = 0; spanIdx < spanMatches.length; spanIdx++) {
                             try {
                                 var encoded = spanMatches[spanIdx];
-                                var decodedMap = {};
+                                var decodedArr = [];
 
                                 Log.d("encoded = " + encoded);
 
@@ -74,20 +74,22 @@ var OpenloadDecoder = {
 
                                 while (num < encoded.length) {
                                     var key = parseInt(encoded.substr(num + 3, 2));
-                                    decodedMap[key] = String.fromCharCode(parseInt(encoded.substr(num, 3)) - subtrahend);
+                                    var val = String.fromCharCode(parseInt(encoded.substr(num, 3)) - subtrahend);
+                                    decodedArr.push([key, val])
                                     num += 5;
                                 }
 
-                                //Sort the map by key
-                                decodedMap = sortObject(decodedMap);
-
                                 var decodedUrl = '';
 
-                                for (var mapKey in decodedMap) {
-                                    if (decodedMap.hasOwnProperty(mapKey)) {
-                                        Log.d("appending. key = " + mapKey);
-                                        decodedUrl += decodedMap[mapKey];
-                                    }
+                                decodedArr.sort(function(a, b) {
+                                    return parseInt(a[0]) - parseInt(b[0]);
+                                });
+
+                                for (var arr in decodedArr) {
+                                    var key = arr[0];
+                                    var val = arr[1];
+                                    Log.d("appending. key = " + key + "; val = " + val);
+                                    decodedUrl += val;
                                 }
 
                                 var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
