@@ -81,14 +81,16 @@ var OpenloadDecoder = {
 
                                 var decodedUrl = '';
 
+                                //Sort the array. Very important!
                                 decodedArr.sort(function(a, b) {
                                     return parseInt(a[0]) - parseInt(b[0]);
                                 });
 
-                                for (var arr in decodedArr) {
+                                for (var arrIdx = 0; arrIdx < decodedArr.length; arrIdx++) {
+                                    var arr = decodedArr[arrIdx];
                                     var key = arr[0];
                                     var val = arr[1];
-                                    Log.d("appending. key = " + key + "; val = " + val);
+                                    //Log.d("appending. key = " + key + "; val = " + val);
                                     decodedUrl += val;
                                 }
 
