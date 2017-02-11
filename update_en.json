@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.3",
+    "newestVersion": "1.4.4",
     "versions": [{
+        "version": "1.4.4",
+        "filename": "app-release",
+        "description": "1. Add ads removal support on FIre TV\n2. Add provider : WatchFilm\n3. Add provider : WOPro\n4. Add provider : WOTube\n5. Fix provider : FliXanity\n6. Fix movies provider : AfdahTV\n7. Fix movies provider : MovieGo\n8. Fix TV shows provider : SezonlukDizi\n9. Remove provider : OLMovies\n10. Remove movies provider : HeyDL\n11. Remove movies provider : Putlockerz\n12. Remove subtitles service : Zimuku\n13. Update translations\n14. Performance improvement\n15. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.3",
         "filename": "app-release",
         "description": "1. Improve Fire TV and Android TV support\n2. Add Serbian translation\n3. Change default poster size to \"Normal\""
