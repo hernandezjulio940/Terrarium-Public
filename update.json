@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.4",
+    "newestVersion": "1.4.5",
     "versions": [{
+        "version": "1.4.5",
+        "filename": "app-release",
+        "description": "1. 修復 Fire TV 移除廣告支援\n2. 新增類別 : 我的最愛\n3. 新增語言 : 羅馬尼亞文\n4. 修復 OpenSubtitles 字幕服務\n5. 修復 SubHD 字幕服務\n6. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.4.4",
         "filename": "app-release",
         "description": "1. 新增 Fire TV 移除廣告支援\n2. 新增 WatchFilm 片源\n3. 新增 WOPro 片源\n4. 新增 WOTube 片源\n5. 修復 FliXanity 片源\n6. 修復 AfdahTV 電影片源\n7. 修復 MovieGo 電影片源\n8. 修復 SezonlukDizi 美劇片源\n9. 移除 OLMovies 片源\n10. 移除 HeyDL 電影片源\n11. 移除 Putlockerz 電影片源\n12. 移除 Zimuku 字幕服務\n13. 更新翻譯\n14. 運行效率優化\n15. Bugs 和 FCs 修復"
