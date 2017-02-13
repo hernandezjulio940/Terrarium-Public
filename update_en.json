@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.4",
+    "newestVersion": "1.4.5",
     "versions": [{
+        "version": "1.4.5",
+        "filename": "app-release",
+        "description": "1. Fix ads removal activation on FIre TV\n2. Add new category : Favorite\n3. Add Romanian translation\n4. Fix subtitles service : OpenSubtitles\n5. Fix subtitles service : SubHD\n6. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.4",
         "filename": "app-release",
         "description": "1. Add ads removal support on FIre TV\n2. Add provider : WatchFilm\n3. Add provider : WOPro\n4. Add provider : WOTube\n5. Fix provider : FliXanity\n6. Fix movies provider : AfdahTV\n7. Fix movies provider : MovieGo\n8. Fix TV shows provider : SezonlukDizi\n9. Remove provider : OLMovies\n10. Remove movies provider : HeyDL\n11. Remove movies provider : Putlockerz\n12. Remove subtitles service : Zimuku\n13. Update translations\n14. Performance improvement\n15. Bugs and FCs fix"
