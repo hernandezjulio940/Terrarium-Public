@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.5",
+    "newestVersion": "1.4.6",
     "versions": [{
+        "version": "1.4.6",
+        "filename": "app-release",
+        "description": "1. Add \"Show HD links only\" option in the Settings page\n2. Add \"Show season special\" option in the Settings page\n3. Add Android N split screen support\n4. Add TV shows provider : MvGee\n5. Fix provider : MvGee\n6. Fix provider : WatchFilm\n7. Fix movies provider : AfdahTV\n8. Fix movies provider : SpaceMov\n9. Fix TV shows provider : YabanciDizi\n10. Remove movies provider : Pubfilm\n11. Fix subtitles service : MakeDie\n12. Fix subtitles service : SubHD\n13. Update translations\n14. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.5",
         "filename": "app-release",
         "description": "1. Fix ads removal activation on FIre TV\n2. Add new category : Favorite\n3. Add Romanian translation\n4. Fix subtitles service : OpenSubtitles\n5. Fix subtitles service : SubHD\n6. Bugs and FCs fix"
