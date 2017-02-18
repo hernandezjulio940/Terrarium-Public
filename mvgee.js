@@ -33,7 +33,8 @@ var MvGeeFirewallBypasser = {
           Log.d("decryptedChallenge = " + decryptedChallenge);
           Log.d("challengePostLink = " + challengePostLink);
           
-          Http.post(challengePostLink, url);
+          //Post url, post data, referer
+          Http.post(challengePostLink, decryptedChallenge, url);
         } catch (err) {
           Log.d(err.toString());
         }
