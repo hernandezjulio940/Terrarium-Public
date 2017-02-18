@@ -43,7 +43,7 @@ var MvGeeFirewallBypasser = {
     }
 };
 
-//Extracted from Firewall page (human verifycation)
+//Extracted from the Firewall page (human verification)
 var hashFnc = function (a) {
     for (var e, f, g, h, i, j, m, b = 0, c = 0, d = [], k = [e = 0x67452301, f = 0xEFCDAB89, ~e, ~f, 0xC3D2E1F0], l = [], n = decodeURI(encodeURI(a)), o = n.length; c <= o;)l[c >> 2] |= (n.charCodeAt(c) || 128) << 8 * (3 - c++ % 4);
     for (l[m = o + 8 >> 2 | 15] = o << 3; b <= m; b += 16) {
