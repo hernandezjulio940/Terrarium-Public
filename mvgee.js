@@ -18,25 +18,23 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 var MvGeeFirewallBypasser = {
     bypass: function(url, html) {
         try {
-          var results = [];
+            var challengeMatch = /<input[^>]*id="chain"[^>]*challenge="([^"]+)"/gi.exec(html);
 
-          var challengeMatch = /<input[^>]*id="chain"[^>]*challenge="([^"]+)"/gi.exec(html);
+            if (!challengeMatch || challengeMatch == null || challengeMatch == undefined || challengeMatch.length < 2)
+                return;
 
-          if (challengeMatch == null)
-              return;
+            var challenge = challengeMatch[1];
+            var decryptedChallenge = hashFnc(challenge);
+            var challengePostLink = "http://mvgee.com/io/1.0/firewall";
 
-          var challenge = challengeMatch[1];
-          var decryptedChallenge = hashFnc(challenge);
-          var challengePostLink = "http://mvgee.com/io/1.0/firewall";
-
-          Log.d("challenge = " + challenge);
-          Log.d("decryptedChallenge = " + decryptedChallenge);
-          Log.d("challengePostLink = " + challengePostLink);
+            Log.d("challenge = " + challenge);
+            Log.d("decryptedChallenge = " + decryptedChallenge);
+            Log.d("challengePostLink = " + challengePostLink);
           
-          //Post url, post data, referer
-          Http.post(challengePostLink, decryptedChallenge, url);
+            //Post url, post data, referer
+            Http.post(challengePostLink, decryptedChallenge, url);
         } catch (err) {
-          Log.d(err.toString());
+            Log.d(err.toString());
         }
     },
     isEnabled: function() {
