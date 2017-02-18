@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.5",
+    "newestVersion": "1.4.6",
     "versions": [{
+        "version": "1.4.6",
+        "filename": "app-release",
+        "description": "1. 新增 \"只顯示高清片源\" 選項\n2. 新增 \"顯示特別季度\" 選項\n3. 新增 Android N 多視窗支援\n4. 新增 MvGee 美劇片源\n5. 修復 MvGee 片源\n6. 修復 WatchFilm 片源\n7. 修復 AfdahTV 電影片源\n8. 修復 SpaceMov 電影片源\n9. 修復 YabanciDizi 美劇片源\n10. 移除 Pubfilm 電影片源\n11. 修復 Makedie 字幕服務\n12. 修復 SubHD 字幕服務\n13. 更新翻譯\n14. Bugs 和 FCs 修復"
+    },
+    {
         "version": "1.4.5",
         "filename": "app-release",
         "description": "1. 修復 Fire TV 移除廣告支援\n2. 新增類別 : 我的最愛\n3. 新增語言 : 羅馬尼亞文\n4. 修復 OpenSubtitles 字幕服務\n5. 修復 SubHD 字幕服務\n6. Bugs 和 FCs 修復"
