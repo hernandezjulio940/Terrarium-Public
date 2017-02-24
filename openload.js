@@ -79,6 +79,7 @@ var OpenloadDecoder = {
                                     if (xyz <= 90)
                                         key = xyz - 65;
                                     else if (xyz >= 97)
+                                        key = 25 + i - 97;
                                     var val = String.fromCharCode(parseInt(encoded.substr(num + 2, 3)) / parseInt(encoded.charAt(num + 1)) - firstChar);
                                     decodedArr.push([key, val]);
                                     num += 5;
