@@ -71,15 +71,14 @@ var OpenloadDecoder = {
 
                                 var firstChar = parseInt(encoded[0]);
                                 var num = 1;
-                                var i = 0;
+                                var xyz = 0;
 
                                 while (num < encoded.length) {
-                                    i = encoded.charAt(num).charCodeAt();
+                                    xyz = encoded.charAt(num).charCodeAt();
                                     var key = 0;
-                                    if (i <= 90)
-                                        key = i - 65;
-                                    else if (i >= 97)
-                                        key = 25 + i - 97;
+                                    if (xyz <= 90)
+                                        key = xyz - 65;
+                                    else if (xyz >= 97)
                                     var val = String.fromCharCode(parseInt(encoded.substr(num + 2, 3)) / parseInt(encoded.charAt(num + 1)) - firstChar);
                                     decodedArr.push([key, val]);
                                     num += 5;
