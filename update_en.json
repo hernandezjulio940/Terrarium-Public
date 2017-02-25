@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.6",
+    "newestVersion": "1.4.7",
     "versions": [{
+        "version": "1.4.7",
+        "filename": "app-release",
+        "description": "1. Add a new performance related option in the Settings page (for low-end devices)\n2. Add \"Hide episode thumbnails\" option in the Settings page\n3. Fix provider : PelisPedia\n4. Fix provider : Watch5s\n5. Fix movies provider : Afdah\n6. Fix movies provider : MovieHubs\n7. Fix TV shows provider : Dizigold\n8. Fix TV shows provider : YabanciDizi\n9. Update translations\n10. Performance improvement\n11. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.6",
         "filename": "app-release",
         "description": "1. Add \"Show HD links only\" option in the Settings page\n2. Add \"Show season special\" option in the Settings page\n3. Add Android N split screen support\n4. Add TV shows provider : MvGee\n5. Fix provider : MvGee\n6. Fix provider : WatchFilm\n7. Fix movies provider : AfdahTV\n8. Fix movies provider : SpaceMov\n9. Fix TV shows provider : YabanciDizi\n10. Remove movies provider : Pubfilm\n11. Fix subtitles service : MakeDie\n12. Fix subtitles service : SubHD\n13. Update translations\n14. Bugs and FCs fix"
