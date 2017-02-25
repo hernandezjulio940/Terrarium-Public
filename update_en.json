@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.6",
+    "newestVersion": "1.4.8",
     "versions": [{
+        "version": "1.4.8",
+        "filename": "app-release",
+        "description": "0. Fix a new bug which is introduced in 1.4.7\n1. Add a new performance related option in the Settings page (for low-end devices)\n2. Add \"Hide episode thumbnails\" option in the Settings page\n3. Fix provider : PelisPedia\n4. Fix provider : Watch5s\n5. Fix movies provider : Afdah\n6. Fix movies provider : MovieHubs\n7. Fix TV shows provider : Dizigold\n8. Fix TV shows provider : YabanciDizi\n9. Update translations\n10. Performance improvement\n11. Bugs and FCs fix"
+    },
+    {
         "version": "1.4.7",
         "filename": "app-release",
         "description": "1. Add a new performance related option in the Settings page (for low-end devices)\n2. Add \"Hide episode thumbnails\" option in the Settings page\n3. Fix provider : PelisPedia\n4. Fix provider : Watch5s\n5. Fix movies provider : Afdah\n6. Fix movies provider : MovieHubs\n7. Fix TV shows provider : Dizigold\n8. Fix TV shows provider : YabanciDizi\n9. Update translations\n10. Performance improvement\n11. Bugs and FCs fix"
