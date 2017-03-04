@@ -67,37 +67,47 @@ var OpenloadDecoder = {
                                 var encoded = spanMatches[spanIdx];
                                 var decodedArr = [];
 
-                                Log.d("encoded = " + encoded);
+                                console.log("encoded = " + encoded);
+                                
+                                /*
+                                 * 2017-03-04 Openload decode algo
+                                 * Credit: samsamsam (https://gitlab.com/samsamsam) (https://github.com/samsamsam-iptvplayer)
+                                 *
+                                 * The following algo code is a JavaScript port from samsamsam's awesome work
+                                 *
+                                 * Original algo in Python by samsamsam:
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/9cbc67fb1742ca53161307fb45b05d3ce0eb89ef
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/119d5c89354924e27c22fa679aa3552acbe9b2a3
+                                 */
 
-                                var firstChar = parseInt(encoded[0]);
-                                var num = 1;
-                                var xyz = 0;
+                                var d = Math.max(2, encoded.charCodeAt(0) - 55);
+                                var e = Math.min(d, encoded.length - 12 - 2);
+                                var t = encoded.substr(e, 12);
+                                var g = [];
 
-                                while (num < encoded.length) {
-                                    xyz = encoded.charAt(num).charCodeAt();
-                                    var key = 0;
-                                    if (xyz <= 90)
-                                        key = xyz - 65;
-                                    else if (xyz >= 97)
-                                        key = 25 + xyz - 97;
-                                    var val = String.fromCharCode(parseInt(encoded.substr(num + 2, 3)) / parseInt(encoded.charAt(num + 1)) - firstChar);
-                                    decodedArr.push([key, val]);
-                                    num += 5;
+                                var start = 0;
+                                var stop = t.length;
+                                var step = 2;
+
+                                for (var h = start; h < stop; h += step) {
+                                    var f = t.substr(h, 2);
+                                    g.push(parseInt(f, 16));
                                 }
 
-                                var decodedUrl = '';
+                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 12, encoded.length).toString();
+                                var p = [];
 
-                                //Sort the array. Very important!
-                                decodedArr.sort(function(a, b) {
-                                    return parseInt(a[0]) - parseInt(b[0]);
-                                });
+                                stop = v.length;
 
-                                for (var arrIdx = 0; arrIdx < decodedArr.length; arrIdx++) {
-                                    var arr = decodedArr[arrIdx];
-                                    var key = arr[0];
-                                    var val = arr[1];
-                                    //Log.d("appending. key = " + key + "; val = " + val);
-                                    decodedUrl += val;
+                                for (var h = start; h < stop; h += step) {
+                                    var r = String.fromCharCode(parseInt(v.substr(h, 2), 16) ^ g[(h / 2) % 6]).toString();
+                                    p.push(r);
+                                }
+
+                                var decodedUrl = "";
+                                for (var u = 0; u < p.length; u++) {
+                                    var w = p[u].toString();
+                                    decodedUrl += w;
                                 }
 
                                 var streamUrl = "https://openload.co/stream/" + decodedUrl + "?mime=true";
@@ -120,7 +130,7 @@ var OpenloadDecoder = {
         return JSON.stringify(results);
     },
     isEnabled: function() {
-        return false;
+        return true;
     }
 };
 
