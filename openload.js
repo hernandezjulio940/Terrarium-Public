@@ -1,27 +1,9 @@
 /* OpenloadDecoder - A script which will be executed by Duktape to extract Openload links
  * 
- * JavaScript (for Duktape Java) port of openload urlresolver plugin by tknorris.
- *
- * Original plugin in Python : 
- * https://github.com/tknorris/script.module.urlresolver/blob/master/lib/urlresolver/plugins/ol_gmu.py
- * 
- * Copyright (C) 2016 NitroXenon
+ * Copyright (C) 2017 NitroXenon
  * 
  * This software is released under the GPLv3 License.
-
-openload.io urlresolver plugin
-Copyright (C) 2015 tknorris
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 const DOTALL = 32;
 const CASE_INSENSITIVE = 2;
 
