@@ -49,7 +49,7 @@ var OpenloadDecoder = {
                                 var encoded = spanMatches[spanIdx];
                                 var decodedArr = [];
 
-                                console.log("encoded = " + encoded);
+                                Log.d("encoded = " + encoded);
                                 
                                 /*
                                  * 2017-03-04 Openload decode algo
