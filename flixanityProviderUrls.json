@@ -1,11 +1,11 @@
 {
     "bases": [{
-        "url": "http://cartoonhd.online",
+        "url": "https://cartoonhd.online",
         "useNEmbeds": true,
         "embedsPath": "tnembeds.php",
         "bdcCookie": "BDC=2244c21a9db5723c5b71e11e24498db4; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/"
     }, {
-        "url": "http://flixanity.watch",
+        "url": "https://flixanity.watch",
         "useNEmbeds": false,
         "embedsPath": "jne.php",
         "bdcCookie": "BDC=e41ad002b377bf85e0a092f4b666fa1a; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/"
