@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.9",
+    "newestVersion": "1.4.10",
     "versions": [{
+        "version": "1.4.10",
+        "filename": "app-release",
+        "description": "1. 新增備份設定選項\n2. 新增電影和美劇簡介語言選項\n3. 新增 YesMovies 片源\n4. 修復 XMovies8 片源\n5. 修復 HeyDL 電影片源\n6. 修復 Movie25 電影片源\n7. 修復 TVRush 美劇片源\n8. 更新翻譯\n9. 優化介面\n10. 優化海報圖片載入速度\n11. 優化運行效率\n12. 修復 Bugs"
+    },
+    {
         "version": "1.4.9",
         "filename": "app-release",
         "description": "0. 修復一個在 1.4.7 和 1.4.8 中出現的 BUG\n1. 新增一個與效能有關的選項\n2. 新增 \"隱藏集數圖片\" 選項\n3. 修復 PelisPedia 片源\n4. 修復 Watch5s 片源\n5. 修復 Afdah 電影片源\n6. 修復 MovieHubs 電影片源\n7. 修復 Dizigold 美劇片源\n8. 修復 YabanciDizi 美劇片源\n9. 更新翻譯\n10. 運行效率優化\n11. Bugs 和 FCs 修復"
