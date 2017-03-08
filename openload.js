@@ -47,43 +47,45 @@ var OpenloadDecoder = {
                         for (var spanIdx = 0; spanIdx < spanMatches.length; spanIdx++) {
                             try {
                                 var encoded = spanMatches[spanIdx];
-                                var decodedArr = [];
 
                                 Log.d("encoded = " + encoded);
-                                
+
                                 /*
-                                 * 2017-03-04 Openload decode algo
+                                 * 2017-03-08 Openload decode algo
                                  * Credit: samsamsam (https://gitlab.com/samsamsam) (https://github.com/samsamsam-iptvplayer)
                                  *
                                  * The following algo code is a JavaScript port from samsamsam's awesome work
                                  *
                                  * Original algo in Python by samsamsam:
-                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/9cbc67fb1742ca53161307fb45b05d3ce0eb89ef
-                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/119d5c89354924e27c22fa679aa3552acbe9b2a3
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/29b6d63341eee5f04958359b55d6a852b4b6f7d9
                                  */
 
-                                var d = Math.max(2, encoded.charCodeAt(0) - 55);
-                                var e = Math.min(d, encoded.length - 12 - 2);
-                                var t = encoded.substr(e, 12);
+                                var y = encoded.charCodeAt(0);
+                                var e = y - 0x32;
+                                var d = Math.max(2, e);
+                                e = Math.min(d, encoded.length - 0x14 - 2);
+                                var t = encoded.substr(e, 0x14);
+                                var h = 0;
                                 var g = [];
 
-                                var start = 0;
-                                var stop = t.length;
-                                var step = 2;
-
-                                for (var h = start; h < stop; h += step) {
+                                while (h < t.length) {
                                     var f = t.substr(h, 2);
-                                    g.push(parseInt(f, 16));
+                                    g.push(parseInt(f, 0x10));
+                                    h += 2;
                                 }
 
-                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 12, encoded.length).toString();
+                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 0x14, encoded.length).toString();
                                 var p = [];
 
-                                stop = v.length;
-
-                                for (var h = start; h < stop; h += step) {
-                                    var r = String.fromCharCode(parseInt(v.substr(h, 2), 16) ^ g[(h / 2) % 6]).toString();
-                                    p.push(r);
+                                h = 0;
+                                while (h < v.length) {
+                                    var B = v.substr(h, 2);
+                                    var f = parseInt(B, 0x10);
+                                    var A = g[(h / 2) % 0xA]
+                                    f ^= 0x89;
+                                    f ^= A;
+                                    p.push(String.fromCharCode(f));
+                                    h += 2;
                                 }
 
                                 var decodedUrl = "";
@@ -112,7 +114,7 @@ var OpenloadDecoder = {
         return JSON.stringify(results);
     },
     isEnabled: function() {
-        return false;
+        return true;
     }
 };
 
