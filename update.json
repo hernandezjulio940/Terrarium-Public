@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.10",
+    "newestVersion": "1.4.11",
     "versions": [{
+        "version": "1.4.11",
+        "filename": "app-release",
+        "description": "1. Swapped \"Play\" and \"Play without subtitles\" buttons\n2. Added options to backup and restore favorites\n3. Added an option adjust sources list refresh interval\n4. Added an option to hide poster thumbnails\n5. Added \"Next Episode\" button in sources searching screen\n6. Added \"Play Trailer\" button in Android TV mode\n7. Added movies provider : StreamDor\n8. Added back movies provider : Pubfilm\n9. Add Estonian translation\n10. Fixed movies provider : MiraDeTodo\n11. Fixed \"Low-end device detected\" dialog showing on some devices\n12. Removed contacts permission\n13. Reduced ads\n14. Updated translations\n15. Improved performance a lot\n16. Improved layout\n17. Fixed bugs and FCs"
+    },
+    {
         "version": "1.4.10",
         "filename": "app-release",
         "description": "1. 新增備份設定選項\n2. 新增電影和美劇簡介語言選項\n3. 新增 YesMovies 片源\n4. 修復 XMovies8 片源\n5. 修復 HeyDL 電影片源\n6. 修復 Movie25 電影片源\n7. 修復 TVRush 美劇片源\n8. 更新翻譯\n9. 優化介面\n10. 優化海報圖片載入速度\n11. 優化運行效率\n12. 修復 Bugs"
