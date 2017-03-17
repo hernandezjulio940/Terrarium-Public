@@ -51,45 +51,54 @@ var OpenloadDecoder = {
                                 Log.d("encoded = " + encoded);
 
                                 /*
-                                 * 2017-03-14 Openload decode algo
+                                 * 2017-03-17 Openload decode algo
                                  * Credit: samsamsam (https://gitlab.com/samsamsam) (https://github.com/samsamsam-iptvplayer)
                                  *
                                  * The following algo code is a JavaScript port from samsamsam's awesome work
                                  *
                                  * Original algo in Python by samsamsam:
-                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/224730e6de6589c244c91ce8d346ce9be4e9b7fb
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/6c8a8a5a54415ee8f15465d9da33eda1baf617da
                                  */
 
                                 var y = encoded.charCodeAt(0);
-                                var e = y - 0x32;
+                                var e = y - 0x37;
                                 var d = Math.max(2, e);
-                                e = Math.min(d, encoded.length - 0x14 - 2);
-                                var t = encoded.substr(e, 0x14);
+                                e = Math.min(d, encoded.length - 0x18 - 2);
+                                var t = encoded.substr(e, 0x18);
                                 var h = 0;
                                 var g = [];
 
                                 while (h < t.length) {
-                                    var f = t.substr(h, 2);
-                                    g.push(parseInt(f, 0x10));
-                                    h += 2;
+                                    var f = t.substr(h, 3);
+                                    g.push(parseInt(f, 0x8));
+                                    h += 3;
                                 }
 
-                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 0x14, encoded.length).toString();
+                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 0x18, encoded.length).toString();
                                 var p = [];
+                                var i = 0;
 
                                 h = 0;
                                 while (h < v.length) {
-                                    var B = v.substr(h, 3);
+                                    var B = v.substr(h, 2);
+                                    var C = v.substr(h, 3);
                                     var f = parseInt(B, 0x10);
 
-                                    if ((h / 3) % 3 == 0)
-                                        f = parseInt(B, 8);
+                                    h += 0x2;
 
-                                    var A = g[(h / 3) % 0xA]
-                                    f ^= 0x2F;
+                                    if (i % 3 == 0) {
+                                        f = parseInt(C, 8);
+                                        h += 1
+                                    } else if (i % 2 == 0 && i != 0 && v.charCodeAt(i - 1) < 0x3C) {
+                                        f = parseInt(C, 0xA);
+                                        h += 1;
+                                    }
+
+                                    A = g[i % 0x8];
+                                    f ^= 0xD5;
                                     f ^= A;
                                     p.push(String.fromCharCode(f));
-                                    h += 3;
+                                    i += 1;
                                 }
 
                                 var decodedUrl = "";
