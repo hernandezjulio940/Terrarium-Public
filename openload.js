@@ -51,20 +51,20 @@ var OpenloadDecoder = {
                                 Log.d("encoded = " + encoded);
 
                                 /*
-                                 * 2017-03-17 Openload decode algo
+                                 * 2017-03-18 Openload decode algo
                                  * Credit: samsamsam (https://gitlab.com/samsamsam) (https://github.com/samsamsam-iptvplayer)
                                  *
                                  * The following algo code is a JavaScript port from samsamsam's awesome work
                                  *
                                  * Original algo in Python by samsamsam:
-                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/6c8a8a5a54415ee8f15465d9da33eda1baf617da
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/10438fe21a1ff43bbcafcca9847d43312113b621
                                  */
 
                                 var y = encoded.charCodeAt(0);
                                 var e = y - 0x37;
                                 var d = Math.max(2, e);
-                                e = Math.min(d, encoded.length - 0x18 - 2);
-                                var t = encoded.substr(e, 0x18);
+                                e = Math.min(d, encoded.length - 0x24 - 2);
+                                var t = encoded.substr(e, 0x24);
                                 var h = 0;
                                 var g = [];
 
@@ -74,7 +74,7 @@ var OpenloadDecoder = {
                                     h += 3;
                                 }
 
-                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 0x18, encoded.length).toString();
+                                var v = encoded.substr(0, e).toString() + encoded.substr(e + 0x24, encoded.length).toString();
                                 var p = [];
                                 var i = 0;
 
@@ -94,7 +94,7 @@ var OpenloadDecoder = {
                                         h += 1;
                                     }
 
-                                    A = g[i % 0x8];
+                                    A = g[i % 0xC];
                                     f ^= 0xD5;
                                     f ^= A;
                                     p.push(String.fromCharCode(f));
