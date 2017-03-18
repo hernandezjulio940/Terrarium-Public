@@ -1,6 +1,6 @@
 /* TheVideoDecoder - A script which will be executed by Duktape to extract TheVideo.me links
  * 
- * Copyright (C) 2016 NitroXenon
+ * Copyright (C) 2017 NitroXenon
  * 
  * This software is released under the GPLv3 License.
 
@@ -23,11 +23,23 @@ var TheVideoDecoder = {
         var results = [];
 
         var keyMatch = /Key\s*=\s*['"]([^'^"]+?)['"]/g.exec(html);
+        var tryAgainMatch = /try_again\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
 
-        if (keyMatch == null)
+        if (keyMatch == null && tryAgainMatch == null)
             return JSON.stringify(results);
-
-        var key = keyMatch[1];
+        
+        var key = "";
+        var tryAgain = "";
+        
+        if (keyMatch != null)
+            key = keyMatch[1];
+        
+        if (tryAgainMatch != null)
+            tryAgain = tryAgainMatch[1];
+        
+        if (tryAgain.length > key.length)
+            key = tryAgain;
+        
         var getVtLink = "http://thevideo.me/jwv/" + key;
         var getVtLinkResult = Http.get(getVtLink, url);
 
