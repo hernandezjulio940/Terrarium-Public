@@ -51,13 +51,13 @@ var OpenloadDecoder = {
                                 Log.d("encoded = " + encoded);
 
                                 /*
-                                 * 2017-03-18 Openload decode algo
+                                 * 2017-03-19 Openload decode algo
                                  * Credit: samsamsam (https://gitlab.com/samsamsam) (https://github.com/samsamsam-iptvplayer)
                                  *
                                  * The following algo code is a JavaScript port from samsamsam's awesome work
                                  *
                                  * Original algo in Python by samsamsam:
-                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/10438fe21a1ff43bbcafcca9847d43312113b621
+                                 * https://gitlab.com/iptvplayer-for-e2/iptvplayer-for-e2/commit/31d575760a1803e5e88a43be0a8d560635c655cf
                                  */
 
                                 var y = encoded.charCodeAt(0);
@@ -94,7 +94,7 @@ var OpenloadDecoder = {
                                         h += 1;
                                     }
 
-                                    A = g[i % 0xC];
+                                    A = g[i % 0x7];
                                     f ^= 0xD5;
                                     f ^= A;
                                     p.push(String.fromCharCode(f));
