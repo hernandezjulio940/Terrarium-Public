@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.4.12",
+    "newestVersion": "1.5.0",
     "versions": [{
+        "version": "1.5.0",
+        "filename": "app-release",
+        "description": "1. Added initial Trakt.tv support (sync favorites)\n2. Added submit search button\n3. Added options to auto mark episodes as watched\n4. Added movies category : Oscars Winners\n5. Added movies category : Christmas\n6. Added movies category : Marvel's\n7. Added movies category : Disney Classics\n8. Fixed provider : TuneMovie\n9. Fixed movies provider : PirateJunkies\n10. Fixed movies provider : StreamDor\n11. Fixed TV shows provider : Vidics\n12. Fixed TV shows provider : WatchSeries\n13. Removed provider : Bia2M\n14. Removed provider : Farda\n15. Removed provider : WatchFilm\n16. Removed movies provider : MovieZone\n17. Updated translations\n18. Fixed bugs and FCs"
+    },
+    {
         "version": "1.4.12",
         "filename": "app-release",
         "description": "1. Fixed \"Download with subtitles\" not working bug\n2. Improved performance"
