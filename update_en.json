@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.0",
+    "newestVersion": "1.5.1",
     "versions": [{
+        "version": "1.5.1",
+        "filename": "app-release",
+        "description": "1. Auto mark episodes as watched when next episode button is clicked\n2. Added share app button on home screen\n3. Added movies category : Western\n4. Changed the order of \"In Theaters\" and \"Most Popular\" in movie categories\n5. Fixed Trakt sync favorites not working bug\n6. Fixed provider : Vivo\n7. Fixed provider : WOPro\n8. Fixed movies provider : Afdah\n9. Fixed movies provider : AfdahTV\n10. Fixed movies provider : MovieHubs\n11. Fixed TV shows provider : OnlineDizi\n12. Fixed URLs resolver : Openload\n13. Removed TV shows provider : YabanciDizi\n14. Improved UI\n15. Updated translations\n16. Fixed bugs and FCs"
+    },
+    {
         "version": "1.5.0",
         "filename": "app-release",
         "description": "1. Added initial Trakt.tv support (sync favorites)\n2. Added submit search button\n3. Added options to auto mark episodes as watched\n4. Added movies category : Oscars Winners\n5. Added movies category : Christmas\n6. Added movies category : Marvel's\n7. Added movies category : Disney Classics\n8. Fixed provider : TuneMovie\n9. Fixed movies provider : PirateJunkies\n10. Fixed movies provider : StreamDor\n11. Fixed TV shows provider : Vidics\n12. Fixed TV shows provider : WatchSeries\n13. Removed provider : Bia2M\n14. Removed provider : Farda\n15. Removed provider : WatchFilm\n16. Removed movies provider : MovieZone\n17. Updated translations\n18. Fixed bugs and FCs"
