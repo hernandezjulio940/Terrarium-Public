@@ -1,7 +1,9 @@
 //Thank you @Tithen-Firion
 var id = "{encodedString}"
 var decoded = "";
-var document = {};
+var document = {
+    getElementById: true
+};
 var window = this;
 var $ = function() {
     return {
