@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.1",
+    "newestVersion": "1.5.2",
     "versions": [{
+        "version": "1.5.2",
+        "filename": "app-release",
+        "description": "1. Added provider : 123MoviesHD\n2. Added movies provider : DayT\n3. Added TV shows provider : MiraDeTodo\n4. Added TV shows (WWE) provider : AllWrestling\n5. Added URL resolver : UniUp\n6. Added Polish translation\n7. Fixed Marvel's TV shows having no links\n8. Fixed provider : Vivo\n9. Fixed provider : XMovies8\n10. Fixed provider : iWatchOnline\n11. Fixed movies provider : Afdah\n12. Fixed movies provider : HDMovie14\n13. Fixed movies provider : MovieHubs\n14. Fixed movies provider : Pubfilm\n15. Fixed TV shows provider : OnlineDizi\n16. Fixed URLs resolver : Openload\n17. Disabled YesMovies provider temporarily\n18. Removed movies provider : MovieFree\n19. Updated translations\n20. Fixed bugs and FCs"
+    },
+    {
         "version": "1.5.1",
         "filename": "app-release",
         "description": "1. Auto mark episodes as watched when next episode button is clicked\n2. Added share app button on home screen\n3. Added movies category : Western\n4. Changed the order of \"In Theaters\" and \"Most Popular\" in movie categories\n5. Fixed Trakt sync favorites not working bug\n6. Fixed provider : Vivo\n7. Fixed provider : WOPro\n8. Fixed movies provider : Afdah\n9. Fixed movies provider : AfdahTV\n10. Fixed movies provider : MovieHubs\n11. Fixed TV shows provider : OnlineDizi\n12. Fixed URLs resolver : Openload\n13. Removed TV shows provider : YabanciDizi\n14. Improved UI\n15. Updated translations\n16. Fixed bugs and FCs"
