@@ -22,25 +22,17 @@ var TheVideoDecoder = {
 
         var results = [];
 
-        var keyMatch = /Key\s*=\s*['"]([^'^"]+?)['"]/g.exec(html);
-        var tryAgainMatch = /try_again\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
-
-        if (keyMatch == null && tryAgainMatch == null)
+        var keyMatch = /better_luck_next_time\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
+        
+        if (keyMatch == null)
             return JSON.stringify(results);
         
         var key = "";
-        var tryAgain = "";
         
         if (keyMatch != null)
             key = keyMatch[1];
         
-        if (tryAgainMatch != null)
-            tryAgain = tryAgainMatch[1];
-        
-        if (tryAgain.length > key.length)
-            key = tryAgain;
-        
-        var getVtLink = "http://thevideo.me/jwv/" + key;
+        var getVtLink = "https://thevideo.me/vsign/player/" + key;
         var getVtLinkResult = Http.get(getVtLink, url);
 
         Log.d("key = " + key);
