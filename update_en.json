@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.6",
+    "newestVersion": "1.5.7",
     "versions": [{
+        "version": "1.5.7",
+        "filename": "app-release",
+        "description": "1. Added provider : GoMovies\n2. Added TV shows provider : MyWS\n3. Add URL resolver : Streamango\n4. Improved the appearance of subtitles when casting with Chromecast\n5. Changed a few Chromecast controller buttons\n6. Don't show the update dialog for multiple times\n7. Fixed provider : 123MoviesHD\n8. Fixed provider : Vivo\n9. Fixed provider : Vumoo\n10. Fixed provider : YesMovies\n11. Removed movies provider : Cine\n12. Disabled WOTube provider temporarily\n13. Improved performance\n14. Fixed bugs"
+    },
+    {
         "version": "1.5.6",
         "filename": "app-release",
         "description": "1. Added subtitles support for native Chromecast\n2. Fixed movies provider : Pubfilm\n3. Disabled Openload URLs resolver temporarily\n4. Improved UI"
