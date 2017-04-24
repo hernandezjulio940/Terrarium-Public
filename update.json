@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.7",
+    "newestVersion": "1.5.8",
     "versions": [{
+        "version": "1.5.8",
+        "filename": "app-release",
+        "description": "1. Show notification when there is a new episode\n2. Added provider : PMovies\n3. Fixed provider : PelisPedia\n4. Fixed provider : Watch5s\n5. Fixed movies provider : MovieXK\n6. Fixed TV shows provider : Vidics\n7. Removed movies provider : HDMovie14\n8. Disabled Movie25 provider temporarily\n9. Improved performance\n10. Fixed bugs"
+    },
+    {
         "version": "1.5.7",
         "filename": "app-release",
         "description": "1. Added provider : GoMovies\n2. Added TV shows provider : MyWS\n3. Add URL resolver : Streamango\n4. Improved the appearance of subtitles when casting with Chromecast\n5. Changed a few Chromecast controller buttons\n6. Don't show the update dialog for multiple times\n7. Fixed provider : 123MoviesHD\n8. Fixed provider : Vivo\n9. Fixed provider : Vumoo\n10. Fixed provider : YesMovies\n11. Removed movies provider : Cine\n12. Disabled WOTube provider temporarily\n13. Improved performance\n14. Fixed bugs"
