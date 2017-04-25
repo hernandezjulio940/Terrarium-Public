@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.8",
+    "newestVersion": "1.5.9",
     "versions": [{
+        "version": "1.5.9",
+        "filename": "app-release",
+        "description": "1. Added an option to enable/disable and change the frequency of new episode checking\n2. Fixed movies provider : HeyDL\n3. Beautified UI\n4. Improved performance\n5. Fixed bugs and crashes"
+    },
+    {
         "version": "1.5.8",
         "filename": "app-release",
         "description": "1. Show notification when there is a new episode\n2. Added provider : PMovies\n3. Fixed provider : PelisPedia\n4. Fixed provider : Watch5s\n5. Fixed movies provider : MovieXK\n6. Fixed TV shows provider : Vidics\n7. Removed movies provider : HDMovie14\n8. Disabled Movie25 provider temporarily\n9. Improved performance\n10. Fixed bugs"
