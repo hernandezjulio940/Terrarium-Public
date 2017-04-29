@@ -22,7 +22,7 @@ var TheVideoDecoder = {
 
         var results = [];
 
-        var keyMatch = /better_luck_next_time\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
+        var keyMatch = /lets_play_a_game\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
         
         if (keyMatch == null)
             return JSON.stringify(results);
