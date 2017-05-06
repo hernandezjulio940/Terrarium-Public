@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.5.10",
+    "newestVersion": "1.6.0",
     "versions": [{
+        "version": "1.6.0",
+        "filename": "app-release",
+        "description": "1. Added 4K movies provider : TTV4K, which provides >40 4K movies.\n2. Added \"4K\" movies category\n3. Added \"Downloads\" section\n4. Added \"Backup watched episodes\" option\n5. Added \"Auto backup before updating\" option\n6. Landscape mode is now supported in Chromecast control activity\n7. Added URLs resolver : UpToBox\n8. Fixed provider : Vumoo\n9. Fixed provider : Watch5s\n10. Fixed TV shows provider : Dizigold\n11. Fixed URLs resolver : YouWatch\n12. Improved UI\n13. Improved performance\n14. Fixed bugs and crashes"
+    },
+    {
         "version": "1.5.10",
         "filename": "app-release",
         "description": "1. Added URLs resolver : Streamable\n2. Added URLs resolver : Tune.pk\n3. Added URLs resolver : Vid.me\n4. Fixed provider : 123MoviesHD\n5. Fixed provider : iWatchOnline\n6. Fixed provider : Vumoo\n7. Fixed TV shows provider : Dizigold\n8. Fixed missing episode information for some TV shows\n9. Improved UI\n10. Improved performance\n11. Updated translations\n12. Fixed bugs and crashes"
