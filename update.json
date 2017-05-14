@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.6.0",
+    "newestVersion": "1.6.1",
     "versions": [{
+        "version": "1.6.1",
+        "filename": "app-release",
+        "description": "1. Added \"Auto check-in into Trakt.tv\" feature\n2. Added \"Auto add watched episode to Trakt.tv history\" feature\n3. Added \"Auto add favorite to Trakt.tv collection\" feature\n4. Supported long pressing \"Enter\" on D-Pad to play\n5. Added provider : KingMovies\n6. Fixed provider : Vumoo\n7. Fixed provider : Watch5s\n8. Fixed movies provider : M4UFree\n9. Fixed movies provider : MovieXK\n10. Fixed movies provider : SpaceMov\n11. Fixed TV shows provider : Dizibox\n12. Fixed TV shows provider : OnlineDizi\n13. Fixed TV shows provider : TVRush\n14. Fixed URLs resolver : ok.ru\n15. Improved UI\n16. Improved performance\n17. Fixed bugs and crashes"
+    },
+    {
         "version": "1.6.0",
         "filename": "app-release",
         "description": "1. Added 4K movies provider : TTV4K, which provides >40 4K movies.\n2. Added \"4K\" movies category\n3. Added \"Downloads\" section\n4. Added \"Backup watched episodes\" option\n5. Added \"Auto backup before updating\" option\n6. Landscape mode is now supported in Chromecast control activity\n7. Added URLs resolver : UpToBox\n8. Fixed provider : Vumoo\n9. Fixed provider : Watch5s\n10. Fixed TV shows provider : Dizigold\n11. Fixed URLs resolver : YouWatch\n12. Improved UI\n13. Improved performance\n14. Fixed bugs and crashes"
