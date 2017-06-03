@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.6.2",
+    "newestVersion": "1.6.3",
     "versions": [{
+        "version": "1.6.3",
+        "filename": "app-release",
+        "description": "1. [Trakt] Movies can be added to watch histories now\n2. Year filter now supports more genre and category lists\n3. Added TV calendar\n4. Added Chromecast subtitles font customization\n5. Added search suggestions\n6. Added Western and Kids genres for TV shows\n7. Added CAM version movies filter\n8. Added URLs resolver : Filez\n9. Added URLs resolver : RapidVideo\n10. Added URLs resolver : Xvidstage\n11. Added \"Clear cache\" button in Settings\n12. Fixed provider : MvGee\n13. Fixed provider : PMovies\n14. Fixed provider : Vumoo\n15. Fixed provider : WOPro\n16. Fixed provider : XMovies8\n17. Fixed TV shows provider : Dizibox\n18. Fixed movies provider : M4UFree\n19. Sort OpenSubtitles subtitles order by download count\n20. Fixed bugs and crashes"
+    },
+    {
         "version": "1.6.2",
         "filename": "app-release",
         "description": "1. Auto mute loud video ads\n2. Added \"Upload watched episodes to Trakt.tv manually\" feature\n3. Fixed provider : FliXanityBased\n4. Fixed provider : Watch5s\n5. Fixed movies provider : M4UFree\n6. Fixed movies provider : MovieGo\n7. Fixed movies provider : MovieXK\n8. Fixed movies provider : SpaceMov\n9. Disabled HeyDL movies provider temporarily\n10. Improved CAM version movies detection\n11. Improved UI\n12. Improved performance\n13. Fixed bugs and crashes"
