@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.6.4",
         "filename": "app-release",
-        "description": "1. Added \"Netflix\" TV shows category\n2. Fixed provider : 123MoviesHD\n3. Fixed provider : KingMovies\4. Fixed provider : PMovies\n5. Fixed provider : Vumoo\n6. Fixed provider : Watch5s\n7. Fixed provider : WOPro\n8. Fixed provider : XMovies8\9. Fixed TV shows provider : SezonlukDizi\n10. Fixed and re-enabled movies provider : HeyDL\n11. Fixed movies provider : M4UFree\12. Fixed URLs resolver : VidUp.me\13. Improved performance\n14. Fixed bugs and crashes\n15. Updated translations"
+        "description": "1. Added \"Netflix\" TV shows category\n2. Fixed provider : 123MoviesHD\n3. Fixed provider : KingMovies\n4. Fixed provider : PMovies\n5. Fixed provider : Vumoo\n6. Fixed provider : Watch5s\n7. Fixed provider : WOPro\n8. Fixed provider : XMovies8\n9. Fixed TV shows provider : SezonlukDizi\n10. Fixed and re-enabled movies provider : HeyDL\n11. Fixed movies provider : M4UFree\n12. Fixed URLs resolver : VidUp.me\n13. Improved performance\n14. Fixed bugs and crashes\n15. Updated translations"
     },
     {
         "version": "1.6.3",
