@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.6.3",
+    "newestVersion": "1.6.4",
     "versions": [{
+        "version": "1.6.4",
+        "filename": "app-release",
+        "description": "1. Added \"Netflix\" TV shows category\n2. Fixed provider : 123MoviesHD\n3. Fixed provider : KingMovies\4. Fixed provider : PMovies\n5. Fixed provider : Vumoo\n6. Fixed provider : Watch5s\n7. Fixed provider : WOPro\n8. Fixed provider : XMovies8\9. Fixed TV shows provider : SezonlukDizi\n10. Fixed and re-enabled movies provider : HeyDL\n11. Fixed movies provider : M4UFree\12. Fixed URLs resolver : VidUp.me\13. Improved performance\n14. Fixed bugs and crashes\n15. Updated translations"
+    },
+    {
         "version": "1.6.3",
         "filename": "app-release",
         "description": "1. [Trakt] Movies can be added to watch histories now\n2. Year filter now supports more genre and category lists\n3. Added TV calendar\n4. Added Chromecast subtitles font customization\n5. Added search suggestions\n6. Added Western and Kids genres for TV shows\n7. Added CAM version movies filter\n8. Added URLs resolver : Filez\n9. Added URLs resolver : RapidVideo\n10. Added URLs resolver : Xvidstage\n11. Added \"Clear cache\" button in Settings\n12. Fixed provider : MvGee\n13. Fixed provider : PMovies\n14. Fixed provider : Vumoo\n15. Fixed provider : WOPro\n16. Fixed provider : XMovies8\n17. Fixed TV shows provider : Dizibox\n18. Fixed movies provider : M4UFree\n19. Sort OpenSubtitles subtitles order by download count\n20. Fixed bugs and crashes"
