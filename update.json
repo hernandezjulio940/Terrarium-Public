@@ -3,7 +3,7 @@
     "versions": [{
         "version": "1.6.5",
         "filename": "app-release",
-        "description": "1. Added new HD movie releases notification\n2. Added \"New HD Releases\" movies category\n3. Added \"Amazon\" TV shows category\n4. Added \"Hulu\" TV shows category\n5. Added \"Hide episode synopsis\" option\6. Added \"Resolve HD links only\" option\n7. Added a blue line to indicate watched movies\n8. Added provider : SeeHD\n9. Added URLs resolver : FastPlay\n10. Fixed 4K movies providers\n11. Fixed existing TV shows providers\n12. Fixed existing movies providers\n13. Fixed existing URLs resolvers\n14. Fixed categories being messed up\n15. Fixed bugs related to Trakt.tv\n16. Fixed bugs related to Chromecast subtitles\n17. Fixed bugs related to video download\n18. Fixed various bugs and crashes\n19. Improved UI\n20. Improved performance"
+        "description": "1. Added new HD movie releases notification\n2. Added \"New HD Releases\" movies category\n3. Added \"Amazon\" TV shows category\n4. Added \"Hulu\" TV shows category\n5. Added \"Hide episode synopsis\" option\n6. Added \"Resolve HD links only\" option\n7. Added a blue line to indicate watched movies\n8. Added provider : SeeHD\n9. Added URLs resolver : FastPlay\n10. Fixed 4K movies providers\n11. Fixed existing TV shows providers\n12. Fixed existing movies providers\n13. Fixed existing URLs resolvers\n14. Fixed categories being messed up\n15. Fixed bugs related to Trakt.tv\n16. Fixed bugs related to Chromecast subtitles\n17. Fixed bugs related to video download\n18. Fixed various bugs and crashes\n19. Improved UI\n20. Improved performance"
     },
     {
         "version": "1.6.4",
