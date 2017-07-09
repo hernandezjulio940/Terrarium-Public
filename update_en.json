@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.6.6",
+    "newestVersion": "1.7.0",
     "versions": [{
+        "version": "1.7.0",
+        "filename": "app-release",
+        "description": "1. Added Real-Debrid (an unrestricted multihoster) support\n2. Added content ratings in media details page\n3. Added auto sync watch histories to Trakt.tv on startup\n4. Added long click to add movie/episode to favorite\n5. Added provider : MyFilm\n6. Added TV shows provider : DiziBeta\n7. Added TV shows provider : Dizist\n8. Added TV shows provider : Dizimvar\n9. Added movies : WikiSeda\n10. Fixed existing TV shows providers\n11. Fixed existing movies providers\n12. Fixed existing URLs resolvers\n13. Removed movies provider : MovieGo\n14. Removed movies provider : Streamdor\n15. Removed URLs resolver : Streaminto\n16. Improved UI\n17. Improved performance\n18. Fixed bugs and crashes"
+    },
+    {
         "version": "1.6.6",
         "filename": "app-release",
         "description": "1. Added TV shows provider : DiziSon\n2. Added URLs resolver : StreamCherry\n3. Fixed wrong stream links of movie Split (2017)\n4. Fixed some new and serious bugs in 1.6.5"
