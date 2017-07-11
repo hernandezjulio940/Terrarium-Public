@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.0",
+    "newestVersion": "1.7.1",
     "versions": [{
+        "version": "1.7.1",
+        "filename": "app-release",
+        "description": "1. Added an option to lock Landscape orientation on Android TV\n2. Added Bengali translation\n3. Fixed Real-Debrid\n4. Fixed existing TV shows providers\n5. Fixed existing movies providers\n6. Fixed existing URLs resolvers\n7. Improved search function\n8. Improved performance\n9. Fixed bugs and crashes\n10. Updated translations"
+    },
+    {
         "version": "1.7.0",
         "filename": "app-release",
         "description": "1. Added Real-Debrid (an unrestricted multihoster) support\n2. Added content ratings in media details page\n3. Added auto sync watch histories to Trakt.tv on startup\n4. Added long click to add movie/episode to favorite\n5. Added provider : MyFilm\n6. Added TV shows provider : DiziBeta\n7. Added TV shows provider : Dizist\n8. Added TV shows provider : Dizimvar\n9. Added movies : WikiSeda\n10. Fixed existing TV shows providers\n11. Fixed existing movies providers\n12. Fixed existing URLs resolvers\n13. Removed movies provider : MovieGo\n14. Removed movies provider : Streamdor\n15. Removed URLs resolver : Streaminto\n16. Improved UI\n17. Improved performance\n18. Fixed bugs and crashes"
