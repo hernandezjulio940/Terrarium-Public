@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.1",
+    "newestVersion": "1.7.2",
     "versions": [{
+        "version": "1.7.2",
+        "filename": "app-release",
+        "description": "1. Added \"Resume Playback\" feature\n2. Added \"YouTube\" TV shows and movies categories\n3. Added \"Crime\" and \"Soap\" TV shows categories\n4. Added Real-Debrid provider : WrzCraft\n5. Added URLs resolver : VidMoly\n6. Added Bulgarian translation\n7. Added Croatian translation\n8. Fixed Real-Debrid\n9. Fixed existing TV shows providers\n10. Fixed existing movies providers\n11. Fixed existing URLs resolvers\n12. Disabled MyFilm provider temporarily\n13. Improved UI\n14. Improved performance\n15. Fixed bugs and crashes\n16. Updated translations"
+    },
+    {
         "version": "1.7.1",
         "filename": "app-release",
         "description": "1. Added an option to lock Landscape orientation on Android TV\n2. Added Bengali translation\n3. Fixed Real-Debrid\n4. Fixed existing TV shows providers\n5. Fixed existing movies providers\n6. Fixed existing URLs resolvers\n7. Improved search function\n8. Improved performance\n9. Fixed bugs and crashes\n10. Updated translations"
