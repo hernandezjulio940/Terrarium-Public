@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.2",
+    "newestVersion": "1.7.3",
     "versions": [{
+        "version": "1.7.3",
+        "filename": "app-release",
+        "description": "1. Show posters instead of banners for season images\n2. Links from Real-Debrid are now in green highlight\n3. Prioritize links from Real-Debrid\n4. Added an option to hide title and year on the poster images\n5. Added a green highlight to indicate watched episodes\n6. Added provider : MHD\n7. Added provider : TheYM\n8. Added Czech translation\n9. Fixed existing TV shows providers\n10. Fixed existing movies providers\n11. Improved UI\n12. Improved performance\n13. Fixed Chromecast subtitles bugs\n14. Fixed Chromecast autoplay bugs\n15. Fixed bugs and crashes\n16. Removed a permission\n17. Updated translations"
+    },
+    {
         "version": "1.7.2",
         "filename": "app-release",
         "description": "1. Added \"Resume Playback\" feature\n2. Added \"YouTube\" TV shows and movies categories\n3. Added \"Crime\" and \"Soap\" TV shows categories\n4. Added Real-Debrid provider : WrzCraft\n5. Added URLs resolver : VidMoly\n6. Added Bulgarian translation\n7. Added Croatian translation\n8. Fixed Real-Debrid\n9. Fixed existing TV shows providers\n10. Fixed existing movies providers\n11. Fixed existing URLs resolvers\n12. Disabled MyFilm provider temporarily\n13. Improved UI\n14. Improved performance\n15. Fixed bugs and crashes\n16. Updated translations"
