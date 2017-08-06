@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.3",
+    "newestVersion": "1.7.4",
     "versions": [{
+        "version": "1.7.4",
+        "filename": "app-release",
+        "description": "1. Fixed existing TV shows providers\n2. Fixed existing movies providers\n3. Disabled DiziBeta TV shows provider temporarily\n4. Simplified menu items (Remove not commonly used Chromecast buttons)\n5. Fixed built-in Chromecast function\n6. Fixed bugs and crashes\n7. Improved UI\n8. Improved performance\n9. Updated translations"
+    },
+    {
         "version": "1.7.3",
         "filename": "app-release",
         "description": "1. Show posters instead of banners for season images\n2. Links from Real-Debrid are now in green highlight\n3. Prioritize links from Real-Debrid\n4. Added an option to hide title and year on the poster images\n5. Added a green highlight to indicate watched episodes\n6. Added provider : MHD\n7. Added provider : TheYM\n8. Added Czech translation\n9. Fixed existing TV shows providers\n10. Fixed existing movies providers\n11. Improved UI\n12. Improved performance\n13. Fixed Chromecast subtitles bugs\n14. Fixed Chromecast autoplay bugs\n15. Fixed bugs and crashes\n16. Removed a permission\n17. Updated translations"
