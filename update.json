@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.4",
+    "newestVersion": "1.7.5",
     "versions": [{
+        "version": "1.7.5",
+        "filename": "app-release",
+        "description": "1. The app now greys out watched links automatically\n2. Reworked TV shows and movies searching function. You can now search for TV shows and movies at the same time!\n3. Added \"Stand-up Comedy\" movies category\n4. Added provider : StreamLord\n5. Added URLs resolver : EStream\n6. Fixed existing TV shows providers\n7. Fixed existing movies providers\n8. Fixed existing URLs resolvers\n9. Fixed images being missing after syncing with Trakt.tv\n10. Fixed YouTube app keep crashing bug\n11. Fixed Chromecast subtitles bug\n12. Updated Disney movies category\n13. Improved UI\n14. Improved performance\n15. Fixed bugs and crashes\n16. Updated translations"
+    },
+    {
         "version": "1.7.4",
         "filename": "app-release",
         "description": "1. Fixed existing TV shows providers\n2. Fixed existing movies providers\n3. Disabled DiziBeta TV shows provider temporarily\n4. Simplified menu items (Remove not commonly used Chromecast buttons)\n5. Fixed built-in Chromecast function\n6. Fixed bugs and crashes\n7. Improved UI\n8. Improved performance\n9. Updated translations"
