@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.5",
+    "newestVersion": "1.7.6",
     "versions": [{
+        "version": "1.7.6",
+        "filename": "app-release",
+        "description": "1. Added provider : Alluc\n2. Fixed existing TV shows providers\n3. Fixed existing movies providers\n4. Improved UI\n5. Improved performance\n6. Fixed \"Play with...\"\n7. Fixed new episodes checker\n8. Fixed Trakt.tv collections/favorites sync\n9. Fixed bugs and crashes\n10. Updated translations"
+    },
+    {
         "version": "1.7.5",
         "filename": "app-release",
         "description": "1. The app now greys out watched links automatically\n2. Reworked TV shows and movies searching function. You can now search for TV shows and movies at the same time!\n3. Added \"Stand-up Comedy\" movies category\n4. Added provider : StreamLord\n5. Added URLs resolver : EStream\n6. Fixed existing TV shows providers\n7. Fixed existing movies providers\n8. Fixed existing URLs resolvers\n9. Fixed images being missing after syncing with Trakt.tv\n10. Fixed YouTube app keep crashing bug\n11. Fixed Chromecast subtitles bug\n12. Updated Disney movies category\n13. Improved UI\n14. Improved performance\n15. Fixed bugs and crashes\n16. Updated translations"
