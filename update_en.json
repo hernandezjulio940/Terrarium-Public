@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.7.6",
+    "newestVersion": "1.8.0",
     "versions": [{
+        "version": "1.8.0",
+        "filename": "app-release",
+        "description": "1. Added a built-in video player (ExoPlayer)\n2. Added a button to switch video player on menu\n3. Alluc now requires an API key to work (you can add one in Settings)\n4. Added provider : ImDark\n5. Added TV shows provider : DiziKing\n6. Added movies provider : PFTV\n7. Added URLs resolver : Vidoza\n8. Fixed existing TV shows providers\n9. Fixed existing movies providers\n10. Disabled Vumoo provider temporarily\n11. Fixed new episodes checker\n12. Fixed bugs and crashes\n13. Improved performance\n14. Reduce ads\n15. Updated translations"
+    },
+    {
         "version": "1.7.6",
         "filename": "app-release",
         "description": "1. Added provider : Alluc\n2. Fixed existing TV shows providers\n3. Fixed existing movies providers\n4. Improved UI\n5. Improved performance\n6. Fixed \"Play with...\"\n7. Fixed new episodes checker\n8. Fixed Trakt.tv collections/favorites sync\n9. Fixed bugs and crashes\n10. Updated translations"
