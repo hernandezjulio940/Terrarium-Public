@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.8.0",
+    "newestVersion": "1.8.1",
     "versions": [{
+        "version": "1.8.1",
+        "filename": "app-release",
+        "description": "1. Added aspect ration adjustment for built-in video player (ExoPlayer)\n2. Added volume adjustment feature in ExoPlayer on Android TV devices\n3. Added Real-Debrid provider : AllRelease\n4. Added provider : MovieOcean\n5. Added provider : PLocker9\n6. Added provider : PLockerSK\n7. Added provider : Pubfilm\n8. Added provider : Vivo\n9. Added URLs resolver : KingVid\n10. Added URLs resolver : MyCloud\n11. Added URLs resolver : UniUp\n12. Fixed existing TV shows providers\n13. Fixed existing movies providers\n14. Reduced loading time for TV shows Trending section\n15. Fixed ads not being removed for paid users\n16. Fixed bugs of built-in video player (ExoPlayer)\n17. Fixed Chromecast controller being in landscape orientation\n18. Fixed trailers on Fire TV\n19. Fixed bugs on Android TV and Fire TV devices\n20. Fixed bugs and crashes\n21. Improved performance\n22. Improved UI\n23. Updated translations"
+    },
+    {
         "version": "1.8.0",
         "filename": "app-release",
         "description": "1. Added a built-in video player (ExoPlayer)\n2. Added a button to switch video player on menu\n3. Alluc now requires an API key to work (you can add one in Settings)\n4. Added provider : ImDark\n5. Added TV shows provider : DiziKing\n6. Added movies provider : PFTV\n7. Added URLs resolver : Vidoza\n8. Fixed existing TV shows providers\n9. Fixed existing movies providers\n10. Disabled Vumoo provider temporarily\n11. Fixed new episodes checker\n12. Fixed bugs and crashes\n13. Improved performance\n14. Reduce ads\n15. Updated translations"
