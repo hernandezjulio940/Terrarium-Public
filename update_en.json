@@ -1,6 +1,11 @@
 {
-    "newestVersion": "1.8.2",
+    "newestVersion": "1.8.3",
     "versions": [{
+        "version": "1.8.3",
+        "filename": "app-release",
+        "description": "0. FIXED CRITICAL BUGS AND CRASHES IN 1.8.2\n1. Auto switch to an alternate subtitles provider if the default one doesn't work\n2. Added results limit for Alluc (Default: 20)\n3. Added Real-Debrid provider : TvRelease\n4. Added Real-Debrid provider : TwoDDL\n5. Added provider: CMovies\n6. Added provider: FMovies\n7. Added provider: GMoviesSC\n8. Added provider: HDMovie\n9. Added movies provider: MyFilm\n10. Added movies provider: OtiMovies\n11. Added movies provider: Vodly\n12. Added URLs resolver : OCloud\n13. Added URLs resolver : Vidlox\n14. Added Greek translation\n15. Fixed existing providers\n16. Fixed existing video hosts\n17. Disabled broken providers\n18. Disabled broken video hosts\n19. Fixed GoogleVideo links\n20. Fixed missing seasons and episodes\n21. Fixed and improved built-in video player (ExoPlayer)\n22. Fixed Trakt.tv\n23. Fixed new episode checker\n24. Fixed file extension of downloaded videos\n25. Fixed downloading videos not being removed properly\n26. Fixed bugs and crashes\n27. Reduced APK size\n28. Improved performance\n29. Improved UI\n30. Updated translations"
+    },
+    {
         "version": "1.8.2",
         "filename": "app-release",
         "description": "1. Auto switch to an alternate subtitles provider if the default one doesn't work\n2. Added results limit for Alluc (Default: 20)\n3. Added Real-Debrid provider : TvRelease\n4. Added Real-Debrid provider : TwoDDL\n5. Added provider: CMovies\n6. Added provider: FMovies\n7. Added provider: GMoviesSC\n8. Added provider: HDMovie\n9. Added movies provider: MyFilm\n10. Added movies provider: OtiMovies\n11. Added movies provider: Vodly\n12. Added URLs resolver : OCloud\n13. Added URLs resolver : Vidlox\n14. Added Greek translation\n15. Fixed existing providers\n16. Fixed existing video hosts\n17. Disabled broken providers\n18. Disabled broken video hosts\n19. Fixed GoogleVideo links\n20. Fixed missing seasons and episodes\n21. Fixed and improved built-in video player (ExoPlayer)\n22. Fixed Trakt.tv\n23. Fixed new episode checker\n24. Fixed file extension of downloaded videos\n25. Fixed downloading videos not being removed properly\n26. Fixed bugs and crashes\n27. Reduced APK size\n28. Improved performance\n29. Improved UI\n30. Updated translations"
