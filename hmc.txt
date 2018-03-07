@@ -1,1 +1,1 @@
-cf_ruser=userconfirmed
+r_usr=userconfirmed
