@@ -22,7 +22,7 @@ var TheVideoDecoder = {
 
         var results = [];
 
-        var keyMatch = /lets_play_a_game\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
+        var keyMatch = /thief\s*=\s*['"]([^'"]+?)['"]/g.exec(html);
         
         if (keyMatch == null)
             return JSON.stringify(results);
@@ -31,6 +31,8 @@ var TheVideoDecoder = {
         
         if (keyMatch != null)
             key = keyMatch[1];
+        
+        key = key.replace("+", "");
         
         var getVtLink = "https://thevideo.me/vsign/player/" + key;
         var getVtLinkResult = Http.get(getVtLink, url);
