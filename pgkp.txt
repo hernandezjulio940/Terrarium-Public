@@ -1,1 +1,1 @@
-plugins/gkphp.php
+plugins/gkpedia.php
